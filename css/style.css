@@ -1,5 +1,58 @@
 :root {
-    --fs-14: 1rem;
+    /* PALETA DE CORES */
+    /* BRANCO */
+    --white-light: #fefefd;
+    --white-light-hover: #FDFDFC;
+    --white-light-active: #FBFBF8;
+    --white: #F2F2E8;
+    --white-hover: #DADAD1;
+    --white-active: #C2C2BA;
+    --white-dark: #B6B6AE;
+    --white-dark-hover: #91918B;
+    --white-dark-active: #6D6D68;
+    --white-darker: #555551;
+    /* PRETO */
+    --black-light: #EDEDED;
+    --black-light-hover: #E3E3E4;
+    --black-light-active: #C6C6C7;
+    --black: #474649;
+    --black-hover: #403F42;
+    --black-active: #39383A;
+    --black-dark: #353537;
+    --black-dark-hover: #2B2A2C;
+    --black-dark-active: #201F21;
+    --black-darker: #19191A;
+    /* ROXO */
+    --black-light: #F2EDF8;
+    --black-light-hover: #EBE4F5;
+    --black-light-active: #D5C8E9;
+    --black: #784DB9;
+    --black-hover: #6C45A7;
+    --black-active: #603E94;
+    --black-dark: #5A3A8B;
+    --black-dark-hover: #482E6F;
+    --black-dark-active: #362353;
+    --black-darker: #2A1B41;
+
+    /* TIPOGRAFIA */
+    --ff-poppins: "Poppins", sans-serif;
+    
+    --fs-40: 2.5rem;
+    --fs-36: 2.25rem;
+    --fs-32: 2rem;
+    --fs-24: 1.5rem;
+    --fs-20: 1.25rem;
+    --fs-16: 1rem;
+    --fs-14: .875rem;
+
+    --fw-thin: 100;
+    --fw-extralight: 200;
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
 }
 
 * {
@@ -9,20 +62,24 @@
 }
 
 header {
-    background-color: blue;
     grid-area: header;
+    display: flex;
+    justify-content: flex-end;
+    background-color: blue;
 }
 
 aside {
-    background-color: green;
     grid-area: aside;
+    display: flex;
+    align-items: center;
+    padding: 21px;
+    background-color: green;
 }
 
 main {
-    background-color: yellow;
     grid-area: main;
-    font-size: var(--fs-14);
     overflow: scroll;
+    background-color: yellow;
 }
 
 audio {
