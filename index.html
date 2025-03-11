@@ -16,8 +16,23 @@
 </head>
 <body>
     <div class="container">
-        <header>Header</header>
-        <aside>Aside</aside>
+        <header>
+            <button>Entrar</button>
+        </header>
+        <aside>
+            <picture>
+                <source media="(max-width: 600px)" srcset="logo-pequena.png">
+                <source media="(max-width: 1024px)" srcset="logo-media.png">
+                <img src="logo-grande.png" class="logo-responsiva">
+            </picture>
+            
+            <ul class="list">
+                <li class="list-item"><button>Início</button></li>
+                <li class="list-item"><button><ion-icon name="search-outline"></ion-icon>Pesquisar</button></li>
+                <li class="list-item list-playlist"><p>Playlists</p><hr></li>
+                <li class="list-item"><button><ion-icon name="add-circle-outline"></ion-icon>Criar playlist</button></li>
+            </ul>
+        </aside>
         <main>
             Main
             <footer>Footer</footer>
@@ -25,6 +40,8 @@
         
         <audio src="" controls></audio>
     </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
