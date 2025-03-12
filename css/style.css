@@ -63,6 +63,13 @@
     /* TRANSIÇÃO */
     --transition-1: .25s;
     --transition-2: .5s;
+
+    /* LISTA */
+    --margin-1: 15px;
+
+
+    /* ICONE */
+    --tamanho-1: var(--fs-36);
 }
 
 * {
@@ -71,6 +78,10 @@
     box-sizing: border-box;
     color: var(--white);
     font-family: var(--ff-poppins);
+}
+
+a, button {
+    cursor: pointer;
 }
 
 header {
@@ -120,6 +131,7 @@ aside > picture {
 
 .list-item {
     color: var(--white);
+    margin-bottom: var(--margin-1);
 }
 
 .list-playlist {
@@ -135,13 +147,28 @@ aside > picture {
     height: 2px;
 }
 
-.list-item > button {
+.list-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     width: 100%;
     font-size: var(--fs-24);
     font-weight: var(--fw-medium);
     text-align: left;
     background-color: var(--black-dark-hover);
     border: none;
+    transition: var(--transition-1);
+}
+
+.list-button:hover {
+    color: var(--purple);
+}
+
+.icone {
+    font-size: var(--tamanho-1);
+    max-width: var(--tamanho-1);
+    width: 100%;
+    filter: brightness(100%);
 }
 
 .logo-responsiva {
