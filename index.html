@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Way Sound</title>
     <!-- CSS -->
-     <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/player.css">
      <!-- FONTE -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +38,24 @@
             <footer>Footer</footer>
         </main>
         
-        <audio src="" controls></audio>
+        <div class="playerDisplay">
+            <div class="playerIcon"></div>
+            <div class="playPainel">
+                <div class="playerControl">
+                    <!-- VOLTAR -->
+                    <a class="player" id="skipBack"><ion-icon name="play-skip-back-outline"></ion-icon></a>
+                    <!-- PAUSE -->
+                    <a class="player" id="pause" style="display: none;"><ion-icon name="pause-outline"></ion-icon></a>
+                    <!-- PLAY -->
+                    <a class="player" id="play" style="margin-left: 3px;"><ion-icon name="play-outline"></ion-icon></a>
+                    <!-- AVANCAR -->
+                    <a class="player" id="skipForward"><ion-icon name="play-skip-forward-outline"></ion-icon></a>
+                </div>
+                <div class="playerTime"></div>
+            </div>
+        </div>
+
+        <audio src=""></audio>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

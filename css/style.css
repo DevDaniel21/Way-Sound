@@ -197,14 +197,6 @@ main::-webkit-scrollbar-thumb:hover {
     background: var(--black-dark);
 }
 
-
-audio {
-    width: 100%;
-    height: 50px;
-    grid-area: audio;
-    background-color: red;
-}
-
 .container {
     display: grid;
     height: 100vh;
@@ -214,7 +206,7 @@ audio {
     grid-template-areas: 
     "aside header"
     "aside main"
-    "audio audio"
+    "player player"
     ;
     height: 100vh;
 }
