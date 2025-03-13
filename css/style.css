@@ -63,6 +63,7 @@
     /* TRANSIÇÃO */
     --transition-1: .25s;
     --transition-2: .5s;
+    --transition-3: .1s;
 
     /* LISTA */
     --margin-1: 15px;
@@ -117,7 +118,7 @@ aside {
     gap: 70px;
     padding: 40px 52px;
     background-color: var(--black-dark-hover);
-    border-right: 10px solid var(--black-darker);
+    border-right: 10px solid var(--black-dark);
 }
 
 aside > picture {
