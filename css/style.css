@@ -168,8 +168,6 @@ aside > picture {
 .icone {
     font-size: var(--tamanho-1);
     max-width: var(--tamanho-1);
-    width: 100%;
-    filter: brightness(100%);
 }
 
 .logo-responsiva {
@@ -183,6 +181,18 @@ main {
     padding: var(--padding-header-main);
     background-color: var(--black-dark-hover);
 }
+
+.artistas {
+    display: flex;
+    flex-direction: column;
+}
+
+.artistas-card {
+    display: flex;
+    gap: 0;
+    justify-content: flex-start;
+}
+
 
 main::-webkit-scrollbar {
     width: 10px;
