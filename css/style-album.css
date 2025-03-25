@@ -1,0 +1,339 @@
+:root {
+    /* PALETA DE CORES */
+    /* BRANCO */
+    --white-light: #fefefd;
+    --white-light-hover: #FDFDFC;
+    --white-light-active: #FBFBF8;
+    --white: #F2F2E8;
+    --white-hover: #DADAD1;
+    --white-active: #C2C2BA;
+    --white-dark: #B6B6AE;
+    --white-dark-hover: #91918B;
+    --white-dark-active: #6D6D68;
+    --white-darker: #555551;
+    /* PRETO */
+    --black-light: #EDEDED;
+    --black-light-hover: #E3E3E4;
+    --black-light-active: #C6C6C7;
+    --black: #474649;
+    --black-hover: #403F42;
+    --black-active: #39383A;
+    --black-dark: #353537;
+    --black-dark-hover: #2B2A2C;
+    --black-dark-active: #201F21;
+    --black-darker: #19191A;
+    /* ROXO */
+    --purple-light: #F2EDF8;
+    --purple-light-hover: #EBE4F5;
+    --purple-light-active: #D5C8E9;
+    --purple: #784DB9;
+    --purple-hover: #6C45A7;
+    --purple-active: #603E94;
+    --purple-dark: #5A3A8B;
+    --purple-dark-hover: #482E6F;
+    --purple-dark-active: #362353;
+    --purple-darker: #2A1B41;
+
+    /* TIPOGRAFIA */
+    --ff-poppins: "Poppins", sans-serif;
+
+    --fs-40: 2.5rem;
+    --fs-36: 2.25rem;
+    --fs-32: 2rem;
+    --fs-24: 1.5rem;
+    --fs-20: 1.25rem;
+    --fs-16: 1rem;
+    --fs-14: .875rem;
+
+    --fw-thin: 100;
+    --fw-extralight: 200;
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+
+    /* PADDING HEADER MAIN */
+    --padding-header-main: 30px 40px 0 40px;
+
+    /* BORDA */
+    --br-1: 27px;
+
+    /* TRANSIÇÃO */
+    --transition-1: .25s;
+    --transition-2: .5s;
+    --transition-3: .1s;
+
+    /* LISTA */
+    --margin-1: 15px;
+
+
+    /* ICONE */
+    --tamanho-1: var(--fs-36);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--white);
+    font-family: var(--ff-poppins);
+}
+
+a,
+button {
+    cursor: pointer;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: flex-end;
+    padding: var(--padding-header-main);
+    background-color: var(--black-dark-hover);
+}
+
+header>button {
+    font-size: var(--fs-20);
+    font-weight: var(--fw-bold);
+    border-radius: var(--br-1);
+    border: 2px solid var(--purple-dark);
+    background-color: var(--purple);
+    width: 150px;
+    height: 50px;
+    transition: var(--transition-1);
+}
+
+header>button:hover {
+    background-color: var(--purple-hover);
+    color: var(--white-hover);
+    cursor: pointer;
+}
+
+aside {
+    grid-area: aside;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+    padding: 40px 52px;
+    background-color: var(--black-dark-hover);
+    border-right: 10px solid var(--black-dark);
+}
+
+aside>picture {
+    width: 80%;
+}
+
+.list {
+    list-style: none;
+    width: 100%;
+}
+
+.list-item {
+    color: var(--white);
+    margin-bottom: var(--margin-1);
+}
+
+.list-playlist {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: var(--fs-32);
+    font-weight: var(--fw-bold);
+}
+
+.list-playlist>hr {
+    width: 100%;
+    height: 2px;
+}
+
+.list-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: var(--fs-24);
+    font-weight: var(--fw-medium);
+    text-align: left;
+    background-color: var(--black-dark-hover);
+    border: none;
+    transition: var(--transition-1);
+}
+
+.list-button:hover {
+    color: var(--purple);
+}
+
+.icone {
+    font-size: var(--tamanho-1);
+    max-width: var(--tamanho-1);
+}
+
+.logo-responsiva {
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    grid-area: main;
+    overflow: scroll;
+    padding: var(--padding-header-main);
+    background-color: var(--black-dark-hover);
+}
+
+main::-webkit-scrollbar {
+    width: 10px;
+    height: 0;
+}
+
+main::-webkit-scrollbar-track {
+    background: var(--black);
+}
+
+main::-webkit-scrollbar-thumb {
+    background: var(--black-active);
+}
+
+main::-webkit-scrollbar-thumb:hover {
+    background: var(--black-dark);
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: .5fr 3fr auto;
+    grid-template-areas:
+        "aside header"
+        "aside main"
+        "player player"
+    ;
+    height: 100vh;
+}
+
+.album-viewer {
+    background-color: #19191abd;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    height: 300px;
+    max-width: 100%;
+    width: 1300px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    border-radius: 16px;
+    position: fixed;
+}
+
+.album-header {
+    display: flex;
+    gap: 40px;
+    align-items: end;
+}
+
+.img-album {
+    height: 230px;
+}
+
+.album-info {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.album-nome {
+    font-size: 55px;
+    font-weight: var(--fw-extrabold);
+    color: var(--white-light);
+}
+
+.infos-alb {
+    font-weight: var(--fw-light);
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--white-dark-hover);
+}
+
+.artista-nome {
+    color: var(--purple);
+    transition: 0.3s;
+}
+
+.artista-nome:is(:hover, :focus) {
+    color: var(--purple-light);
+}
+
+.album-musicas {
+    padding-top: 320px;
+}
+
+.music-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 5px;
+}
+
+.musicaTESTE {
+    background-color: var(--purple-dark);
+    max-width: 100%;
+    width: 1300px;
+    height: 80px;
+    border-radius: 16px;
+    display: flex;
+    padding-left: 40px;
+    align-items: center;
+    border: 2px solid #f2edf800;
+    transition: 0.3s;
+}
+
+.musicaTESTE:is(:hover, :focus) {
+    background-color: var(--purple-dark-hover);
+    border: 2px solid #F2EDF8;
+}
+
+.musica-info {
+    display: flex;
+    align-items: center;
+
+}
+
+.musica-desc {
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.play-M {
+    font-size: var(--fs-20);
+    padding-right: 30px;
+    transition: 0.3s;
+}
+
+.play-musica {
+    display: none;
+}
+
+.musicaTESTE:is(:hover, :focus) .numero-musica {
+    display: none;
+}
+
+.musicaTESTE:is(:hover, :focus) .play-musica {
+    transform: translateX(5px);
+    display: block;
+}
+
+.musicaTESTE:is(:hover, :focus) .musica-desc {
+    transform: translateX(5px);
+}
+
+.nome-musica {
+    font-size: var(--fs-20);
+}
+
+.nome-artista {
+    font-size: var(--fs-16);
+}
