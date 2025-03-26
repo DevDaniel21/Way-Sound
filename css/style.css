@@ -36,7 +36,7 @@
 
     /* TIPOGRAFIA */
     --ff-poppins: "Poppins", sans-serif;
-    
+
     --fs-40: 2.5rem;
     --fs-36: 2.25rem;
     --fs-32: 2rem;
@@ -81,7 +81,8 @@
     font-family: var(--ff-poppins);
 }
 
-a, button {
+a,
+button {
     cursor: pointer;
 }
 
@@ -93,7 +94,7 @@ header {
     background-color: var(--black-dark-hover);
 }
 
-header > button {
+header>button {
     font-size: var(--fs-20);
     font-weight: var(--fw-bold);
     border-radius: var(--br-1);
@@ -104,10 +105,11 @@ header > button {
     transition: var(--transition-1);
 }
 
-header > button:hover {
-    background-color: var(--purple-hover);
-    color: var(--white-hover);
+header>button:hover {
+    background-color: var(--purple-darker);
+    color: var(--purple);
     cursor: pointer;
+    border: 3px solid var(--purple);
 }
 
 aside {
@@ -121,7 +123,7 @@ aside {
     border-right: 10px solid var(--black-dark);
 }
 
-aside > picture {
+aside>picture {
     width: 80%;
 }
 
@@ -143,7 +145,7 @@ aside > picture {
     font-weight: var(--fw-bold);
 }
 
-.list-playlist > hr {
+.list-playlist>hr {
     width: 100%;
     height: 2px;
 }
@@ -168,6 +170,11 @@ aside > picture {
 .icone {
     font-size: var(--tamanho-1);
     max-width: var(--tamanho-1);
+    fill: var(--white);
+}
+
+.playLibrary {
+    display: none;
 }
 
 .logo-responsiva {
@@ -175,9 +182,14 @@ aside > picture {
     height: auto;
 }
 
+.conta-list {
+    display: none;
+}
+
 main {
     grid-area: main;
     overflow: scroll;
+    overflow-x: hidden;
     padding: var(--padding-header-main);
     background-color: var(--black-dark-hover);
 }
@@ -198,12 +210,15 @@ main::-webkit-scrollbar {
     width: 10px;
     height: 0;
 }
+
 main::-webkit-scrollbar-track {
-    background:var(--black);
+    background: var(--black);
 }
+
 main::-webkit-scrollbar-thumb {
     background: var(--black-active);
 }
+
 main::-webkit-scrollbar-thumb:hover {
     background: var(--black-dark);
 }
@@ -214,10 +229,83 @@ main::-webkit-scrollbar-thumb:hover {
     width: 100vw;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: .5fr 3fr auto;
-    grid-template-areas: 
-    "aside header"
-    "aside main"
-    "player player"
+    grid-template-areas:
+        "aside header"
+        "aside main"
+        "player player"
     ;
     height: 100vh;
+}
+
+@media (max-width:600px) {
+    .container {
+        display: grid;
+        height: 100vh;
+        width: 100vw;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: .5fr 3fr auto;
+        grid-template-areas:
+            "header header"
+            "main main"
+            "player player"
+            "aside aside"
+        ;
+        height: 100vh;
+    }
+
+    .entrar-button {
+        display: none;
+    }
+
+    aside {
+        bottom: 0px;
+        position: fixed;
+        background-color: var(--black-dark);
+        width: 100%;
+        display: flex;
+        border-right: none;
+        justify-content: center;
+    }
+
+    .list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        gap: 80px;
+    }
+
+    .list-item {
+        margin-bottom: 0;
+    }
+
+    .list-button {
+        background-color: var(--black-dark);
+        font-size: 0;
+    }
+
+    .list-playlist {
+        display: none;
+    }
+
+    .conta-list {
+        display: block;
+    }
+
+    .playlist-add {
+        display: none;
+    }
+
+    .icone {
+        font-size: var(--tamanho-1);
+    }
+
+    .playLibrary {
+        display: block;
+    }
+
+    .logo-responsiva {
+        display: none;
+    }
+
 }

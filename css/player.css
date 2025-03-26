@@ -45,7 +45,7 @@
     outline: 2px solid var(--purple);
 }
 
-.player > ion-icon {
+.player>ion-icon {
     transition: var(--transition-1);
 }
 
@@ -59,8 +59,47 @@
     gap: 10px;
 }
 
-.playerTime > hr {
+.playerTime>hr {
     width: 100%;
+}
+
+@media (max-width:600px) {
+    .playerDisplay {
+        width: 90%;
+        left: 30px;
+        bottom: 90px;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        height: 5em;
+        border-radius: 16px;
+        box-shadow: 0px 0px 7px var(--purple);
+    }
+
+    .playerIcon {
+        width: 50px;
+        height: 50px;
+        border-radius: 0.7em;
+    }
+
+    .playerTime {
+        width: 40vw;
+    }
+
+    #skipBack {
+        display: none;
+    }
+
+    #skipForward {
+        display: none;
+    }
+
+    .playPainel {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
 }
 
 /* 

@@ -179,8 +179,10 @@ aside>picture {
 main {
     grid-area: main;
     overflow: scroll;
+    overflow-x: hidden;
     padding: var(--padding-header-main);
     background-color: var(--black-dark-hover);
+    padding-top: 0px;
 }
 
 main::-webkit-scrollbar {
@@ -215,7 +217,7 @@ main::-webkit-scrollbar-thumb:hover {
 }
 
 .album-viewer {
-    background-color: #19191abd;
+    background: linear-gradient(rgba(25, 25, 26, 1) 50%, rgba(25, 25, 26, 0.40112048237263653) 100%);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     height: 300px;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,20 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/player.css">
-     <!-- FONTE -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- FONTE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
-     
+
 </head>
+
 <body>
     <div class="container">
         <header>
-            <button>Entrar</button>
+            <button class="entrar-button">Entrar</button>
         </header>
         <aside>
             <picture>
@@ -25,15 +29,25 @@
                 <source media="(max-width: 1024px)" srcset="logo-media.png">
                 <img src="logo-grande.png" class="logo-responsiva">
             </picture>
-            
+
             <ul class="list">
-                <li class="list-item"><button class="list-button"><img src="home.png" class="icone">Início</button></li>
-                
-                <li class="list-item"><button class="list-button"><ion-icon name="search-outline" class="icone"></ion-icon>Pesquisar</button></li>
-                
-                <li class="list-item list-playlist"><p>Playlists</p><hr></li>
-                
-                <li class="list-item"><button class="list-button"><ion-icon name="add-circle-outline" class="icone"></ion-icon>Criar playlist</button></li>
+                <li class="list-item"><button class="list-button"><img src="imgs/Home.svg" class="icone">Início</button>
+                </li>
+
+                <li class="list-item"><button class="list-button"><img src="imgs/Pesquisar.svg"
+                            class="icone">Pesquisar</button></li>
+                <li class="list-item playLibrary"><button class="list-button"><img src="imgs/playlists.svg"
+                            class="icone"></button>
+                </li>
+                <li class="list-item list-playlist">
+                    <p>Playlists</p>
+                    <hr>
+                </li>
+                <li class="list-item conta-list"><button class="list-button"><img src="imgs/perfil.svg"
+                            class="icone"></ion-icon></button></li>
+                <li class="list-item playlist-add"><button class="list-button"><img src="imgs/adcionar.svg"
+                            class="icone">Criar
+                        playlist</button></li>
             </ul>
         </aside>
         <main>
@@ -69,7 +83,6 @@
             </article>
             <footer>Footer</footer>
         </main>
-        
         <div class="playerDisplay">
             <div class="playerIcon"></div>
             <div class="playPainel">
@@ -79,7 +92,7 @@
                     <!-- PAUSE -->
                     <a class="player" id="pause" style="display: none;"><ion-icon name="pause"></ion-icon></a>
                     <!-- PLAY -->
-                    <a class="player" id="play" style="margin-left: 5px;"><ion-icon name="play"></ion-icon></a>
+                    <a class="player" id="play"><ion-icon name="play"></ion-icon></a>
                     <!-- AVANCAR -->
                     <a class="player" id="skipForward"><ion-icon name="play-forward"></ion-icon></a>
                 </div>
@@ -93,10 +106,12 @@
             <div class="playerVolume"></div>
         </div>
 
+
         <audio src=""></audio>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>
