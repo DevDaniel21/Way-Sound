@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Way Sound</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/player.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/player.css">
     <!-- FONTE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,37 +23,44 @@
             <button class="entrar-button">Entrar</button>
         </header>
         <aside>
-            <a href="sobre.html">
+            <a href="src/html/sobre.html">
                 <picture>
-                    <source media="(max-width: 600px)" srcset="logo-pequena.png">
-                    <source media="(max-width: 1024px)" srcset="logo-media.png">
-                    <img src="logo-grande.png" class="logo-responsiva">
+                    <source media="(max-width: 600px)" srcset="/imgs/logo-pequena.png">
+                    <source media="(max-width: 1024px)" srcset="/imgs/logos/logo-media.png">
+                    <img src="/imgs/logos/logo-grande.png" class="logo-responsiva">
                 </picture>
             </a>
 
             <ul class="list">
-                <li class="list-item"><button class="list-button"><img src="imgs/Home.svg" class="icone">Início</button>
+                <li class="list-item">
+                    <button class="list-button"><img src="imgs/Home.svg" class="icone">Início</button>
                 </li>
-
-                <li class="list-item"><button class="list-button"><img src="imgs/Pesquisar.svg"
-                            class="icone">Pesquisar</button></li>
-                <li class="list-item playLibrary"><button class="list-button"><img src="imgs/playlists.svg"
-                            class="icone"></button>
+                
+                <li class="list-item">
+                    <button class="list-button"><img src="imgs/Pesquisar.svg" class="icone">Pesquisar</button>
                 </li>
+                
+                <li class="list-item playLibrary">
+                    <button class="list-button"><img src="imgs/playlists.svg" class="icone"></button>
+                </li>
+                
                 <li class="list-item list-playlist">
                     <p>Playlists</p>
                     <hr>
                 </li>
-                <li class="list-item conta-list"><button class="list-button"><img src="imgs/perfil.svg"
-                            class="icone"></ion-icon></button></li>
-                <li class="list-item playlist-add"><button class="list-button"><img src="imgs/adcionar.svg"
-                            class="icone">Criar
-                        playlist</button></li>
+                
+                <li class="list-item conta-list">
+                    <button class="list-button"><img src="imgs/perfil.svg" class="icone"></ion-icon></button>
+                </li>
+                
+                <li class="list-item playlist-add"><button class="list-button"><img src="imgs/adcionar.svg" class="icone">Criar playlist</button>
+                
+                </li>
             </ul>
         </aside>
         <main>
             <article class="artistas">
-                <h1>Artistas em baixa</h1>
+                <h1>Artistas em alta</h1>
                 <ul class="artistas-list">
                     <li class="artistas-card">
                         <img src="" class="artistas-card-img">
