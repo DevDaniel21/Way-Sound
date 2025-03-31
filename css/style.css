@@ -36,7 +36,7 @@
 
     /* TIPOGRAFIA */
     --ff-poppins: "Poppins", sans-serif;
-
+    
     --fs-40: 2.5rem;
     --fs-36: 2.25rem;
     --fs-32: 2rem;
@@ -81,12 +81,7 @@
     font-family: var(--ff-poppins);
 }
 
-a {
-    text-decoration: none;
-}
-
-a,
-button {
+a, button {
     cursor: pointer;
 }
 
@@ -98,7 +93,7 @@ header {
     background-color: var(--black-dark-hover);
 }
 
-header>button {
+header > button {
     font-size: var(--fs-20);
     font-weight: var(--fw-bold);
     border-radius: var(--br-1);
@@ -109,11 +104,10 @@ header>button {
     transition: var(--transition-1);
 }
 
-header>button:hover {
-    background-color: var(--purple-darker);
-    color: var(--purple);
+header > button:hover {
+    background-color: var(--purple-hover);
+    color: var(--white-hover);
     cursor: pointer;
-    border: 3px solid var(--purple);
 }
 
 aside {
@@ -127,7 +121,7 @@ aside {
     border-right: 10px solid var(--black-dark);
 }
 
-aside>picture {
+aside > picture {
     width: 80%;
 }
 
@@ -149,15 +143,9 @@ aside>picture {
     font-weight: var(--fw-bold);
 }
 
-.list-playlist>hr {
+.list-playlist > hr {
     width: 100%;
     height: 2px;
-}
-
-.list-link {
-    display: flex;
-    transition: var(--transition-1);
-    gap: 10px;
 }
 
 .list-button {
@@ -167,22 +155,19 @@ aside>picture {
     width: 100%;
     font-size: var(--fs-24);
     font-weight: var(--fw-medium);
+    text-align: left;
     background-color: var(--black-dark-hover);
     border: none;
+    transition: var(--transition-1);
 }
 
-.list-button:hover > .list-link {
+.list-button:hover {
     color: var(--purple);
 }
 
 .icone {
     font-size: var(--tamanho-1);
     max-width: var(--tamanho-1);
-    fill: var(--white);
-}
-
-.playLibrary {
-    display: none;
 }
 
 .logo-responsiva {
@@ -190,14 +175,9 @@ aside>picture {
     height: auto;
 }
 
-.conta-list {
-    display: none;
-}
-
 main {
     grid-area: main;
     overflow: scroll;
-    overflow-x: hidden;
     padding: var(--padding-header-main);
     background-color: var(--black-dark-hover);
 }
@@ -218,15 +198,12 @@ main::-webkit-scrollbar {
     width: 10px;
     height: 0;
 }
-
 main::-webkit-scrollbar-track {
-    background: var(--black);
+    background:var(--black);
 }
-
 main::-webkit-scrollbar-thumb {
     background: var(--black-active);
 }
-
 main::-webkit-scrollbar-thumb:hover {
     background: var(--black-dark);
 }
@@ -237,212 +214,26 @@ main::-webkit-scrollbar-thumb:hover {
     width: 100vw;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: .5fr 3fr auto;
-    grid-template-areas:
-        "aside header"
-        "aside main"
-        "player player"
+    grid-template-areas: 
+    "aside header"
+    "aside main"
+    "player player"
     ;
     height: 100vh;
 }
 
-/*parte que weslley adicionou no documento*/
+/*--------------------------------------*/
+
+body {
+    background-color: var(--black);
+    list-style: none;
+}
 
 .title-user-config {
     text-align: center;
-    font-size: var(--fs-36);
-    padding-top: 50px;
-    font-weight: var(--fw-bold);
+    
 }
 
-.user-config {
-    display: flex;
-    justify-content: center;
-}
-
-.image-area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--black-darker);
-    border-radius: 15px;
-    text-align: justify;
-    padding: 20px;
-    width: 35%;
-}
-
-.text-change-image {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.text-send {
-    text-decoration: underline;
-}
-
-.icon-profile {
-    width: 150px;
-    height: 150px;
-}
-
-.btn-1 {
-    margin-top: 20px;
-    text-align: center;
-    background-color: var(--purple-dark);
-    height: 20%;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-weight: var(--fw-bold);
-}
-
-.btn-1:hover {
-    background-color: var(--purple-hover);
-    transform: scale(1.05);
-    cursor: pointer;
-}
-
-.table-container {
-    display: flex;
-    padding: 80px;
-    justify-content: center;
-}
-
-td {
-    padding: 15px;
-    vertical-align: middle;
-    font-size: var(--fs-20);
-}
-
-.edit-icon {
-    cursor: pointer;
-    font-size: 24px;
-    color: #722fbe;
-    transform: rotate(80deg);
-    transition: transform 0.3s, font-size 0.3s;
-}
-
-.edit-icon:hover {
-    transform: rotate(80deg);
-    font-size: 27px;
-}
-
-.input-display {
-    display: block;
-    padding: 5px;
-    color: var(--white-dark-active);
-}
-
-.row {
-    display: flex;
-    align-items: center;
-}
-
-.row span {
-    margin-left: 5px;
-}
-
-.btn-cc-ex {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 60px;
-}
-
-.cc {
-    color: var(--purple-light-active);
-    cursor: pointer;
-}
-
-.ex {
-    color: red;
-    cursor: pointer;
-}
-
-@media (max-width:1420px) {
-    .image-area {
-        flex-wrap: wrap;
-        width: 50%;
-    }
-}
-
-@media (max-width:600px) {
-    .container {
-        display: grid;
-        height: 100vh;
-        width: 100vw;
-        grid-template-columns: 1fr 3fr;
-        grid-template-rows: 1fr auto;
-        grid-template-areas:
-            "main main"
-            "player player"
-            "aside aside"
-        ;
-        height: 100vh;
-    }
-
-    .entrar-button {
-        display: none;
-    }
-
-    header {
-        display: none;
-    }
-
-    aside {
-        bottom: 0px;
-        position: fixed;
-        background-color: var(--black-dark);
-        width: 100%;
-        display: flex;
-        border-right: none;
-        justify-content: center;
-    }
-
-    .list {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        gap: 80px;
-    }
-
-    .list-item {
-        margin-bottom: 0;
-    }
-
-    .list-button {
-        background-color: var(--black-dark);
-        font-size: 0;
-    }
-
-    .list-playlist {
-        display: none;
-    }
-
-    .conta-list {
-        display: block;
-    }
-
-    .playlist-add {
-        display: none;
-    }
-
-    .icone {
-        font-size: var(--tamanho-1);
-    }
-
-    .playLibrary {
-        display: block;
-    }
-
-    .logo-responsiva {
-        display: none;
-    }
-
-    .image-area {
-        flex-wrap: wrap;
-        width: 100%;
-    }
+.area-change-image {
+    background-color: black;
 }

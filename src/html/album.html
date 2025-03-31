@@ -27,24 +27,56 @@
         </header>
         <aside>
             <picture>
-                <source media="(max-width: 600px)" srcset="logo-pequena.png">
-                <source media="(max-width: 1024px)" srcset="logo-media.png">
-                <img src="logo-grande.png" class="logo-responsiva">
+                <source media="(max-width: 600px)" srcset="/imgs/logo-pequena.png">
+                <source media="(max-width: 1024px)" srcset="/imgs/logos/logo-media.png">
+                <img src="/imgs/logos/logo-grande.png" class="logo-responsiva">
             </picture>
 
             <ul class="list">
-                <li class="list-item"><button class="list-button"><img src="home.png" class="icone">Início</button></li>
-
-                <li class="list-item"><button class="list-button"><ion-icon name="search-outline"
-                            class="icone"></ion-icon>Pesquisar</button></li>
-
+                <li class="list-item">
+                    <button class="list-button">
+                        <a href="/index.html" class="list-link">
+                        <img src="/imgs/Home.svg" class="icone">Início
+                        </a>
+                    </button>
+                </li>
+                
+                <li class="list-item">
+                    <button class="list-button">
+                        <a href="/index.html" class="list-link">
+                        <img src="/imgs/Pesquisar.svg" class="icone">Pesquisar
+                        </a>
+                    </button>
+                </li>
+                
+                <li class="list-item playLibrary">
+                    <button class="list-button">
+                        <a href="/index.html" class="list-link">
+                        <img src="/imgs/playlists.svg" class="icone">
+                        </a>
+                    </button>
+                </li>
+                
                 <li class="list-item list-playlist">
                     <p>Playlists</p>
                     <hr>
                 </li>
-
-                <li class="list-item"><button class="list-button"><ion-icon name="add-circle-outline"
-                            class="icone"></ion-icon>Criar playlist</button></li>
+                
+                <li class="list-item conta-list">
+                    <button class="list-button">
+                        <a href="/index.html" class="list-link">
+                        <img src="/imgs/perfil.svg" class="icone"></ion-icon>
+                        </a>
+                    </button>
+                </li>
+                
+                <li class="list-item playlist-add">
+                    <button class="list-button">
+                        <a href="/index.html" class="list-link">
+                        <img src="/imgs/adcionar.svg" class="icone">Criar playlist
+                        </a>
+                    </button>
+                </li>
             </ul>
         </aside>
         <main>

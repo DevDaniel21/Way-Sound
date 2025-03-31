@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Way Sound</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="src/css/style.css">
-    <link rel="stylesheet" href="src/css/player.css">
-    <!-- FONTE -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/css/player.css">
+    <link rel="stylesheet" href="/src/css/config.css">
+     <!-- FONTE -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-
+     
 </head>
-
 <body>
     <div class="container">
-        <header>
-            <button class="entrar-button">Entrar</button>
-        </header>
         <aside>
-            <a href="src/html/sobre.html">
+            <a href="sobre.html">
                 <picture>
                     <source media="(max-width: 600px)" srcset="/imgs/logo-pequena.png">
                     <source media="(max-width: 1024px)" srcset="/imgs/logos/logo-media.png">
@@ -79,38 +74,71 @@
             </ul>
         </aside>
         <main>
-            <article class="artistas">
-                <h1>Artistas em alta</h1>
-                <ul class="artistas-list">
-                    <li class="artistas-card">
-                        <img src="" class="artistas-card-img">
-                        <p class="artistas-card-titulo"></p>
-                        <p class="artistas-card-subtitulo"></p>
-                    </li>
-                    <li class="artistas-card">
-                        <img src="" class="artistas-card-img">
-                        <p class="artistas-card-titulo"></p>
-                        <p class="artistas-card-subtitulo"></p>
-                    </li>
-                    <li class="artistas-card">
-                        <img src="" class="artistas-card-img">
-                        <p class="artistas-card-titulo"></p>
-                        <p class="artistas-card-subtitulo"></p>
-                    </li>
-                    <li class="artistas-card">
-                        <img src="" class="artistas-card-img">
-                        <p class="artistas-card-titulo"></p>
-                        <p class="artistas-card-subtitulo"></p>
-                    </li>
-                    <li class="artistas-card">
-                        <img src="" class="artistas-card-img">
-                        <p class="artistas-card-titulo"></p>
-                        <p class="artistas-card-subtitulo"></p>
-                    </li>
-                </ul>
-            </article>
-            <footer>Footer</footer>
+            <h2 class="title-user-config">Configurações do Usuário</h2>
+            <section class="user-config">
+                <div class="image-area">
+                    <div>
+                        <ion-icon name="person-circle-outline" class="icon-profile"></ion-icon>
+                    </div>
+    
+                    <div class="text-change-image">
+                        <P class="text-send">Enviar um arquivo do seu dispositivo.
+                            A imagem deve ser quadrada e ter
+                            dimensões mínimas de 184px x 184px.</P>
+                        <p class="btn-1">Mudar</p>
+                    </div>
+                </div>
+            </section>
+                
+               
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="row">
+                                <span>NOME</span>
+                                <span class="edit-icon">&#9998;</span>
+                            </div>
+                            <span class="input-display">Carlos Silva</span>
+                        </td>
+                        <td>
+                            <div class="row">
+                                <span>NOME DE USUARIO</span>
+                                <span class="edit-icon">&#9998;</span>
+                            </div>
+                            <span class="input-display">carlos_silva</span>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <div class="row">
+                                <span>EMAIL</span>
+                                <span class="edit-icon">&#9998;</span>
+                            </div>
+                            <span class="input-display">carlos.silva@email.com</span>
+                        </td>
+                        <td>
+                            <div class="row">
+                                <span>TELEFONE</span>
+                                <span class="edit-icon">&#9998;</span>
+                            </div>
+                            <span class="input-display">(11) 91234-5678</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        
+
+            <div class="btn-cc-ex">
+                <p class="cc">Alterar para conta comercial</p>
+
+                <p class="ex">Excluir conta</p>
+            </div>
+                
+            <footer></footer>
         </main>
+        
         <div class="playerDisplay">
             <div class="playerIcon"></div>
             <div class="playPainel">
@@ -120,7 +148,7 @@
                     <!-- PAUSE -->
                     <a class="player" id="pause" style="display: none;"><ion-icon name="pause"></ion-icon></a>
                     <!-- PLAY -->
-                    <a class="player" id="play"><ion-icon name="play"></ion-icon></a>
+                    <a class="player" id="play" style="margin-left: 5px;"><ion-icon name="play"></ion-icon></a>
                     <!-- AVANCAR -->
                     <a class="player" id="skipForward"><ion-icon name="play-forward"></ion-icon></a>
                 </div>
@@ -134,13 +162,10 @@
             <div class="playerVolume"></div>
         </div>
 
-
         <audio src=""></audio>
     </div>
-
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="js/main.js"></script>
 </body>
-
 </html>
