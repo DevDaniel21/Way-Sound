@@ -198,21 +198,104 @@ main {
     grid-area: main;
     overflow: scroll;
     overflow-x: hidden;
-    padding: var(--padding-header-main);
     background-color: var(--black-dark-hover);
 }
 
 .artistas {
     display: flex;
     flex-direction: column;
+    padding: var(--padding-header-main);
+}
+
+.artistas-list {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    max-height: 240px;
+    gap: 10px;
 }
 
 .artistas-card {
     display: flex;
-    gap: 0;
-    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 10px;
+    overflow: hidden;
+    transition: var(--transition-1);
+    border-radius: 20px;
 }
 
+/* .artistas-card-play {
+    display: none;
+    position: relative;
+    font-size: 3em;
+    bottom: 45%;
+    left: 25%;
+    background-color: var(--purple-hover);
+    border-radius: 100%;
+    padding: 6px 5px 6px 10px;
+} */
+
+.artistas-card-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}
+
+.artistas-card-titulo {
+    font-size: 1.3em;
+    width: 100%;
+}
+
+.artistas-card-subtitulo {
+    font-size: 1em;
+    width: 100%;
+    text-align: left;
+}
+
+.artistas-card:hover {
+    background-color: var(--black-active);
+}
+
+
+/* FOOTER */
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--black-dark-active);
+    height: 150px;
+    width: 100%;
+}
+
+.footer-links {
+    display: flex;
+    flex: .7;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.footer-links-titulo {
+    font-weight: var(--fw-bold);
+}
+
+.footer-links-link {
+    font-weight: var(--fw-medium);
+    width: min-content;
+}
+
+.footer-links-link:hover {
+    color: var(--purple-light-active);
+}
+
+.footer-copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: .3;
+    background-color: var(--black-darker);
+}
+
+/* BARRA DE SCROLL */
 
 main::-webkit-scrollbar {
     width: 10px;
