@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Way Sound</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="/src/css/style.css">
-    <link rel="stylesheet" href="/src/css/player.css">
-    <link rel="stylesheet" href="/src/css/style-album.css">
-
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/player.css">
+    <link rel="stylesheet" href="../css/style-album.css">
     <!-- FONTE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
 
 </head>
@@ -26,33 +22,35 @@
             <button>Entrar</button>
         </header>
         <aside>
-            <picture>
-                <source media="(max-width: 600px)" srcset="/imgs/logo-pequena.png">
-                <source media="(max-width: 1024px)" srcset="/imgs/logos/logo-media.png">
-                <img src="/imgs/logos/logo-grande.png" class="logo-responsiva">
-            </picture>
+            <a href="sobre.html">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="../../imgs/logo-pequena.png">
+                    <source media="(max-width: 1024px)" srcset="../../imgs/logos/logo-media.png">
+                    <img src="../../imgs/logos/logo-grande.png" class="logo-responsiva">
+                </picture>
+            </a>
 
             <ul class="list">
                 <li class="list-item">
                     <button class="list-button">
-                        <a href="/index.html" class="list-link">
-                        <img src="/imgs/Home.svg" class="icone">Início
+                        <a href="../../index.html" class="list-link">
+                        <img src="../../imgs/Home.svg" class="icone">Início
                         </a>
                     </button>
                 </li>
                 
                 <li class="list-item">
                     <button class="list-button">
-                        <a href="/index.html" class="list-link">
-                        <img src="/imgs/Pesquisar.svg" class="icone">Pesquisar
+                        <a href="" class="list-link">
+                        <img src="../../imgs/Pesquisar.svg" class="icone">Pesquisar
                         </a>
                     </button>
                 </li>
                 
                 <li class="list-item playLibrary">
                     <button class="list-button">
-                        <a href="/index.html" class="list-link">
-                        <img src="/imgs/playlists.svg" class="icone">
+                        <a href="" class="list-link">
+                        <img src="../../imgs/playlists.svg" class="icone">
                         </a>
                     </button>
                 </li>
@@ -62,18 +60,18 @@
                     <hr>
                 </li>
                 
-                <li class="list-item conta-list">
+                <li class="list-item playlist-add">
                     <button class="list-button">
-                        <a href="/index.html" class="list-link">
-                        <img src="/imgs/perfil.svg" class="icone"></ion-icon>
+                        <a href="" class="list-link">
+                            <img src="../../imgs/adcionar.svg" class="icone">Criar playlist
                         </a>
                     </button>
                 </li>
                 
-                <li class="list-item playlist-add">
+                <li class="list-item conta-list">
                     <button class="list-button">
-                        <a href="/index.html" class="list-link">
-                        <img src="/imgs/adcionar.svg" class="icone">Criar playlist
+                        <a href="" class="list-link">
+                            <img src="../../imgs/perfil.svg" class="icone"></ion-icon>
                         </a>
                     </button>
                 </li>
@@ -239,9 +237,9 @@
 
         <audio src=""></audio>
     </div>
+    <script src="js/main.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="js/main.js"></script>
 </body>
 
 </html>
