@@ -1,0 +1,199 @@
+:root {
+    /* PALETA DE CORES */
+    /* BRANCO */
+    --white-light: #fefefd;
+    --white-light-hover: #FDFDFC;
+    --white-light-active: #FBFBF8;
+    --white: #F2F2E8;
+    --white-hover: #DADAD1;
+    --white-active: #C2C2BA;
+    --white-dark: #B6B6AE;
+    --white-dark-hover: #91918B;
+    --white-dark-active: #6D6D68;
+    --white-darker: #555551;
+    /* PRETO */
+    --black-light: #EDEDED;
+    --black-light-hover: #E3E3E4;
+    --black-light-active: #C6C6C7;
+    --black: #474649;
+    --black-hover: #403F42;
+    --black-active: #39383A;
+    --black-dark: #353537;
+    --black-dark-hover: #2B2A2C;
+    --black-dark-active: #201F21;
+    --black-darker: #19191A;
+    /* ROXO */
+    --purple-light: #F2EDF8;
+    --purple-light-hover: #EBE4F5;
+    --purple-light-active: #D5C8E9;
+    --purple: #784DB9;
+    --purple-hover: #6C45A7;
+    --purple-active: #603E94;
+    --purple-dark: #5A3A8B;
+    --purple-dark-hover: #482E6F;
+    --purple-dark-active: #362353;
+    --purple-darker: #2A1B41;
+
+    /* TIPOGRAFIA */
+    --ff-poppins: "Poppins", sans-serif;
+    
+    --fs-40: 2.5rem;
+    --fs-36: 2.25rem;
+    --fs-32: 2rem;
+    --fs-24: 1.5rem;
+    --fs-20: 1.25rem;
+    --fs-16: 1rem;
+    --fs-14: .875rem;
+
+    --fw-thin: 100;
+    --fw-extralight: 200;
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+
+    /* PADDING HEADER MAIN */
+    --padding-header-main: 30px 40px 0 40px;
+
+    /* BORDA */
+    --br-1: 27px;
+
+    /* TRANSIÇÃO */
+    --transition-1: .25s;
+    --transition-2: .5s;
+    --transition-3: .1s;
+
+    /* LISTA */
+    --margin-1: 15px;
+
+
+    /* ICONE */
+    --tamanho-1: var(--fs-36);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--ff-poppins);
+    color: #784DB9;
+}
+
+.container { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    height: 100vh;
+    background-image: url(../../imgs/bg-login.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login {
+    display: flex;
+    flex-wrap:wrap ;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 60vh;
+    width: 70vw;
+}
+
+.logo, .login-informacoes {
+    flex: .5;
+}
+
+.logo {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo > img {
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+}
+
+.login-informacoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--white-light);
+}
+
+/* FORMULARIO */
+.form-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-between;
+}
+
+.input-email, .input-senha {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    background-color: var(--black-dark);
+    border: 4px solid var(--purple);
+    color: var(--white-active);
+    border-radius: 10px;
+    width: 432px;
+    height: 48px;
+}
+
+.input-label {
+    color: var(--purple);
+    font-weight: bolder;
+}
+
+.btn-entrar {
+    margin-top: 20px;
+    width: 151px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: var(--purple);
+    color: var(--white-light-active);
+    font-family: var(--ff-poppins);
+    border-color: var(--purple);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.btn-registrar {
+    width: 151px;
+    height: 40px;
+    border-radius: 30px;
+    background-color:var(--white-light-active);
+    color: var(--purple);
+    font-family: var(--ff-poppins);
+    border-color: var(--purple);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.registre-se {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sla {
+    width: 300px;
+}
+
+hr {
+    width: 30%;
+    height: 2px;
+}
