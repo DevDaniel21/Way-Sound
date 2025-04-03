@@ -128,7 +128,7 @@ header>button:hover {
     position: absolute;
     right: 0;
     background-color: var(--black-dark);
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -139,7 +139,10 @@ header>button:hover {
     padding: .5em;
 }
 
-.perfil-links a:hover {background-color: var(--black-dark-hover); color: rgb(199, 199, 199);}
+.perfil-links a:hover {
+    background-color: var(--black-dark-hover);
+    color: rgb(199, 199, 199);
+}
 
 .perfil:hover .perfil-links {
     display: block;
@@ -200,7 +203,7 @@ aside>picture {
     border: none;
 }
 
-.list-button:hover > .list-link {
+.list-button:hover>.list-link {
     color: var(--purple);
 }
 
@@ -486,7 +489,7 @@ td {
         height: 100dvh;
         width: 100dvw;
         grid-template-columns: 1fr;
-        grid-template-rows:  auto 1fr auto;
+        grid-template-rows: auto 1fr auto;
         grid-template-areas:
             "header"
             "main"

@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaySound | Configurações</title>
+    <title>WaySound</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/livraria.css">
     <link rel="stylesheet" href="../css/player.css">
-    <link rel="stylesheet" href="../css/config.css">
+    <link rel="stylesheet" href="../css/style-album.css">
     <!-- FONTE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,13 +17,14 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
-    <!-- ICONE -->
-    <link rel="shortcut icon" href="../../imgs/logos/logo-pequena.png" type="image/x-icon">
 
 </head>
 
 <body>
     <div class="container">
+        <header>
+            <button>Entrar</button>
+        </header>
         <aside>
             <a href="sobre.html">
                 <picture>
@@ -51,7 +53,7 @@
 
                 <li class="list-item playLibrary">
                     <button class="list-button">
-                        <a href="#" class="list-link">
+                        <a href="" class="list-link">
                             <img src="../../imgs/playlists.svg" class="icone">
                         </a>
                     </button>
@@ -64,7 +66,7 @@
 
                 <li class="list-item playlist-add">
                     <button class="list-button">
-                        <a href="playlist.html" class="list-link">
+                        <a href="livraria.html" class="list-link">
                             <img src="../../imgs/adcionar.svg" class="icone">Criar playlist
                         </a>
                     </button>
@@ -80,69 +82,30 @@
             </ul>
         </aside>
         <main>
-            <h2 class="title-user-config">Configurações do Usuário</h2>
-            <section class="user-config">
-                <div class="image-area">
-                    <div>
-                        <ion-icon name="person-circle-outline" class="icon-profile"></ion-icon>
-                    </div>
+            <article class="livraria">
+                <h1 class="titulo-livraria">Biblioteca</h1>
+                <ul class="artistas-list">
+                    <li class="playlist-elemnt">
+                        <a href="playlist.html" class="card-liv">
+                            <div class="fundo-maiszinho"><span class="maiszinho">+</span></div>
+                            <p class="artistas-card-titulo">Criar playlist</p>
+                        </a>
 
-                    <div class="text-change-image">
-                        <P class="text-send">Enviar um arquivo do seu dispositivo.
-                            A imagem deve ser quadrada e ter
-                            dimensões mínimas de 184px x 184px.</P>
-                        <p class="btn-1">Mudar</p>
-                    </div>
-                </div>
-            </section>
+                    </li>
+                </ul>
+                <h1 class="titulo-livraria">Albuns Salvos</h1>
+                <ul class="artistas-list">
+                    <li class="playlist-elemnt">
+                        <a href="album.html" class="card-liv">
+                            <div class="fundo-maiszinho"><span class="maiszinho">+</span></div>
+                            <p class="artistas-card-titulo">Adicionar Album</p>
+                        </a>
 
+                    </li>
+                </ul>
+            </article>
 
-            <div class="table-container">
-                <table>
-                    <tr>
-                        <td>
-                            <div class="row">
-                                <span>NOME</span>
-                                <span class="edit-icon">&#9998;</span>
-                            </div>
-                            <span class="input-display">Carlos Silva</span>
-                        </td>
-                        <td>
-                            <div class="row">
-                                <span>NOME DE USUARIO</span>
-                                <span class="edit-icon">&#9998;</span>
-                            </div>
-                            <span class="input-display">carlos_silva</span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="row">
-                                <span>EMAIL</span>
-                                <span class="edit-icon">&#9998;</span>
-                            </div>
-                            <span class="input-display">carlos.silva@email.com</span>
-                        </td>
-                        <td>
-                            <div class="row">
-                                <span>TELEFONE</span>
-                                <span class="edit-icon">&#9998;</span>
-                            </div>
-                            <span class="input-display">(11) 91234-5678</span>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-
-            <div class="btn-cc-ex">
-                <p class="cc">Alterar para conta comercial</p>
-
-                <p class="ex">Excluir conta</p>
-            </div>
-
-            <footer></footer>
+            <footer>Footer</footer>
         </main>
 
         <div class="playerDisplay">

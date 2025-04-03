@@ -8,7 +8,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/player.css">
-    <link rel="stylesheet" href="../css/style-album.css">
+    <link rel="stylesheet" href="../css/playlist.css">
     <!-- FONTE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
 <body>
     <div class="container">
         <header>
-            <button>Entrar</button>
+            <button class="entrar-button"><a href="entre.html">Entrar</a></button>
         </header>
         <aside>
             <a href="sobre.html">
@@ -52,7 +52,7 @@
 
                 <li class="list-item playLibrary">
                     <button class="list-button">
-                        <a href="playlist.html" class="list-link">
+                        <a href="livraria.html" class="list-link">
                             <img src="../../imgs/playlists.svg" class="icone">
                         </a>
                     </button>
@@ -73,7 +73,7 @@
 
                 <li class="list-item conta-list">
                     <button class="list-button">
-                        <a href="config-user.html" class="list-link">
+                        <a href="" class="list-link">
                             <img src="../../imgs/perfil.svg" class="icone"></ion-icon>
                         </a>
                     </button>
@@ -82,85 +82,44 @@
         </aside>
         <main>
             <div class="esconder"></div>
-            <div class="album-viewer">
-                <div class="album-header">
-                    <img class="img-album" src="/imgs/album-1-meisemones.avif" alt="Imagem-album">
-                    <div class="album-titles">
-                        <h1 class="album-nome">I can do what I want</h1>
-                        <div class="album-info">
-                            <a href="#" class="artista-nome infos-alb">Mei Semones</a>
+            <div class="playlist-viewer">
+                <div class="playlist-header">
+                    <button class="img-custom-fundo">
+                        <img class="img-custom" src="/imgs/lapis.svg" alt="Imagem-custom">
+                    </button>
+                    <div class="pl-titles">
+                        <div class="pl-custom-name">
+                            <h1 class="pl-nome">Playlist #1</h1><button class="custom-name infos-pl">
+                                <div class="custom-img-name-fundo"><img class="custom-img-name"
+                                        src="/imgs/lapis-fill.svg" alt="privacidade"></div>
+                            </button>
+
+                            </button>
+                        </div>
+
+                        <div class="pl-info">
+                            <button class="privacidade infos-pl">Privacidade<div class="priv-img-fundo"><img
+                                        class="priv-img" src="/imgs/lapis-fill.svg" alt="privacidade"></div></button>
+                            <span class="infos-pl">•</span>
+                            <h2 class="data-criacao infos-pl">XXXX</h2>
                             <span class="infos-alb">•</span>
-                            <h2 class="data-album infos-alb">2025</h2>
-                            <span class="infos-alb">•</span>
-                            <h2 class="N-mus-akbum infos-alb">3 músicas</h2>
-                            <span class="infos-alb">•</span>
-                            <h2 class="H-mus-akbum infos-alb">9min e 29seg</h2>
+                            <h2 class="N-mus-akbum infos-pl">X músicas</h2>
+                            <span class="infos-pl">•</span>
+                            <h2 class="H-mus-akbum infos-pl">X min e X seg</h2>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="opcoes-playlist-cont">
+                <div class="opcoes-pl">
+                    <button class="botao-pl add-mus">Adcionar Músicas<span class="maiszinho-add">+</span></button>
+                    <button class="botao-pl org-mus">Editar Ordem</button>
+                    <button class="botao-pl share-mus">Compartilhar</button>
+                </div>
+
+            </div>
             <div class="album-musicas">
                 <ul class="music-list">
-                    <li class="musicaTESTE">
-                        <div class="musica-info">
-                            <span class="numero-musica play-M">1</span>
-                            <ion-icon class="play-musica play-M" name="play"></ion-icon>
-                            <div class="musica-desc">
-                                <span class="nome-musica">I can do what i want</span>
-                                <span class="nome-artista">Mei Semones</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="musicaTESTE">
-                        <div class="musica-info">
-                            <span class="numero-musica play-M">1</span>
-                            <ion-icon class="play-musica play-M" name="play"></ion-icon>
-                            <div class="musica-desc">
-                                <span class="nome-musica">I can do what i want</span>
-                                <span class="nome-artista">Mei Semones</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="musicaTESTE">
-                        <div class="musica-info">
-                            <span class="numero-musica play-M">1</span>
-                            <ion-icon class="play-musica play-M" name="play"></ion-icon>
-                            <div class="musica-desc">
-                                <span class="nome-musica">I can do what i want</span>
-                                <span class="nome-artista">Mei Semones</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="musicaTESTE">
-                        <div class="musica-info">
-                            <span class="numero-musica play-M">1</span>
-                            <ion-icon class="play-musica play-M" name="play"></ion-icon>
-                            <div class="musica-desc">
-                                <span class="nome-musica">I can do what i want</span>
-                                <span class="nome-artista">Mei Semones</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="musicaTESTE">
-                        <div class="musica-info">
-                            <span class="numero-musica play-M">1</span>
-                            <ion-icon class="play-musica play-M" name="play"></ion-icon>
-                            <div class="musica-desc">
-                                <span class="nome-musica">I can do what i want</span>
-                                <span class="nome-artista">Mei Semones</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="musicaTESTE">
-                        <div class="musica-info">
-                            <span class="numero-musica play-M">1</span>
-                            <ion-icon class="play-musica play-M" name="play"></ion-icon>
-                            <div class="musica-desc">
-                                <span class="nome-musica">I can do what i want</span>
-                                <span class="nome-artista">Mei Semones</span>
-                            </div>
-                        </div>
-                    </li>
                     <li class="musicaTESTE">
                         <div class="musica-info">
                             <span class="numero-musica play-M">1</span>

@@ -216,10 +216,8 @@ main::-webkit-scrollbar-thumb:hover {
     height: 100vh;
 }
 
-.album-viewer {
-    background: linear-gradient(rgba(25, 25, 26, 1) 50%, rgba(25, 25, 26, 0.40112048237263653) 100%);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+.playlist-viewer {
+    background-color: var(--black-darker);
     height: 300px;
     max-width: 100%;
     width: 1300px;
@@ -228,60 +226,184 @@ main::-webkit-scrollbar-thumb:hover {
     padding-left: 30px;
     border-radius: 16px;
     position: fixed;
-    z-index: 4;
+    z-index: 5;
 }
 
 .esconder {
-    background: linear-gradient(180deg, rgba(43, 42, 44, 1) 40%, rgba(43, 42, 44, 0.4999505560900408) 100%);
-    height: 300px;
+    background: linear-gradient(180deg, rgba(43, 42, 44, 1) 90%, rgba(43, 42, 44, 0) 100%);
+    height: 400px;
     max-width: 100%;
     width: 1300px;
     display: flex;
     align-items: center;
     padding-left: 30px;
     position: fixed;
+    z-index: 3;
 }
 
-.album-header {
+.playlist-header {
     display: flex;
     gap: 40px;
     align-items: end;
 }
 
-.img-album {
+.img-custom-fundo {
+    background-color: var(--purple);
+    border-radius: 20px;
     height: 230px;
+    width: 230px;
+    border: none;
+    transition: 0.3s;
 }
 
-.album-info {
+.img-custom-fundo:is(:hover, :focus) {
+    border: 3px solid var(--purple);
+    background-color: var(--purple-dark-hover);
+}
+
+.img-custom {
+    height: 80px;
+}
+
+.pl-info {
     display: flex;
     gap: 15px;
     align-items: center;
 }
 
-.album-nome {
+.pl-custom-name {
+    display: flex;
+}
+
+.custom-name {
+    background: none;
+    border: none;
+    display: flex;
+    font-weight: var(--fw-medium);
+    align-items: center;
+    gap: 10px;
+    color: var(--purple);
+    transition: 0.3s;
+}
+
+.custom-img-name-fundo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--purple);
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.custom-img-name {
+    height: 23px;
+}
+
+.custom-name:is(:hover, :focus) .custom-img-name-fundo {
+    background-color: var(--purple-dark-hover);
+}
+
+.pl-nome {
     font-size: 55px;
     font-weight: var(--fw-extrabold);
     color: var(--white-light);
 }
 
-.infos-alb {
+.infos-pl {
     font-weight: var(--fw-light);
     font-size: 20px;
     text-decoration: none;
     color: var(--white-dark-hover);
 }
 
-.artista-nome {
+.privacidade {
+    background: none;
+    border: none;
+    display: flex;
+    font-weight: var(--fw-medium);
+    align-items: center;
+    gap: 10px;
     color: var(--purple);
     transition: 0.3s;
 }
 
-.artista-nome:is(:hover, :focus) {
-    color: var(--purple-light);
+.privacidade:is(:hover, :focus) {
+    color: var(--purple-dark-hover);
+}
+
+.priv-img {
+    height: 15px;
+
+}
+
+.priv-img-fundo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--purple);
+    height: 26px;
+    width: 26px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.privacidade:is(:hover, :focus) .priv-img-fundo {
+    background-color: var(--purple-dark-hover);
+}
+
+.opcoes-playlist-cont {
+    position: fixed;
+    padding-top: 320px;
+    z-index: 4;
+}
+
+.opcoes-pl {
+    display: flex;
+    gap: 20px;
+    max-width: 100%;
+    width: 1300px;
+    z-index: 1;
+}
+
+.botao-pl {
+    font-size: 16px;
+    color: var(--purple-light-active);
+    background: var(--black-dark-active);
+    border: 3px solid var(--purple);
+    border-radius: 20px;
+    padding-bottom: 6px;
+    padding: 13px;
+    transition: 0.3s;
+}
+
+.add-mus {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+}
+
+.maiszinho-add {
+    font-size: var(--fs-24);
+    color: var(--purple-light-active);
+    transition: 0.3s;
+}
+
+.botao-pl:is(:hover, :focus) {
+    color: var(--black-darker);
+    background: var(--purple);
+    border: 3px solid var(--purple-light-hover);
+}
+
+.botao-pl:is(:hover, :focus) .maiszinho-add {
+    color: var(--black-darker);
 }
 
 .album-musicas {
-    padding-top: 320px;
+    padding-top: 400px;
 }
 
 .music-list {
