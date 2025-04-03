@@ -243,7 +243,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
-    max-height: 240px;
+    max-height: 270px;
     gap: 10px;
 }
 
@@ -251,10 +251,11 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 6px 10px;
     overflow: hidden;
     transition: var(--transition-1);
-    border-radius: 20px;
+    max-width: 250px;
+    padding: 6px 10px;
+    border-radius: 8px;
 }
 
 /* .artistas-card-play {
@@ -269,9 +270,11 @@ main {
 } */
 
 .artistas-card-img {
-    width: 150px;
-    height: 150px;
+    width: 202px;
+    height: 202px;
     border-radius: 100%;
+    background: center no-repeat;
+    background-size: cover;
 }
 
 .artistas-card-titulo {
@@ -289,6 +292,68 @@ main {
     background-color: var(--black-active);
 }
 
+.musicas {
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-header-main);
+    margin-top: 20px;
+}
+
+.musicas-list {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    max-height: 270px;
+    gap: 10px;
+}
+
+.musicas-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    transition: var(--transition-1);
+    max-width: 250px;
+    width: 100%;
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+/* .artistas-card-play {
+    display: none;
+    position: relative;
+    font-size: 3em;
+    bottom: 45%;
+    left: 25%;
+    background-color: var(--purple-hover);
+    border-radius: 100%;
+    padding: 6px 5px 6px 10px;
+} */
+
+.musicas-card-img {
+    width: 100%;
+    height: 202px;
+    border-radius: 10px;
+    background: center no-repeat;
+    background-size: cover;
+}
+
+.musicas-card-titulo {
+    font-size: 1.3em;
+    width: 100%;
+}
+
+.musicas-card-subtitulo {
+    font-size: 1em;
+    width: 100%;
+    text-align: left;
+}
+
+.musicas-card:hover {
+    background-color: var(--black-active);
+}
+
+
 
 /* FOOTER */
 footer {
@@ -297,6 +362,7 @@ footer {
     background-color: var(--black-dark-active);
     height: 150px;
     width: 100%;
+    margin-top: 70px;
 }
 
 .footer-links {
