@@ -36,7 +36,7 @@
 
     /* TIPOGRAFIA */
     --ff-poppins: "Poppins", sans-serif;
-    
+
     --fs-40: 2.5rem;
     --fs-36: 2.25rem;
     --fs-32: 2rem;
@@ -88,7 +88,7 @@ span {
     color: var(--purple-active);
 }
 
-.container { 
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,15 +103,20 @@ span {
 
 .login {
     display: flex;
-    flex-wrap:wrap ;
+    flex-wrap: wrap;
     border-radius: 20px;
     overflow: hidden;
     height: 60vh;
     width: 70vw;
 }
 
-.logo, .login-informacoes {
+.logo,
+.login-informacoes {
     flex: .5;
+}
+
+.login-titulo {
+    font-size: 45px;
 }
 
 .logo {
@@ -121,7 +126,7 @@ span {
     align-items: center;
 }
 
-.logo > img {
+.logo>img {
     width: 60%;
     height: auto;
     object-fit: cover;
@@ -140,10 +145,9 @@ span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: space-between;
 }
 
-.input-usuario, 
+.input-usuario,
 .input-email,
 .input-senha {
     display: flex;
@@ -168,7 +172,7 @@ span {
     width: 151px;
     height: 40px;
     border-radius: 30px;
-    background-color:var(--purple-dark-active);
+    background-color: var(--purple-dark-active);
     color: var(--purple-hover);
     font-family: var(--ff-poppins);
     border-color: var(--white);
