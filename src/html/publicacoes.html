@@ -4,16 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaySound | Configurações</title>
+    <title>WaySound</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/publicar.css">
     <link rel="stylesheet" href="../css/player.css">
-    <link rel="stylesheet" href="../css/config.css">
     <!-- FONTE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
     <!-- ICONE -->
@@ -23,6 +22,16 @@
 
 <body>
     <div class="container">
+        <header>
+            <div class="perfil">
+                <img src="../../imgs/perfil.svg" class="icone">
+                <div class="perfil-links">
+                    <a href="config-user.html" class="perfil-link">Configurações</a>
+                    <a href="../../index.html" class="perfil-link">Sair</a>
+                </div>
+            </div>
+
+        </header>
         <aside>
             <a href="sobre.html">
                 <picture>
@@ -35,116 +44,89 @@
             <ul class="list">
                 <li class="list-item">
                     <button class="list-button">
-                        <a href="../../index.html" class="list-link">
-                            <img src="../../imgs/Home.svg" class="icone">Início
+                        <a href="index.html" class="list-link">
+                        <img src="../../imgs/Home.svg" class="icone">Início
                         </a>
                     </button>
                 </li>
-
+                
                 <li class="list-item">
                     <button class="list-button">
-                        <a href="pesquisa.html" class="list-link">
-                            <img src="../../imgs/Pesquisar.svg" class="icone">Pesquisar
+                        <a href="src/html/pesquisa.html" class="list-link">
+                        <img src="../../imgs/Pesquisar.svg" class="icone">Pesquisar
                         </a>
                     </button>
                 </li>
-
+                
                 <li class="list-item playLibrary">
                     <button class="list-button">
-                        <a href="#" class="list-link">
-                            <img src="../../imgs/playlists.svg" class="icone">
+                        <a href="index.html" class="list-link">
+                        <img src="../../imgs/playlists.svg" class="icone">
+                        </a>
+                    </button>
+                </li>
+                
+                <li class="list-item list-playlist">
+                    <p>Playlists</p>
+                    <hr>
+                </li>
+                
+                <li class="list-item conta-list">
+                    <button class="list-button">
+                        <a href="index.html" class="list-link">
+                        <img src="../../imgs/perfil.svg" class="icone">
+                        </a>
+                    </button>
+                </li>
+                
+                <li class="list-item playlist-add">
+                    <button class="list-button">
+                        <a href="playlist.html" class="list-link">
+                        <img src="../../imgs/adcionar.svg" class="icone">Criar playlist
                         </a>
                     </button>
                 </li>
 
                 <li class="list-item list-playlist">
-                    <p>Playlists</p>
+                    <p>Publicar</p>
                     <hr>
                 </li>
-
+                
                 <li class="list-item playlist-add">
                     <button class="list-button">
-                        <a href="playlist.html" class="list-link">
-                            <img src="../../imgs/adcionar.svg" class="icone">Criar playlist
-                        </a>
-                    </button>
-                </li>
-
-                <li class="list-item conta-list">
-                    <button class="list-button">
-                        <a href="" class="list-link">
-                            <img src="../../imgs/perfil.svg" class="icone"></ion-icon>
+                        <a href="publicacoes.html" class="list-link">
+                        <img src="../../imgs/adcionar.svg" class="icone">Adicionar música
                         </a>
                     </button>
                 </li>
             </ul>
         </aside>
         <main>
-            <h2 class="title-user-config">Configurações do Usuário</h2>
-            <section class="user-config">
-                <div class="image-area">
-                    <div>
-                        <ion-icon name="person-circle-outline" class="icon-profile"></ion-icon>
-                    </div>
+            <a href="" class="publicar">
+                Publicar
+                <img src="../../imgs/adcionar.svg" class="icone">
+            </a>
 
-                    <div class="text-change-image">
-                        <P class="text-send">Enviar um arquivo do seu dispositivo.
-                            A imagem deve ser quadrada e ter
-                            dimensões mínimas de 184px x 184px.</P>
-                        <p class="btn-1">Mudar</p>
-                    </div>
-                </div>
-            </section>
-
-
-            <div class="table-container">
+            <div class="publicacao">
                 <table>
-                    <tr>
-                        <td>
-                            <div class="row">
-                                <span>NOME</span>
-                                <span class="edit-icon">&#9998;</span>
-                            </div>
-                            <span class="input-display">Carlos Silva</span>
-                        </td>
-                        <td>
-                            <div class="row">
-                                <span>NOME DE USUARIO</span>
-                                <span class="edit-icon">&#9998;</span>
-                            </div>
-                            <span class="input-display">carlos_silva</span>
-                        </td>
+                    <tr class="publicar-linha">
+                        <td class="publicar-informacao" rowspan="2"><img src="https://i.scdn.co/image/ab67616d0000b273ebdb1b9e90bc232b97a48410"></td>
+                        <td class="publicar-informacao table-titulo">Música</td>
+                        <td class="publicar-informacao table-titulo">Artista/Banda</td>
+                        <td class="publicar-informacao table-titulo">Data</td>
+                        <td class="publicar-informacao table-titulo">Duração</td>
+                        <td class="publicar-informacao table-titulo">Status</td>
                     </tr>
-
-                    <tr>
-                        <td>
-                            <div class="row">
-                                <span>EMAIL</span>
-                                <span class="edit-icon">&#9998;</span>
-                            </div>
-                            <span class="input-display">carlos.silva@email.com</span>
-                        </td>
-                        <td>
-                            <div class="row">
-                                <span>TELEFONE</span>
-                                <span class="edit-icon">&#9998;</span>
-                            </div>
-                            <span class="input-display">(11) 91234-5678</span>
-                        </td>
+                    <tr class="publicar-linha">
+                        <td class="publicar-informacao">Coração partido</td>
+                        <td class="publicar-informacao">Menos é mais</td>
+                        <td class="publicar-informacao">27/02/2025</td>
+                        <td class="publicar-informacao">03:15</td>
+                        <td class="publicar-informacao">Aprovado</td>
                     </tr>
                 </table>
             </div>
-
-
-            <div class="btn-cc-ex">
-                <a href="exemplo_comercial.html" class="cc">Alterar para conta comercial</a>
-
-                <p class="ex">Excluir conta</p>
-            </div>
-
-            <footer></footer>
         </main>
-
         <div class="playerDisplay">
             <div class="playerMusic">
                 <figure class="playerIcon esqueleto"></figure>
@@ -160,7 +142,7 @@
                     <!-- PAUSE -->
                     <a class="player" id="pause" style="display: none;"><ion-icon name="pause"></ion-icon></a>
                     <!-- PLAY -->
-                    <a class="player" id="play" style="margin-left: 5px;"><ion-icon name="play"></ion-icon></a>
+                    <a class="player" id="play"><ion-icon name="play"></ion-icon></a>
                     <!-- AVANCAR -->
                     <a class="player" id="skipForward"><ion-icon name="play-forward"></ion-icon></a>
                 </div>
@@ -174,8 +156,10 @@
             <div class="playerVolume"></div>
         </div>
 
+
         <audio src=""></audio>
     </div>
+
     <script src="js/main.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

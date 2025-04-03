@@ -178,7 +178,6 @@ aside > picture {
 main {
     grid-area: main;
     overflow: scroll;
-    padding: var(--padding-header-main);
     background-color: var(--black-dark-hover);
 }
 

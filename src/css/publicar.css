@@ -1,0 +1,38 @@
+.publicacao {
+    margin: 30px 40px 0 40px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.publicacao > table {
+    width: 100%;
+    background-color: whitesmoke;
+    padding: 5px 0 0 0;
+}
+
+
+.publicar {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    gap: 10px;
+    margin: 0 40px;
+    font-weight: var(--fw-bold);
+}
+
+.publicar-informacao {
+    padding: 5px 10px;
+    text-align: center;
+    color: black;
+    width: 10vw;
+    overflow: hidden;
+}
+
+.publicar-informacao > img{
+    width: 100px;
+    border-radius: 20px;
+}
+
+.table-titulo {
+    font-weight: var(--fw-bold);
+}

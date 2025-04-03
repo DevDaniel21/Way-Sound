@@ -6,31 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WaySound</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="src/css/style.css">
-    <link rel="stylesheet" href="src/css/player.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/player.css">
     <!-- FONTE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
     <!-- ICONE -->
-    <link rel="shortcut icon" href="imgs/logos/logo-pequena.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../imgs/logos/logo-pequena.png" type="image/x-icon">
 
 </head>
 
 <body>
     <div class="container">
         <header>
-            <button class="entrar-button"><a href="src/html/entre.html">Entrar</a></button>
+            <div class="perfil">
+                <img src="../../imgs/perfil.svg" class="icone">
+                <div class="perfil-links">
+                    <a href="config-user.html" class="perfil-link">Configurações</a>
+                    <a href="../../index.html" class="perfil-link">Sair</a>
+                </div>
+            </div>
+
         </header>
         <aside>
-            <a href="src/html/sobre.html">
+            <a href="sobre.html">
                 <picture>
-                    <source media="(max-width: 600px)" srcset="imgs/logo-pequena.png">
-                    <source media="(max-width: 1024px)" srcset="imgs/logos/logo-media.png">
-                    <img src="imgs/logos/logo-grande.png" class="logo-responsiva">
+                    <source media="(max-width: 600px)" srcset="../../imgs/logo-pequena.png">
+                    <source media="(max-width: 1024px)" srcset="../../imgs/logos/logo-media.png">
+                    <img src="../../imgs/logos/logo-grande.png" class="logo-responsiva">
                 </picture>
             </a>
 
@@ -38,44 +44,57 @@
                 <li class="list-item">
                     <button class="list-button">
                         <a href="index.html" class="list-link">
-                            <img src="imgs/Home.svg" class="icone">Início
+                        <img src="../../imgs/Home.svg" class="icone">Início
                         </a>
                     </button>
                 </li>
-
+                
                 <li class="list-item">
                     <button class="list-button">
-                        <a href="src/html/pesquisa.html" class="list-link">
-                            <img src="imgs/Pesquisar.svg" class="icone">Pesquisar
+                        <a href="pesquisa.html" class="list-link">
+                        <img src="../../imgs/Pesquisar.svg" class="icone">Pesquisar
                         </a>
                     </button>
                 </li>
-
+                
                 <li class="list-item playLibrary">
                     <button class="list-button">
-                        <a href="index.html" class="list-link">
-                            <img src="imgs/playlists.svg" class="icone">
+                        <a href="playlist.html" class="list-link">
+                        <img src="../../imgs/playlists.svg" class="icone">
                         </a>
                     </button>
                 </li>
-
+                
                 <li class="list-item list-playlist">
                     <p>Playlists</p>
                     <hr>
                 </li>
-
+                
                 <li class="list-item conta-list">
                     <button class="list-button">
                         <a href="index.html" class="list-link">
-                            <img src="imgs/perfil.svg" class="icone">
+                        <img src="../../imgs/perfil.svg" class="icone">
                         </a>
                     </button>
                 </li>
-
+                
                 <li class="list-item playlist-add">
                     <button class="list-button">
-                        <a href="/src/html/livraria.html" class="list-link">
-                            <img src="imgs/adcionar.svg" class="icone">Criar playlist
+                        <a href="playlist.html" class="list-link">
+                        <img src="../../imgs/adcionar.svg" class="icone">Criar playlist
+                        </a>
+                    </button>
+                </li>
+                
+                <li class="list-item list-playlist">
+                    <p>Publicar</p>
+                    <hr>
+                </li>
+                
+                <li class="list-item playlist-add">
+                    <button class="list-button">
+                        <a href="publicacoes.html" class="list-link">
+                        <img src="../../imgs/adcionar.svg" class="icone">Adicionar música
                         </a>
                     </button>
                 </li>
@@ -139,7 +158,7 @@
                     <li class="musicas-card">
                         <figure style="background-image: url(https://cdn-images.dzcdn.net/images/cover/5dc1617ec4b0aae08e259139fa616df6/0x1900-000000-80-0-0.jpg);" class="musicas-card-img">
                         </figure>
-                        <p class="musicas-card-titulo">Oh garota eu qu...</p>
+                        <p class="musicas-card-titulo">Oh garota eu quero você só para mim</p>
                         <p class="musicas-card-subtitulo">Oruam, Zé Felipe, MC Rodrigo do CN, MC Tuto</p>
                     </li>
                     <li class="musicas-card">
@@ -151,12 +170,13 @@
                 </ul>
             </article>
 
+            
             <footer>
                 <div class="footer-links">
                     <p class="footer-links-titulo">Empresa</p>
                     <a href="src/html/sobre.html" class="footer-links-link">Sobre</a>
                 </div>
-
+                
                 <div class="footer-copyright">
                     Copyright &copy 2025 Way Sound
                 </div>

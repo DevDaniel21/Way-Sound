@@ -171,7 +171,7 @@ body {
 }
 
 .btn-entrar {
-
+    margin-bottom: 10px;
     width: 180px;
     height: 60px;
     border-radius: 30px;
@@ -195,11 +195,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
 }
 
 .btn-registrar {
-    margin-top: 30px;
+    margin-top: 10px;
     width: 180px;
     height: 60px;
     border-radius: 30px;
