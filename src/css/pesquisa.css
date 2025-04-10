@@ -354,8 +354,22 @@ header, main, aside {
 }
 
 .card-music:hover {
+    background-color: #784db9;
+    transition: 0.25s;
     transform: scale(1.05);
-    border: 3px solid #784DB9;
+    border: 3px solid #fff;
+}
+
+.card-music:hover > .text-music {
+    color: white;
+}
+
+.card-music:hover > .icones > ion-icon {
+    color: white;
+}
+
+.card-music:hover > .text-music > .text-music {
+    color: white;
 }
 
 .foto-music {
@@ -381,7 +395,6 @@ header, main, aside {
     cursor: pointer;
     color: var(--black);    
 }
-
 
 @media (max-width: 600px) {
     .header > button {
@@ -418,7 +431,6 @@ header, main, aside {
         height: 100vh;
     }
 
-    
     aside {
         bottom: 0px;
         position: fixed;
