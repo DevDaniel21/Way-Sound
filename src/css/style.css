@@ -94,6 +94,7 @@ header {
     grid-area: header;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     padding: var(--padding-header-main);
     background-color: var(--black-dark-hover);
 }
@@ -121,6 +122,7 @@ header>button:hover {
     display: inline-block;
     font-size: var(--fs-32);
     cursor: pointer;
+    height: 36px;
 }
 
 .perfil-links {
