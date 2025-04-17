@@ -394,7 +394,25 @@ header, main, aside {
 
 .icones ion-icon {
     cursor: pointer;
-    color: var(--black);    
+    color: var(--black);
+}
+
+.icones {
+    position: relative;
+    font-size: 24px;
+    transform: translateX(-20px);
+}
+
+.pause-icon {
+    display: none;
+}
+
+.card-music:hover .play-icon {
+    display: none;
+}
+
+.card-music:hover .pause-icon {
+    display: inline;
 }
 
 @media (max-width: 600px) {
