@@ -15,7 +15,7 @@ img {
     flex-direction: column;
     align-items: center;
     gap: 4em;
-    background-image: url(../../imgs/sobre-fundo.png);
+    background-image: url(../../imgs/bg-sobre.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,6 +34,8 @@ img {
     padding: 10px 20px;
     border-radius: 20px;
     transition: .5s;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .sobre-button:hover {
