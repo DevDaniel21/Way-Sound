@@ -180,7 +180,6 @@ main {
     grid-area: main;
     overflow: scroll;
     overflow-x: hidden;
-    padding: var(--padding-header-main);
     background-color: var(--black-dark-hover);
     padding-top: 0px;
 }
