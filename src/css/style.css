@@ -90,6 +90,94 @@ button {
     cursor: pointer;
 }
 
+
+.lightbox {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.4s ease forwards;
+    z-index: 40;
+}
+
+@keyframes fadeIn{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.active {
+    display: flex;
+}
+
+.lightbox-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    width: 500px;
+    height: 320px;
+    border-radius: 21px;
+    padding: 0 30px 50px 30px;
+    background-color: var(--black-dark);
+}
+
+.fechar-container {
+    position: relative;
+    align-self: flex-end;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.fechar {
+    font-size: 50px;
+    transition: var(--transition-1);
+}
+
+.fechar:hover {
+    color: var(--purple);
+    transform: rotate(90deg);
+    transition: var(--transition-1) ease;
+}
+
+.lightbox-title {
+    color: white;
+    font-weight: var(--fw-bold);
+}
+
+.btn-registrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    width: 151px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: var(--purple-light);
+    color: var(--purple-hover);
+    font-family: var(--ff-poppins);
+    transition: var(--transition-1) ease;
+}
+
+.btn-registrar:hover {
+    border-color: var(--purple-hover);
+    background-color: var(--purple-hover);
+    color: var(--purple-light);
+    transition: var(--transition-1) ease;
+}
+
 header {
     grid-area: header;
     display: flex;
@@ -233,6 +321,10 @@ main {
     overflow: scroll;
     overflow-x: hidden;
     background-color: var(--black-dark-hover);
+}
+
+.artistas-card, .musicas-card {
+    cursor: pointer;
 }
 
 .artistas {

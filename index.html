@@ -21,6 +21,17 @@
 </head>
 
 <body>
+    <div class="lightbox" id="alerta-conta">
+        <div class="lightbox-container">
+            <span class="fechar-container">
+                <ion-icon name="close-outline" class="fechar" id="lightboxFechar"></ion-icon>
+            </span>
+            <h3 class="lightbox-title">Entre em sua conta</h3>
+            <p class="lightbox-text">Use uma conta para criar playlists e acessar as suas playlists</p>
+            <a href="src/html/entre.html" class="btn-registrar">Entrar</a>
+        </div>
+    </div>
+
     <div class="container">
         <header>
             <button class="entrar-button"><a href="src/html/entre.html">Entrar</a></button>
@@ -28,7 +39,7 @@
         <aside>
             <a href="src/html/sobre.html">
                 <picture>
-                    <source media="(max-width: 600px)" srcset="imgs/logo-pequena.png">
+                    <source media="(max-width: 600px)" srcset="imgs/logos/logo-pequena.png">
                     <source media="(max-width: 1024px)" srcset="imgs/logos/logo-media.png">
                     <img src="imgs/logos/logo-grande.png" class="logo-responsiva">
                 </picture>
@@ -51,9 +62,9 @@
                     </button>
                 </li>
 
-                <li class="list-item playLibrary">
+                <li class="list-item playLibrary linkConta">
                     <button class="list-button">
-                        <a href="index.html" class="list-link">
+                        <a class="list-link">
                             <img src="imgs/playlists.svg" class="icone">
                         </a>
                     </button>
@@ -72,9 +83,9 @@
                     </button>
                 </li>
 
-                <li class="list-item playlist-add">
+                <li class="list-item playlist-add linkConta">
                     <button class="list-button">
-                        <a href="src/html/livraria.html" class="list-link">
+                        <a  class="list-link">
                             <img src="imgs/adcionar.svg" class="icone">Criar playlist
                         </a>
                     </button>
@@ -195,7 +206,7 @@
         <audio src=""></audio>
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="src/js/main.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
