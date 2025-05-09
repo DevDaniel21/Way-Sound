@@ -267,14 +267,48 @@ header, main, aside {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 300px;
+    position: relative;
+    overflow: hidden;
 }
 
 .img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 10px;
     border-radius: 20px;
+}
+
+.text-title-img {
+    color: #000;
+    font-size: 1.5em;
+}
+
+.card-button {
+    position: absolute;
+    bottom: 80px;
+    right: 18px;
+    background-color: var(--purple);
+    color: var(--white);
+    border: 2px solid transparent;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    pointer-events: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: opacity 0.5s ease, border 0.3s ease;
+}
+
+.card:hover .card-button {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.card-button:hover {
+    border: 2px solid white;
 }
 
 .card-descricao {
@@ -297,17 +331,13 @@ header, main, aside {
     font-size: 1em;
 }
 
-.text-title-img {
-    color: #000;
-    font-size: 1.5em;
-}
-
 .text-title-desc {
-    color: #000;
+    color: var(--black-light-active);
     font-size: 1.3em;
 }
 
 .text-desc {
+    margin-top: 8px;
     text-align: justify;
     color: var(--white);
     font-size: 1em;
@@ -351,7 +381,6 @@ header, main, aside {
     align-items: center;
     border: 2px solid transparent;
     border-radius: 10px; 
-    cursor: pointer;
 }
 
 .card-music:hover {
@@ -361,16 +390,31 @@ header, main, aside {
     border: 3px solid #fff;
 }
 
-.card-music:hover > .text-music {
+.card-music:hover .text-music {
     color: white;
 }
 
-.card-music:hover > .icones > ion-icon {
+.card-music:hover .icones .btn-toggle ion-icon {
     color: white;
 }
 
-.card-music:hover > .text-music > .text-music {
+.card-music:hover .text-music .text-music {
     color: white;
+}
+
+.btn-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    transform: translateX(-20px);
+}
+
+.btn-toggle ion-icon {
+    font-size: 24px;
+    color: var(--black);
 }
 
 .foto-music {
@@ -384,35 +428,6 @@ header, main, aside {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.icones {
-    display: flex;
-    gap: 10px;
-    font-size: 24px;
-}
-
-.icones ion-icon {
-    cursor: pointer;
-    color: var(--black);
-}
-
-.icones {
-    position: relative;
-    font-size: 24px;
-    transform: translateX(-20px);
-}
-
-.pause-icon {
-    display: none;
-}
-
-.card-music:hover .play-icon {
-    display: none;
-}
-
-.card-music:hover .pause-icon {
-    display: inline;
 }
 
 @media (max-width: 600px) {
