@@ -100,20 +100,38 @@
     border-radius: 16px;
 }
 
+.profile-img-fundo {
+    background-color: var(--white-dark-active);
+    border-radius: 20px;
+    height: 140px;
+    width: 140px;
+    cursor: pointer;
+}
+
+.profile-img-fundo:hover {
+    background-color: var(--purple);
+}
+
 #profile-img {
     background-image: url('/imgs/perfil.svg');
-    background-size: 140px;
+    background-size: 110px;
+    background-repeat: no-repeat;
+    background-position: center;
     height: 140px;
     width: 140px;
     transition: 0.3s ease;
+
 }
 
-#profile-img:hover {
+.profile-img-fundo:hover #profile-img {
+    transform: rotate(-90deg);
     background-image: url('/imgs/lapis-fill.svg');
-    background-size: 140px;
+    background-size: 90px;
     height: 140px;
     width: 140px;
-    background-color: var(--purple);
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 
 .text-change-image {
