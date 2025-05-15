@@ -1,23 +1,11 @@
-let conta = false
-let contaLogada = conta;
+// ABRIR DROPDOWN PERFIL
+const perfilIcon = document.getElementById('perfilIcon');
+const perfilLinks = document.getElementById('perfilLinks');
 
-const linkConta = document.querySelectorAll('.linkConta')
-const lightbox = document.getElementById('alerta-conta')
-const lightboxFechar = document.getElementById('lightboxFechar')
-
-if (!contaLogada) {
-    linkConta.forEach( ( link ) => {
-        link.addEventListener('click', function () {
-            lightbox.classList.add('active');
-        })
-    })
-
-    lightboxFechar.addEventListener('click', function () {
-        lightbox.classList.remove('active')
-    })
-}
-
-
-
-
-//href="src/html/livraria.html"
+perfilIcon.addEventListener('click', function () {
+    if (perfilLinks.style.display == 'block') {
+        perfilLinks.style.display = 'none';
+    } else {
+        perfilLinks.style.display = 'block';
+    }
+})

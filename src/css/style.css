@@ -211,6 +211,7 @@ header>button:hover {
     font-size: var(--fs-32);
     cursor: pointer;
     height: 36px;
+    z-index: 10;
 }
 
 .perfil-links {
@@ -234,9 +235,9 @@ header>button:hover {
     color: rgb(199, 199, 199);
 }
 
-.perfil:hover .perfil-links {
+/* .perfil:hover .perfil-links {
     display: block;
-}
+} */
 
 aside {
     grid-area: aside;
