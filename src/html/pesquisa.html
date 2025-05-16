@@ -29,11 +29,10 @@
             </span>
             <h3 class="lightbox-title">Entre em sua conta</h3>
             <p class="lightbox-text">Use uma conta para criar playlists e acessar as suas playlists</p>
-            <a href="src/html/entre.html" class="btn-registrar">Entrar</a>
+            <a href="../html/entre.html" class="btn-registrar">Entrar</a>
         </div>
     </div>
 
-    
     <div class="container">
 
         <header class="header">
@@ -233,51 +232,10 @@
                                 </div>
                             </div>
 
-                            <script>
-                                // Botão de play e pause
-                                const buttons = document.querySelectorAll('.btn-toggle');
-                                buttons.forEach(button => {
-                                    const icon = button.querySelector('.icon-toggle');
-
-                                    button.addEventListener('click', () => {
-                                        if (icon.name === 'play-outline') {
-                                            icon.name = 'pause-outline';
-                                        } else {
-                                            icon.name = 'play-outline';
-                                        }
-                                    });
-                                });
-                            </script>
-
-                            <script>
-                                // Lightbox no botão de play
-                                document.getElementById('botao-roxo').addEventListener('click', function () {
-                                    const lightbox = document.getElementById('alerta-conta');
-                                    if (lightbox) {
-                                        lightbox.classList.add('active');
-                                    } else {
-                                        console.warn('Lightbox não encontrada.');
-                                    }
-                                });
-                            </script>
-
                         </div>
                     </ul>
                 </div>
             </div>
-
-            <script>
-                // Barra de pesquisa
-                document.getElementById("pesquisaInput").addEventListener("input", function () {
-                    const filtro = this.value.toLowerCase();
-                    const cards = document.querySelectorAll(".card-music");
-
-                    cards.forEach(card => {
-                        const titulo = card.querySelector(".text-music").textContent.toLowerCase();
-                        card.style.display = titulo.includes(filtro) ? "" : "none";
-                    });
-                });
-            </script>
 
             <footer>
                 <div class="footer-links">
@@ -323,6 +281,8 @@
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+   
+    <script src="../js/semConta.js"></script>
     <script src="../js/main.js"></script>
 </body>
 
