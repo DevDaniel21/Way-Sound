@@ -37,26 +37,28 @@
 
           <div class="input-usuario">
             <label class="input-label">Usuário *</label>
-            <input type="name" placeholder="Nome do usuário" id="0" class="input">
+            <input type="name" placeholder="Nome do usuário" id="registerUsuario" class="input">
           </div>
 
           <div class="input-email">
             <label class="input-label">Email *</label>
-            <input type="email" placeholder="Digite seu Email aqui" id="1" class="input">
+            <input type="email" placeholder="Digite seu Email aqui" id="registerEmail" class="input">
           </div>
 
           <div class="input-senha">
             <label class="input-label">Senha *</label>
-            <input type="password" placeholder="Digite sua Senha aqui" id="2" class="input">
+            <input type="password" placeholder="Digite sua Senha aqui" id="registerSenha" class="input">
           </div>
 
         </form>
 
-        <a href="exemplo.html"><button class="btn-registrar" type="button">Registre-se</button></a>
+        <a href="#"><button id="registerBtn" class="btn-registrar" type="button" >Registre-se</button></a>
       </div>
 
     </div>
   </div>
-</body>
 
+  <script type="module" src="../js/service/Usuario.service.js"></script>
+  <script type="module" src="../js/models/Usuario.model.js"></script>
+</body>
 </html>
