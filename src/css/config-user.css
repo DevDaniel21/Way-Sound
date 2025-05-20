@@ -33,6 +33,7 @@
     --purple-dark-hover: #482E6F;
     --purple-dark-active: #362353;
     --purple-darker: #2A1B41;
+    --red-good: rgb(236, 96, 96);
 
     /* TIPOGRAFIA */
     --ff-poppins: "Poppins", sans-serif;
@@ -73,6 +74,50 @@
     --tamanho-1: var(--fs-36);
 }
 
+.btn-1 {
+    margin-top: 20px;
+    text-align: center;
+    background-color: var(--purple-dark);
+    height: 20%;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: var(--fw-bold);
+}
+
+.btn-del {
+    text-align: center;
+    background-color: var(--black-hover);
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: var(--fs-16);
+    color: var(--red-good);
+    transition: 0.3s ease;
+}
+
+.btn-1:hover {
+    background-color: var(--purple-hover);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.btn-del:hover {
+    background-color: var(--red-good);
+    color: var(--white);
+}
+
+.title-user-config {
+    text-align: center;
+    font-size: var(--fs-36);
+    padding-top: 50px;
+    font-weight: var(--fw-bold);
+}
+
 .cont-config {
     display: flex;
     justify-content: center;
@@ -88,6 +133,7 @@
     padding: 20px;
     width: 80%;
     height: 60vh;
+    gap: 60px
 }
 
 .img-config {
@@ -96,16 +142,17 @@
     align-items: center;
     padding: 20px;
     gap: 20px;
-    background-color: var(--black-hover);
+    background-color: var(--black-dark-hover);
     border-radius: 16px;
 }
 
 .profile-img-fundo {
-    background-color: var(--white-dark-active);
+    background-color: var(--black-hover);
     border-radius: 20px;
     height: 140px;
     width: 140px;
     cursor: pointer;
+    transition: 0.3s ease;
 }
 
 .profile-img-fundo:hover {
@@ -134,48 +181,95 @@
 
 }
 
-.text-change-image {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .text-send {
     text-decoration: underline;
     font-size: var(--fs-20);
 }
 
-.icon-profile {
-    width: 150px;
-    height: 150px;
-}
-
-
-.title-user-config {
-    text-align: center;
-    font-size: var(--fs-36);
-    padding-top: 50px;
-    font-weight: var(--fw-bold);
-}
-
-.btn-1 {
-    margin-top: 20px;
-    text-align: center;
-    background-color: var(--purple-dark);
-    height: 20%;
-    border-radius: 50px;
+.descMbtn {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-weight: var(--fw-bold);
+    gap: 10px;
 }
 
-.btn-1:hover {
-    background-color: var(--purple-hover);
-    transform: scale(1.05);
-    cursor: pointer;
+.btn-change {
+    text-align: center;
+    background: none;
+    height: 30px;
+    width: 30px;
+    border: none;
+    transition: 0.3s ease;
 }
+
+.btn-change:hover #svg-change-path {
+    fill: var(--purple);
+}
+
+#svg-change-path {
+    fill: var(--white);
+    transition: 0.3s ease;
+}
+
+#btn-change-img {
+    background-size: 20px;
+    height: 25px;
+    width: 25px;
+
+}
+
+.config-title {
+    font-size: var(--fs-24);
+    font-weight: var(--fw-bold);
+    color: var(--white)
+}
+
+.input-config {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-config-user {
+    background-color: var(--black-dark);
+    border-radius: 10px;
+    padding: 10px;
+    color: var(--white-dark-active);
+    font-size: var(--fs-16);
+    border: none;
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
 
 .table-container {
     display: flex;
@@ -231,4 +325,4 @@ td {
 .ex {
     color: red;
     cursor: pointer;
-}
+} */
