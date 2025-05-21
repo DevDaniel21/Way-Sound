@@ -191,3 +191,60 @@ hr {
     width: 30%;
     height: 2px;
 }
+
+@media (max-width: 320px) {
+    .container {
+        padding: unset;
+        background: none;
+    }
+
+    .form-login {
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .logo {
+        height: 30%;
+    }
+
+    .login {
+        border-radius: unset;
+        overflow: unset;
+        height: 100%;
+        width: 100%;
+    }
+
+    .login-titulo {
+        display: none;
+    }
+
+    .login-informacoes {
+        padding: unset;
+        width: 100%;
+        height: 70%;
+    }
+
+    .logo,
+    .login-informacoes {
+        flex: unset;
+    }
+
+    .input-usuario,
+    .input-email,
+    .input-senha {
+        width: 100%;
+        align-items: center;
+    }
+
+    .input-label {
+        width: 90%;
+    }
+
+    .input {
+        width: 90%;
+        background-color: var(--black-dark-active);
+        border: 3px solid var(--purple-dark-active);
+        color: var(--white-light);
+        padding-left: 1rem;
+    }
+}
