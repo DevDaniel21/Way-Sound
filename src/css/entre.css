@@ -90,7 +90,7 @@ body {
     align-items: center;
     padding: 40px;
     height: 100vh;
-    background-image: url(../imgs/bg-login.png);
+    background-image: url('/imgs/bg-login.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -175,6 +175,7 @@ body {
     width: 180px;
     height: 60px;
     border-radius: 30px;
+    border: none;
     background-color: var(--purple);
     color: var(--white-light-active);
     font-family: var(--ff-poppins);
@@ -202,6 +203,7 @@ body {
     width: 180px;
     height: 60px;
     border-radius: 30px;
+    border: 3px solid var(--purple);
     background-color: var(--white-light-active);
     color: var(--purple);
     font-family: var(--ff-poppins);
