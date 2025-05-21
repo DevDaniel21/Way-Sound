@@ -90,7 +90,7 @@ body {
     align-items: center;
     padding: 40px;
     height: 100vh;
-    background-image: url(../../imgs/bg-login.png);
+    background-image: url(/imgs/bg-login.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
