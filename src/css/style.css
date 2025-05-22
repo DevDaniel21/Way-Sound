@@ -214,11 +214,6 @@ header>button:hover {
     z-index: 10;
 }
 
-.perfil-container {
-    position: relative;
-    display: inline-block;
-}
-
 .perfil-links {
     display: none;
     position: absolute;
