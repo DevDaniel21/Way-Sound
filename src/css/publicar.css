@@ -124,7 +124,7 @@
       margin-top: 0;
     }
 
-    .popup input {
+    .popup input, label {
       background-color: var(--black-dark);
       border: 1px solid var(--purple);
       color: var(--white-active);
@@ -133,6 +133,14 @@
       height: 50px;
       padding-left: 30px;
       letter-spacing: 2px;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      color: var(--white-dark-active);
+      cursor: pointer;
+      font-size: var(--fs-14);
     }
 
     .popup button {
