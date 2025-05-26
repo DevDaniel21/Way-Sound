@@ -107,10 +107,11 @@ button {
     z-index: 40;
 }
 
-@keyframes fadeIn{
+@keyframes fadeIn {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -327,7 +328,8 @@ main {
     background-color: var(--black-dark-hover);
 }
 
-.artistas-card, .musicas-card {
+.artistas-card,
+.musicas-card {
     cursor: pointer;
 }
 
@@ -524,120 +526,6 @@ main::-webkit-scrollbar-thumb:hover {
     height: 100vh;
 }
 
-/*parte que weslley adicionou no documento*/
-
-.title-user-config {
-    text-align: center;
-    font-size: var(--fs-36);
-    padding-top: 50px;
-    font-weight: var(--fw-bold);
-}
-
-.user-config {
-    display: flex;
-    justify-content: center;
-}
-
-.image-area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--black-darker);
-    border-radius: 15px;
-    text-align: justify;
-    padding: 20px;
-    width: 50%;
-}
-
-.text-change-image {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.text-send {
-    text-decoration: underline;
-}
-
-.icon-profile {
-    width: 150px;
-    height: 150px;
-}
-
-.btn-1 {
-    margin-top: 20px;
-    text-align: center;
-    background-color: var(--purple-dark);
-    height: 20%;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-weight: var(--fw-bold);
-}
-
-.btn-1:hover {
-    background-color: var(--purple-hover);
-    transform: scale(1.05);
-    cursor: pointer;
-}
-
-.table-container {
-    display: flex;
-    padding: 80px;
-    justify-content: center;
-}
-
-td {
-    padding: 15px;
-    vertical-align: middle;
-    font-size: var(--fs-20);
-}
-
-.edit-icon {
-    cursor: pointer;
-    font-size: 24px;
-    color: #722fbe;
-    transform: rotate(80deg);
-    transition: transform 0.3s, font-size 0.3s;
-}
-
-.edit-icon:hover {
-    transform: rotate(80deg);
-    font-size: 27px;
-}
-
-.input-display {
-    display: block;
-    padding: 5px;
-    color: var(--white-dark-active);
-}
-
-.row {
-    display: flex;
-    align-items: center;
-}
-
-.row span {
-    margin-left: 5px;
-}
-
-.btn-cc-ex {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 60px;
-}
-
-.cc {
-    color: var(--purple-light-active);
-    cursor: pointer;
-}
-
-.ex {
-    color: red;
-    cursor: pointer;
-}
 
 .musicas-card-img {
     position: relative;

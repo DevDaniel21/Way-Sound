@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/player.css">
     <link rel="stylesheet" href="../css/config.css">
+    <link rel="stylesheet" href="../css/config-user.css">
     <!-- FONTE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,21 +82,63 @@
         </aside>
         <main>
             <h2 class="title-user-config">Configurações do Usuário</h2>
-            <section class="user-config">
-                <div class="image-area">
-                    <div>
-                        <ion-icon name="person-circle-outline" class="icon-profile"></ion-icon>
+            <section class="cont-config">
+                <div class="user-config">
+                    <div class="img-config">
+                        <div class="profile-img-fundo">
+                            <div id="profile-img"></div>
+                        </div>
+                        <P class="text-send">Envie uma imagem de <br>no minimo 184px x 184px.</P>
+                        <div class="del-img">
+                            <button class="btn-del">
+                                Remover imagem
+                            </button>
+                        </div>
                     </div>
+                    <div class="input-config">
+                        <div class="input-container">
+                            <div class="atual-config">
 
-                    <div class="text-change-image">
-                        <P class="text-send">Enviar um arquivo do seu dispositivo.
-                            A imagem deve ser quadrada e ter
-                            dimensões mínimas de 184px x 184px.</P>
-                        <p class="btn-1">Mudar</p>
+                            </div>
+                            <div class="descMbtn">
+                                <label class="config-title" for="name">Nome</label>
+                                <button class="btn-change">
+                                    <svg id="btn-change-img" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
+                                        <path id="svg-change-path"
+                                            d="M52.4413 3.84102C53.342 2.94031 54.4113 2.22582 55.5882 1.73836C56.765 1.25089 58.0263 1 59.3001 1C60.5739 1 61.8353 1.25089 63.0121 1.73836C64.189 2.22582 65.2583 2.94031 66.159 3.84102C67.0597 4.74174 67.7742 5.81105 68.2616 6.98789C68.7491 8.16473 69 9.42606 69 10.6999C69 11.9737 68.7491 13.235 68.2616 14.4118C67.7742 15.5887 67.0597 16.658 66.159 17.5587L19.8618 63.8559L1 69L6.14413 50.1382L52.4413 3.84102Z"
+                                            fill="#none" stroke="#F2F2E8" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <input type="text" class="input-config-user" id="name" placeholder="Digite seu nome">
+                        </div>
+                        <div class="input-container">
+                            <div class="atual-config">
+
+                            </div>
+                            <label class="config-title" for="username">Nome de usuário</label>
+                            <input type="text" class="input-config-user" id="username"
+                                placeholder="Digite seu nome de usuário">
+                        </div>
+                        <div class="input-container">
+                            <div class="atual-config">
+
+                            </div>
+                            <label class="config-title" for="email">Email</label>
+                            <input type="email" class="input-config-user" id="email" placeholder="Digite seu email">
+                        </div>
+                        <div class="input-container">
+                            <div class="atual-config">
+
+                            </div>
+                            <label class="config-title" for="phone">Telefone</label>
+                            <input type="tel" class="input-config-user" id="phone" placeholder="Digite seu telefone">
+                        </div>
                     </div>
                 </div>
             </section>
-
+            <!-- 
 
             <div class="table-container">
                 <table>
@@ -140,7 +183,7 @@
                 <a href="exemplo_comercial.html" class="cc">Alterar para conta comercial</a>
 
                 <p class="ex">Excluir conta</p>
-            </div>
+            </div> -->
 
             <footer></footer>
         </main>
@@ -176,7 +219,8 @@
 
         <audio src=""></audio>
     </div>
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/config-user.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
