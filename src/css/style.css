@@ -460,7 +460,7 @@ footer {
     display: flex;
     flex-direction: column;
     background-color: var(--black-dark-active);
-    height: 150px;
+    height: 90px;
     width: 100%;
     margin-top: 70px;
 }
@@ -491,6 +491,7 @@ footer {
     justify-content: center;
     flex: .3;
     background-color: var(--black-darker);
+    font-size: var(--fs-14);
 }
 
 /* BARRA DE SCROLL */

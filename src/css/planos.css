@@ -72,6 +72,7 @@
     /* ICONE */
     --tamanho-1: var(--fs-36);
 }
+
 .planos {
     margin-right: 20px;
 }
@@ -88,7 +89,6 @@
     border-radius: 30px;
     transition: 0.3s;
 }
-
 
 .planos-button:is(:hover, :focus) {
     background-color: var(--purple-darker);
