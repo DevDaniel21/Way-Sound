@@ -12,69 +12,107 @@
     <!-- FONTE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
-       <!-- ICONE -->
+    <!-- ICONE -->
     <link rel="shortcut icon" href="../../imgs/logo-p-comfundo.png" type="image/x-icon">
-
 </head>
+
 <body>
     <main>
-        <button class="sobre-button"><a href="javascript: history.go(-1)">Voltar</a></button>
-        <span class="titulo">Planos do WaySound</span>
+        <button class="sobre-button"><a href="exemplo.html">&lt; voltar</a></button>
+        <span class="titulo">Planos do <strong style="color: #784DB9;">WaySound</strong></span>
+
         <div class="cards">
             <div class="card junior">
-                <span class="titulo-card">Junior</span>
-                <p class="descricao-card">Plano básico</p>
+                <span class="titulo-card">Junior
+                    <img src="../../imgs/logos/logo-pequena.png" alt="logo" class="imgs" style="width: 50px; height: auto;"></span>
+                <p class="descricao-card hover-desc">Plano básico</p>
                 <ul class="list-card">
-                    <li>Lorem</li>
-                    <li>Lorem</li>
-                    <li>Lorem</li>
-                    <li>Lorem</li>
-                    <li>Lorem</li>
-                    <li>Lorem</li>
+                    <li>Faixas Ilimitadas</li>
+                    <li>Até 4 pessoas no plano</li>
                 </ul>
                 <div class="card-btn">
-                    <button class="planos-button-cont">
-                        Contratar
-                    </button>
+                    <button class="planos-button-cont">Contratar</button>
                 </div>
             </div>
             <div class="card pleno">
-                <span class="titulo-card">Pleno</span>
-                <p class="descricao-card">Plano médio</p>
+                <span class="titulo-card">Pleno
+                    <img src="../../imgs/logos/logo-pequena.png" alt="logo" class="imgs" style="width: 50px; height: auto;"></span>
+                <p class="descricao-card">Plano médio <strong style="color: #784DB9;">Mais popular</strong></p>
                 <ul class="list-card">
-                    <li>Lorem</li>
-                    <li>Lorem</li>
-                    <li>Lorem</li>
-                    <li>Lorem</li>
-                    <li>Lorem</li>
-                    <li>Lorem</li>
+                    <li>Faixas Ilimitadas</li>
+                    <li>Até 6 pessoas no plano</li>
                 </ul>
                 <div class="card-btn">
-                    <button class="planos-button-cont">
-                        Contratar
-                    </button>
+                    <button class="planos-button-cont">Contratar</button>
                 </div>
             </div>
             <div class="card senior">
-                <span class="titulo-card">Senior</span>
-                <p class="descricao-card">Plano avançado</p>
+                <span class="titulo-card">Senior
+                    <img src="../../imgs/logos/logo-pequena.png" alt="logo" class="imgs" style="width: 50px; height: auto;"></span>
+                <p class="descricao-card hover-desc">Plano avançado</p>
                 <ul class="list-card">
-                    <li>Lorem</li>
-                    <li>Lorem</li>
-                    <li>Lorem</li>
-                    <li>Lorem</li>
-                    <li>Lorem</li>
-                    <li>Lorem</li>
+                    <li>Faixas Ilimitadas</li>
+                    <li>Família Ilimitada</li>
                 </ul>
                 <div class="card-btn">
-                    <button class="planos-button-cont">
-                        Contratar
-                    </button>
+                    <button class="planos-button-cont">Contratar</button>
                 </div>
             </div>
         </div>
+
+        <div style="text-align: center; margin-bottom: 20px;">
+            <button onclick="abrirPopup()" class="planos-button-cont">Comparar Planos</button>
+        </div>
     </main>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="fecharPopup()">&times;</span>
+            <table class="compare-table">
+                <tr>
+                    <th>Recursos</th>
+                    <th>Junior</th>
+                    <th>Pleno</th>
+                    <th>Senior</th>
+                </tr>
+                <tr>
+                    <td>Faixas Ilimitadas</td>
+                    <td>✔️</td>
+                    <td>✔️</td>
+                    <td>✔️</td>
+                </tr>
+                <tr>
+                    <td>Pessoas no plano</td>
+                    <td>Até 4</td>
+                    <td>Até 6</td>
+                    <td>Ilimitado</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // popup de comparação de planos
+        function abrirPopup() {
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function fecharPopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            const popup = document.getElementById("popup");
+            if (event.target === popup) {
+                fecharPopup();
+            }
+        }
+    </script>
+
 </body>
+
+</html>
