@@ -137,7 +137,7 @@ body {
 }
 
 .descricao-card {
-  font-size: var(--fs-20);
+  font-size: 19px;
   text-align: center;
   margin-top: auto;
   margin-bottom: auto;

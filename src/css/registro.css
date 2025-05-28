@@ -167,7 +167,9 @@ span {
 .input-label {
     color: var(--white);
     font-weight: bolder;
-}
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
 
 .btn-registrar {
     width: 151px;
@@ -186,6 +188,29 @@ span {
     align-items: center;
     justify-content: center;
 }
+
+.botoes-acoes {
+    display: flex;
+    gap: 1rem;
+    margin-top: 20px;
+  }
+  
+  .btn-voltar {
+    width: 151px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: var(--white-dark);
+    color: var(--purple-active);
+    font-family: var(--ff-poppins);
+    font-weight: bold;
+    border: 2px solid var(--white);
+    cursor: pointer;
+    transition: background-color var(--transition-1);
+  }
+  
+  .btn-voltar:hover {
+    background-color: var(--white-dark-active);
+  }  
 
 hr {
     width: 30%;
