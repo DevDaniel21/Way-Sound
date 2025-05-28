@@ -86,11 +86,14 @@
                 <div class="user-config">
                     <div class="img-config">
                         <div class="profile-img-fundo">
-                            <div id="profile-img"></div>
+                            <div id="profile-container">
+                                <div id="profile-img"></div>
+                                <input type="file" id="upload-btn" accept="image/*">
+                            </div>
                         </div>
                         <P class="text-send">Envie uma imagem de <br>no minimo 184px x 184px.</P>
                         <div class="del-img">
-                            <button class="btn-del">
+                            <button class="btn-del"  id="delete-btn">
                                 Remover imagem
                             </button>
                         </div>
@@ -127,6 +130,11 @@
                             </div>
                             <label class="config-title" for="email">Email</label>
                             <input type="email" class="input-config-user" id="email" placeholder="Digite seu email">
+
+                            <div class="">
+                                <a href="exemplo_comercial.html" class="cc-btn">Conta Comercial</a>
+                            </div>
+
                         </div>
                         <div class="input-container">
                             <div class="atual-config">
@@ -134,58 +142,14 @@
                             </div>
                             <label class="config-title" for="phone">Telefone</label>
                             <input type="tel" class="input-config-user" id="phone" placeholder="Digite seu telefone">
+
+                            <div class="">
+                                <span class="ex-btn">Excluir conta</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- 
-
-            <div class="table-container">
-                <table>
-                    <tr>
-                        <td>
-                            <div class="row">
-                                <span>NOME</span>
-                                <span class="edit-icon">&#9998;</span>
-                            </div>
-                            <span class="input-display">Carlos Silva</span>
-                        </td>
-                        <td>
-                            <div class="row">
-                                <span>NOME DE USUARIO</span>
-                                <span class="edit-icon">&#9998;</span>
-                            </div>
-                            <span class="input-display">carlos_silva</span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="row">
-                                <span>EMAIL</span>
-                                <span class="edit-icon">&#9998;</span>
-                            </div>
-                            <span class="input-display">carlos.silva@email.com</span>
-                        </td>
-                        <td>
-                            <div class="row">
-                                <span>TELEFONE</span>
-                                <span class="edit-icon">&#9998;</span>
-                            </div>
-                            <span class="input-display">(11) 91234-5678</span>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-
-            <div class="btn-cc-ex">
-                <a href="exemplo_comercial.html" class="cc">Alterar para conta comercial</a>
-
-                <p class="ex">Excluir conta</p>
-            </div> -->
-
-            <footer></footer>
         </main>
 
         <div class="playerDisplay">
