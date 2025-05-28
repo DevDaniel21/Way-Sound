@@ -92,9 +92,9 @@
             </ul>
         </aside>
         <main>
-            <article class="artistas">
+            <article class="artistas" id="secaoArtistas">
                 <h1>Artistas em alta</h1>
-                <ul class="artistas-list">
+                <ul class="artistas-list" id="artistasList">
                     <!-- <ion-icon name="play" class="artistas-card-play"></ion-icon> -->
                     <li class="artistas-card">
                         <figure style="background-image: url(https://portalperifacon.com/wp-content/uploads/2024/09/imagem-2-1.jpg);" class="artistas-card-img"></figure>
@@ -124,45 +124,9 @@
                 </ul>
             </article>
 
-            <article class="musicas">
+            <article class="musicas" id="secaoMusicas">
                 <h2>Musicas em alta</h2>
-                <ul class="musicas-list">
-                    <li class="musicas-card">
-                        <figure style="background-image: url(https://i.ytimg.com/vi/2csOMGFFgJ0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB11nm0Cnjt67qYxpdyTaTcifsdow);" class="musicas-card-img">
-                            <button class="card-button" id="botao-roxo">▶</button>
-                        </figure>
-                        <p class="musicas-card-titulo">Denial is a river</p>
-                        <p class="musicas-card-subtitulo">Doechii</p>
-                    </li>
-                    <li class="musicas-card">
-                        <figure style="background-image: url(https://i.scdn.co/image/ab67616d0000b273b95ec67486445b1c81e55b32);" class="musicas-card-img">
-                            <button class="card-button" id="botao-roxo">▶</button>
-                        </figure>
-                        <p class="musicas-card-titulo">Resenha do arrocha</p>
-                        <p class="musicas-card-subtitulo">J. Eskine</p>
-                    </li>
-                    <li class="musicas-card">
-                        <figure style="background-image: url(https://akamai.sscdn.co/letras/360x360/albuns/f/7/d/c/2475161734385435.jpg);" class="musicas-card-img">
-                            <button class="card-button" id="botao-roxo">▶</button>
-                        </figure>
-                        <p class="musicas-card-titulo">Última noite</p>
-                        <p class="musicas-card-subtitulo">Léo Foguete</p>
-                    </li>
-                    <li class="musicas-card">
-                        <figure style="background-image: url(https://cdn-images.dzcdn.net/images/cover/5dc1617ec4b0aae08e259139fa616df6/0x1900-000000-80-0-0.jpg);" class="musicas-card-img">
-                            <button class="card-button" id="botao-roxo">▶</button>
-                        </figure>
-                        <p class="musicas-card-titulo">Oh garota eu qu...</p>
-                        <p class="musicas-card-subtitulo">Oruam, Zé Felipe, MC Rodrigo do CN, MC Tuto</p>
-                    </li>
-                    <li class="musicas-card">
-                        <figure style="background-image: url(https://i.scdn.co/image/ab67616d0000b273ebdb1b9e90bc232b97a48410);" class="musicas-card-img">
-                            <button class="card-button" id="botao-roxo">▶</button>
-                        </figure>
-                        <p class="musicas-card-titulo">Coração partido</p>
-                        <p class="musicas-card-subtitulo">Grupo Menos é Mais</p>
-                    </li>
-                </ul>
+                <ul class="musicas-list" id="musicasList"></ul>
             </article>
 
             <footer>
@@ -210,6 +174,8 @@
     </div>
 
     <script src="src/js/semConta.js"></script>
+    <script type="module" src="src/js/service/Musica.service.js"></script>
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
