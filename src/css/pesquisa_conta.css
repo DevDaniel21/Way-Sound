@@ -147,6 +147,23 @@ header {
     color: rgb(199, 199, 199);
 }
 
+header > button {
+    font-size: var(--fs-20);
+    font-weight: var(--fw-bold);
+    border-radius: var(--br-1);
+    border: 2px solid var(--purple-dark);
+    background-color: var(--purple);
+    width: 150px;
+    height: 50px;
+    transition: var(--transition-1);
+}
+
+header > button:hover {
+    background-color: var(--purple-hover);
+    color: var(--white-hover);
+    cursor: pointer;
+}
+
 aside {
     grid-area: aside;
     display: flex;
@@ -315,6 +332,14 @@ header, main, aside {
     border-radius: 20px;
 }
 
+.img-link .img {
+  transition: transform 0.3s ease;
+}
+
+.img-link:hover .img {
+  transform: scale(1.05); /* aumenta 5% */
+}
+
 .text-title-img {
     color: #000;
     font-size: 1.5em;
@@ -349,13 +374,15 @@ header, main, aside {
 }
 
 .card-descricao {
-    margin-top: 50px;
+    margin-top: 90px;
     background: var(--purple);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 300px;
+    font-weight: bold;
+    font-size: var(--fs-20);
 }
 
 .card h2 {

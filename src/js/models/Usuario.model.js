@@ -7,8 +7,5 @@ export class UsuarioModel {
         this.email = email;
         this.senha = senha;
         this.foto = null;
-        this.foto = null;
-        this.tipo = 'Comum';
-        this.plano = 'Free';
     }
 }

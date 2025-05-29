@@ -217,6 +217,11 @@ hr {
     height: 2px;
 }
 
+.input {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
 @media (max-width: 425px) {
     .container {
         padding: unset;

@@ -72,133 +72,256 @@
   /* ICONE */
   --tamanho-1: var(--fs-36);
 }
-    .container-music {
-      display: flex;
-    }
-    .publicar {
-      display: flex;
-      align-items: center;
-      font-size: 1.5em;
-      gap: 10px;
-      margin-left: 40px;
-      margin-bottom: 20px;
-      font-weight: var(--fw-bold);
-    }
-    /* Popup overlay */
-    .popup-overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-    .botoes-add-del {
-      justify-content: center;
-      gap: 10px;
-      display: flex;
-      margin: 10px;
-    }
-    /* Popup window */
-    .pop-title {
-      font-size: 2rem;
-      color: var(--white);
-      margin-bottom: 20px;
-    }
-    .popup {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: var(--black-darker);
-      padding: 20px;
-      border-radius: 10px;
-      width: 400px;
-      box-shadow: 0 0 10px var(--purple);
-      gap: 10px;
-    }
+ 
+/* Container musica */
+.container-music {
+  display: flex;
+  flex-direction: column;
+}
 
-    .popup h2 {
-      margin-top: 0;
-    }
+/* Botão publicar */
+.publicar {
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  gap: 10px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+}
 
-    .popup input, label {
-      background-color: var(--black-dark);
-      border: 1px solid var(--purple);
-      color: var(--white-active);
-      border-radius: 10px;
-      width: 100%;
-      height: 50px;
-      padding-left: 30px;
-      letter-spacing: 2px;
-    }
+.publicar img.icone {
+  width: 24px;
+  height: 24px;
+}
 
-    label {
-      display: flex;
-      align-items: center;
-      color: var(--white-dark-active);
-      cursor: pointer;
-      font-size: var(--fs-14);
-    }
+/* Popup overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
 
-    .popup button {
-      padding: 10px 15px;
-      margin-right: 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+/* Popup window */
+.popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black-darker);
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 0 10px var(--purple);
+  gap: 15px;
+}
 
-    .btn-add {
-      background-color: #28a745;
-      color: white;
-    }
+/* Titulo */
+.pop-title {
+  font-size: 2rem;
+  color: var(--white);
+  margin-bottom: 20px;
+}
 
-    .btn-cancel {
-      background-color: #dc3545;
-      color: white;
-    }
+/* Inputs e labels */
+.popup input[type="text"] {
+  background-color: var(--black-dark);
+  border: 1px solid var(--purple);
+  color: var(--white-active);
+  border-radius: 10px;
+  width: 100%;
+  height: 50px;
+  padding-left: 15px;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+}
 
-    .card {
-        display: flex;
-        align-items: center;
-        background-color: var(--black-hover);
-        border-radius: 20px;
-        padding: 20px;
-        margin-left: 40px;
-        margin-bottom: 20px;
-        gap: 20px;
-        color: #000;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        width: 100vh;
-      }
-      
-      .card img {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        border-radius: 15px;
-      }
-      
-      .card-content {
-        display: flex;
-        gap: 30px;
-        flex-wrap: wrap;
-      }
-      
-      .column {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        font-size: 16px;
-      }
-      
-      .column strong {
-        display: block;
-        font-weight: bold;
-        font-size: 17px;
-        margin-bottom: 5px;
-      }
-      
+label {
+  display: block;
+  color: var(--white-dark-active);
+  font-size: var(--fs-14);
+  margin-bottom: 5px;
+  cursor: default;
+}
+
+/* Botão para escolher arquivo */
+.file-input-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.file-name {
+  color: var(--white-active);
+  font-size: 0.9rem;
+  min-height: 20px;
+  word-break: break-word;
+}
+
+.file-btn {
+  background-color: var(--purple);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.file-btn:hover {
+  background-color: #8e44ad;
+}
+
+/* Botões adicionar e cancelar */
+.botoes-add-del {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.popup button.btn-add {
+  background-color: rgb(234, 216, 255);
+  color: var(--purple-active);
+  flex: 1;
+  font-weight: bold;
+  height: 40PX;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.popup button.btn-add:hover {
+  background-color: var(--purple-active);
+  color: var(--purple-light);
+  transition: var(--transition-1);
+}
+
+.popup button.btn-cancel {
+  background-color: rgb(255, 218, 218);
+  color: rgb(255, 0, 0);
+  flex: 1;
+  font-weight: bold;
+  height: 40PX;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.popup button.btn-cancel:hover {
+  background-color: rgb(255, 57, 57);
+  color: var(--white);
+  transition: var(--transition-1);
+}
+
+/* Card música */
+.card {
+  display: flex;
+  align-items: center;
+  background-color: var(--black-hover);
+  border-radius: 20px;
+  padding: 20px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  gap: 20px;
+  color: #000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100vh;
+  position: relative;
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card-content {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  flex: 1;
+}
+
+.column strong {
+  display: block;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+/* Dropdown para ações */
+.dropdown {
+  position: relative;
+  user-select: none;
+}
+
+.dropdown-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--purple);
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-btn:hover {
+  background-color: rgba(142, 68, 173, 0.2);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 30px;
+  background-color: var(--black-darker);
+  min-width: 120px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 1000;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.dropdown-content.show {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-content button {
+  background: none;
+  border: none;
+  color: var(--white-active);
+  padding: 10px 15px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-content button:hover {
+  background-color: var(--purple);
+  color: white;
+}

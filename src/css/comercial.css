@@ -93,6 +93,66 @@ header {
     background-color: var(--black-dark-hover);
 }
 
+.planos {
+    margin-right: 20px;
+}
+
+.planos-button {
+    color:var(--white);
+    background-color: var(--purple);
+    padding: 8px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: var(--fs-20);
+    font-weight: var(--fw-semibold);
+    border: 2px solid var(--purple-dark);
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.planos-button:is(:hover, :focus) {
+    background-color: var(--purple-darker);
+}
+
+.perfil2 {
+    position: relative;
+    display: inline-block;
+    font-size: var(--fs-32);
+    cursor: pointer;
+    height: 36px;
+    z-index: 10;
+    left: 100px;
+    transition: transform 0.3s ease;
+}
+
+.perfil2:hover {
+    transform: scale(1.1);
+}
+
+.perfil-links {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: var(--black-dark);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width: 150px;
+    border-radius: 5px;
+}
+
+.perfil-links a {
+    display: block;
+    color: whitesmoke;
+    font-size: var(--fs-20);
+    padding: 0.5em 1em;
+    text-decoration: none;
+}
+
+.perfil-links a:hover {
+    background-color: var(--black-dark-hover);
+    color: rgb(199, 199, 199);
+}
+
 header > button {
     font-size: var(--fs-20);
     font-weight: var(--fw-bold);

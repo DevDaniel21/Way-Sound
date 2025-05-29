@@ -162,6 +162,8 @@ body {
     height: 48px;
     padding-left: 30px;
     letter-spacing: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .input-label {

@@ -8,7 +8,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/player.css">
-    <link rel="stylesheet" href="../css/playlist.css">
+    <link rel="stylesheet" href="../css/style-album.css">
     <!-- FONTE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,78 +16,87 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
-     <!-- ICONE -->
-    <link rel="shortcut icon" href="../../imgs/logo-p-comfundo.png" type="image/x-icon">
-
+       <!-- ICONE -->
+    <link rel="shortcut icon" href="../../imgs/logos/logo-p-comfundo.png" type="image/x-icon">
+    
 </head>
 
 <body>
     <div class="container">
         <header>
-            <div class="planos">
-                <button class="planos-button">
-                    <a href="planos.html">Planos</a>
-                </button>
-            </div>
             <div class="perfil" id="perfilIcon">
                 <img src="../../imgs/perfil.svg" class="icone-perf" id="perfilImg">
                 <div class="perfil-links" id="perfilLinks">
-                    <a href="config-user.html" class="perfil-link">Configurações</a>
+                    <a href="config-user_comercial.html" class="perfil-link">Configurações</a>
                     <a href="../../index.html" class="perfil-link">Sair</a>
                 </div>
             </div>
         </header>
         <aside>
-            <a href="sobre.html">
+            <a href="sobre.html" style="display: flex; flex-direction: column; align-items: end;">
                 <picture>
                     <source media="(max-width: 600px)" srcset="../../imgs/logo-pequena.png">
                     <source media="(max-width: 1024px)" srcset="../../imgs/logos/logo-media.png">
                     <img src="../../imgs/logos/logo-grande.png" class="logo-responsiva">
                 </picture>
+                <span style="font-size: 20px; font-weight: 600; position: absolute; margin-top: 80px; rotate: -5deg; color: #b38aef; text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.700);">Conta Comercial</span>
             </a>
 
             <ul class="list">
                 <li class="list-item">
                     <button class="list-button">
-                        <a href="exemplo.html" class="list-link">
-                            <img src="../../imgs/Home.svg" class="icone">Início
+                        <a href="../../src/html/exemplo_comercial.html" class="list-link">
+                        <img src="../../imgs/Home.svg" class="icone">Início
                         </a>
                     </button>
                 </li>
-
+                
                 <li class="list-item">
                     <button class="list-button">
-                        <a href="pesquisa_conta.html" class="list-link">
-                            <img src="../../imgs/Pesquisar.svg" class="icone">Pesquisar
+                        <a href="../html/pesquisa_comercial.html" class="list-link">
+                        <img src="../../imgs/Pesquisar.svg" class="icone">Pesquisar
                         </a>
                     </button>
                 </li>
-
+                
                 <li class="list-item playLibrary">
                     <button class="list-button">
-                        <a href="livraria.html" class="list-link">
-                            <img src="../../imgs/playlists.svg" class="icone">
+                        <a href="playlist.html" class="list-link">
+                        <img src="../../imgs/playlists.svg" class="icone">
                         </a>
                     </button>
                 </li>
-
+                
                 <li class="list-item list-playlist">
                     <p>Playlists</p>
                     <hr>
                 </li>
-
-                <li class="list-item playlist-add">
+                
+                <li class="list-item conta-list">
                     <button class="list-button">
-                        <a href="livraria.html" class="list-link">
-                            <img src="../../imgs/adcionar.svg" class="icone">Criar playlist
+                        <a href="index.html" class="list-link">
+                        <img src="../../imgs/perfil.svg" class="icone">
                         </a>
                     </button>
                 </li>
-
-                <li class="list-item conta-list">
+                
+                <li class="list-item playlist-add">
                     <button class="list-button">
-                        <a href="" class="list-link">
-                            <img src="../../imgs/perfil.svg" class="icone"></ion-icon>
+                        <a href="../../src/html/livraria_comercial.html" class="list-link">
+                        <img src="../../imgs/adcionar.svg" class="icone">Criar playlist
+                        </a>
+                    </button>
+                </li>
+                
+                <li class="list-item list-playlist">
+                    <p>Publicar</p>
+                    <hr>
+                </li>
+                
+                <li class="list-item playlist-add">
+                    <button class="list-button">
+                        <a href="publicacoes.html" class="list-link">
+                        <img src="../../imgs/adcionar.svg" class="icone">Adicionar música
                         </a>
                     </button>
                 </li>
@@ -95,37 +104,81 @@
         </aside>
         <main>
             <div class="esconder"></div>
-            <div class="playlist-viewer">
-                <div class="playlist-header">
-                    <button class="img-custom-fundo">
-                        <img class="img-custom" src="../../imgs/lapis.svg" alt="Imagem-custom">
-                    </button>
-                    <div class="pl-titles">
-                        <div class="pl-custom-name">
-                            <h1 class="pl-nome">Playlist #1</h1><button class="custom-name infos-pl">
-                                <div class="custom-img-name-fundo"><img class="custom-img-name"
-                                        src="../../imgs/lapis-fill.svg" alt="privacidade"></div>
-                            </button>
-
-                            </button>
-                        </div>
-
-                        <div class="pl-info">
-                            <h2 class="N-mus-album infos-pl">X músicas</h2>
+            <div class="album-viewer">
+                <div class="album-header">
+                    <img class="img-album" src="../../imgs/album-1-meisemones.avif" alt="Imagem-album">
+                    <div class="album-titles">
+                        <h1 class="album-nome">I can do what I want</h1>
+                        <div class="album-info">
+                            <a href="#" class="artista-nome infos-alb">Mei Semones</a>
+                            <span class="infos-alb">•</span>
+                            <h2 class="N-mus-album infos-alb">3 músicas</h2>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="opcoes-playlist-cont">
-                <div class="opcoes-pl">
-                    <button class="botao-pl add-mus">Adcionar Músicas<span class="maiszinho-add">+</span></button>
-                    <button class="botao-pl org-mus">Editar Ordem</button>
-                    <button class="botao-pl share-mus">Compartilhar</button>
-                </div>
-
-            </div>
             <div class="album-musicas">
                 <ul class="music-list">
+                    <li class="musicaTESTE">
+                        <div class="musica-info">
+                            <span class="numero-musica play-M">1</span>
+                            <ion-icon class="play-musica play-M" name="play"></ion-icon>
+                            <div class="musica-desc">
+                                <span class="nome-musica">I can do what i want</span>
+                                <span class="nome-artista">Mei Semones</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="musicaTESTE">
+                        <div class="musica-info">
+                            <span class="numero-musica play-M">1</span>
+                            <ion-icon class="play-musica play-M" name="play"></ion-icon>
+                            <div class="musica-desc">
+                                <span class="nome-musica">I can do what i want</span>
+                                <span class="nome-artista">Mei Semones</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="musicaTESTE">
+                        <div class="musica-info">
+                            <span class="numero-musica play-M">1</span>
+                            <ion-icon class="play-musica play-M" name="play"></ion-icon>
+                            <div class="musica-desc">
+                                <span class="nome-musica">I can do what i want</span>
+                                <span class="nome-artista">Mei Semones</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="musicaTESTE">
+                        <div class="musica-info">
+                            <span class="numero-musica play-M">1</span>
+                            <ion-icon class="play-musica play-M" name="play"></ion-icon>
+                            <div class="musica-desc">
+                                <span class="nome-musica">I can do what i want</span>
+                                <span class="nome-artista">Mei Semones</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="musicaTESTE">
+                        <div class="musica-info">
+                            <span class="numero-musica play-M">1</span>
+                            <ion-icon class="play-musica play-M" name="play"></ion-icon>
+                            <div class="musica-desc">
+                                <span class="nome-musica">I can do what i want</span>
+                                <span class="nome-artista">Mei Semones</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="musicaTESTE">
+                        <div class="musica-info">
+                            <span class="numero-musica play-M">1</span>
+                            <ion-icon class="play-musica play-M" name="play"></ion-icon>
+                            <div class="musica-desc">
+                                <span class="nome-musica">I can do what i want</span>
+                                <span class="nome-artista">Mei Semones</span>
+                            </div>
+                        </div>
+                    </li>
                     <li class="musicaTESTE">
                         <div class="musica-info">
                             <span class="numero-musica play-M">1</span>
@@ -221,7 +274,7 @@
 
         <audio src=""></audio>
     </div>
-    <script src="../js/playlist.js"></script>
+    <script src="../js/album.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

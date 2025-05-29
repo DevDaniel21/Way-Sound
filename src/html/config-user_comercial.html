@@ -25,56 +25,70 @@
 <body>
     <div class="container">
         <aside>
-            <a href="sobre.html">
+            <a href="sobre.html" style="display: flex; flex-direction: column; align-items: end;">
                 <picture>
                     <source media="(max-width: 600px)" srcset="../../imgs/logo-pequena.png">
                     <source media="(max-width: 1024px)" srcset="../../imgs/logos/logo-media.png">
                     <img src="../../imgs/logos/logo-grande.png" class="logo-responsiva">
                 </picture>
+                <span style="font-size: 20px; font-weight: 600; position: absolute; margin-top: 80px; rotate: -5deg; color: #b38aef; text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.700);">Conta Comercial</span>
             </a>
 
             <ul class="list">
                 <li class="list-item">
                     <button class="list-button">
-                        <a href="exemplo.html" class="list-link">
+                        <a href="../../src/html/exemplo_comercial.html" class="list-link">
                         <img src="../../imgs/Home.svg" class="icone">Início
                         </a>
                     </button>
                 </li>
-
+                
                 <li class="list-item">
                     <button class="list-button">
-                        <a href="pesquisa_conta.html" class="list-link">
-                            <img src="../../imgs/Pesquisar.svg" class="icone">Pesquisar
+                        <a href="../html/pesquisa_comercial.html" class="list-link">
+                        <img src="../../imgs/Pesquisar.svg" class="icone">Pesquisar
                         </a>
                     </button>
                 </li>
-
+                
                 <li class="list-item playLibrary">
                     <button class="list-button">
-                        <a href="#" class="list-link">
-                            <img src="../../imgs/playlists.svg" class="icone">
+                        <a href="playlist.html" class="list-link">
+                        <img src="../../imgs/playlists.svg" class="icone">
                         </a>
                     </button>
                 </li>
-
+                
                 <li class="list-item list-playlist">
                     <p>Playlists</p>
                     <hr>
                 </li>
-
-                <li class="list-item playlist-add">
+                
+                <li class="list-item conta-list">
                     <button class="list-button">
-                        <a href="livraria.html" class="list-link">
-                            <img src="../../imgs/adcionar.svg" class="icone">Criar playlist
+                        <a href="index.html" class="list-link">
+                        <img src="../../imgs/perfil.svg" class="icone">
                         </a>
                     </button>
                 </li>
-
-                <li class="list-item conta-list">
+                
+                <li class="list-item playlist-add">
                     <button class="list-button">
-                        <a href="" class="list-link">
-                            <img src="../../imgs/perfil.svg" class="icone"></ion-icon>
+                        <a href="../../src/html/livraria_comercial.html" class="list-link">
+                        <img src="../../imgs/adcionar.svg" class="icone">Criar playlist
+                        </a>
+                    </button>
+                </li>
+                
+                <li class="list-item list-playlist">
+                    <p>Publicar</p>
+                    <hr>
+                </li>
+                
+                <li class="list-item playlist-add">
+                    <button class="list-button">
+                        <a href="publicacoes.html" class="list-link">
+                        <img src="../../imgs/adcionar.svg" class="icone">Adicionar música
                         </a>
                     </button>
                 </li>
@@ -124,7 +138,7 @@
                             <input type="email" class="input-config-user" id="email" placeholder="Digite seu email" autocomplete="off">
 
                             <div class="">
-                                <a href="exemplo_comercial.html" class="cc-btn">Conta Comercial</a>
+                                <a href="exemplo.html" class="cc-btn">Sair da Conta Comercial</a>
                             </div>
 
                             <div class="" id="btn-save-config">

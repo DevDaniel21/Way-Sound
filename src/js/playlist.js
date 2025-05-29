@@ -19,3 +19,14 @@ document.addEventListener("click", function (event) {
     perfilLinks.style.display = "none";
   }
 });
+
+// Carregar a imagem do perfil salva no localStorage e substituir o ícone
+const perfilImg = document.getElementById('perfilImg');
+
+function loadProfileImage() {
+    const savedImage = localStorage.getItem('profileImage');
+    if (savedImage) {
+        perfilImg.src = savedImage;
+    }
+}
+loadProfileImage();

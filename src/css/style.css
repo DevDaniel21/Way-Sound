@@ -213,6 +213,11 @@ header>button:hover {
     cursor: pointer;
     height: 36px;
     z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+.perfil:hover {
+    transform: scale(1.1);
 }
 
 .perfil-links {
@@ -238,10 +243,6 @@ header>button:hover {
     background-color: var(--black-dark-hover);
     color: rgb(199, 199, 199);
 }
-
-/* .perfil:hover .perfil-links {
-    display: block;
-} */
 
 aside {
     grid-area: aside;
@@ -302,10 +303,11 @@ aside>picture {
     color: var(--purple);
 }
 
-.icone {
-    font-size: var(--tamanho-1);
-    max-width: var(--tamanho-1);
-    fill: var(--white);
+.icone-perf {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%; /* para deixar redondo */
+    object-fit: cover;
 }
 
 .playLibrary {
