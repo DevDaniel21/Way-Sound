@@ -5,64 +5,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bem-vindo de volta ao WaySound</title>
-  <!-- CSS -->
-  <link rel="stylesheet" href="../css/entre.css">
-  <!-- FONTE -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-  <!-- ICONE -->
-  <link rel="shortcut icon" href="../../imgs/logos/logo-p-comfundo.png" type="image/x-icon">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+   <link rel="shortcut icon" href="../../imgs/logo-p-comfundo.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
 </head>
 
-<body>
+<body class="bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center" style="background-image: url('../../imgs/bg-login.png')">
+  <div class="flex flex-col md:flex-row w-[95vw] md:w-[90vw] xl:w-[80vw] h-[90vh] bg-white rounded-2xl overflow-hidden shadow-lg">
+    <div class="flex-1 bg-black flex items-center justify-center p-4">
+      <img src="../../imgs/logo-entrar.png" alt="Logo" class="w-3/4 h-auto object-cover">
+    </div>
 
-  <div class="container">
-    <div class="login">
-      <div class="logo">
-        <img src="../../imgs/logo-entrar.png" alt="">
-      </div>
+    <div class="flex-1 bg-[#fefefd] flex flex-col items-center justify-center p-6">
+      <h1 class="text-3xl font-bold text-[#784DB9] mb-10">Entre no WaySound!</h1>
 
-      <div class="login-informacoes">
-        <h1 class="login-titulo"> Entre no WaySound!</h1>
+      <form action="none" class="flex flex-col items-center w-full max-w-md">
+        <div class="w-full mb-6">
+          <label class="block text-[#784DB9] text-xl font-bold mb-2">Email</label>
+          <input type="email" placeholder="Digite seu Email aqui" class="w-full h-12 px-4 border-4 border-[#784DB9] rounded-lg bg-[#353537] text-[#C2C2BA] tracking-wide" />
+        </div>
 
-        <form action="none" class="form-login">
-          <div class="input-email">
-            <label class="input-label">Email</label>
-            <input type="email" placeholder="Digite seu Email aqui" id="1" class="input">
-          </div>
+        <div class="w-full mb-6">
+          <label class="block text-[#784DB9] text-xl font-bold mb-2">Senha</label>
+          <input type="password" placeholder="Digite sua Senha aqui" class="w-full h-12 px-4 border-4 border-[#784DB9] rounded-lg bg-[#353537] text-[#C2C2BA] tracking-wide" />
+        </div>
 
-          <div class="input-senha">
-            <label class="input-label">Senha</label>
-            <input type="password" placeholder="Digite sua Senha aqui" id="2" class="input">
-          </div>
+        <div class="flex flex-wrap justify-center gap-4 mb-6">
+          <a href="../../index.html">
+            <button type="button" class="w-44 h-14 rounded-full border-4 border-[#19191A] bg-[#784DB9] text-[#FBFBF8] font-bold hover:bg-[#353537] hover:text-[#784DB9] transition">Voltar</button>
+          </a>
 
-          <div class="botoes-acoes">
-            <a href="../../index.html">
-              <button class="btn-voltar" type="button">Voltar</button>
-            </a>
-            
-            <a href="exemplo.html">
-              <button class="btn-entrar" type="button">Entrar</button>
-            </a>
-          </div>          
+          <a href="exemplo.html">
+            <button type="button" class="w-44 h-14 rounded-full border-4 border-[#19191A] bg-[#784DB9] text-[#FBFBF8] font-bold hover:bg-[#353537] hover:text-[#784DB9] transition">Entrar</button>
+          </a>
+        </div>
 
-        <div class="regis-info">
-          <div class="registre-se">
-            <hr>
-            <p href="registro.html">ou registre-se agora!</p>
-            <hr>
+        <div class="flex flex-col items-center">
+          <div class="flex items-center gap-4 w-full justify-center mb-2">
+            <hr class="w-1/4 border-[#784DB9]">
+            <p class="text-[#784DB9]">ou registre-se agora!</p>
+            <hr class="w-1/4 border-[#784DB9]">
           </div>
 
           <a href="registro.html">
-            <button class="btn-registrar" type="button">Registre-se</button></a>
+            <button type="button" class="w-44 h-14 mt-2 rounded-full border-4 border-[#784DB9] bg-[#FBFBF8] text-[#784DB9] font-bold hover:bg-[#784DB9] hover:text-[#FBFBF8] hover:border-[#353537] transition">Registre-se</button>
+          </a>
         </div>
-
-      </div>
-
+      </form>
     </div>
   </div>
 </body>

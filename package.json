@@ -1,0 +1,24 @@
+{
+  "name": "way-sound",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i src/css/tailwind.css -o src/css/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevDaniel21/Way-Sound.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevDaniel21/Way-Sound/issues"
+  },
+  "homepage": "https://github.com/DevDaniel21/Way-Sound#readme",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.8",
+    "tailwindcss": "^4.1.8"
+  }
+}
