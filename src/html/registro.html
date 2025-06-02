@@ -33,36 +33,33 @@
           e aproveite os <span class="login-titulo">melhores hits</span>
           do momento!</h1>
 
-        <form action="none" class="form-login">
+        <form class="form-login">
 
           <div class="input-usuario">
             <label class="input-label">Usuário *</label>
-            <input type="name" placeholder="Nome do usuário" id="registerUsuario" class="input">
+            <input type="name" placeholder="Nome do usuário" id="registerUsuario" class="input" required>
           </div>
 
           <div class="input-email">
             <label class="input-label">Email *</label>
-            <input type="email" placeholder="Digite seu Email aqui" id="registerEmail" class="input">
+            <input type="email" placeholder="Digite seu Email aqui" id="registerEmail" class="input" required>
           </div>
 
           <div class="input-senha">
             <label class="input-label">Senha *</label>
-            <input type="password" placeholder="Digite sua Senha aqui" id="registerSenha" class="input">
+            <input type="password" placeholder="Digite sua Senha aqui" id="registerSenha" class="input" required>
           </div>
 
+          <div class="botoes-acoes">
+            <a href="../../index.html"><button class="btn-voltar" type="button">Voltar</button></a>
+            <button id="registerBtn" class="btn-registrar" type="submit">Registre-se</button>
+          </div>
         </form>
 
-        <div class="botoes-acoes">
-          <a href="../../index.html"><button class="btn-voltar" type="button">Voltar</button></a>
-          <button id="registerBtn" class="btn-registrar" type="button">Registre-se</button>
-        </div>
       </div>
 
     </div>
   </div>
-
-  <script type="module" src="../js/service/Usuario.service.js"></script>
-  <script type="module" src="../js/models/Usuario.model.js"></script>
 </body>
 
 </html>

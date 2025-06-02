@@ -5,7 +5,12 @@ let contaLogada = conta;
 if (!contaLogada) {
   const lightbox = document.getElementById("alerta-conta");
   const lightboxFechar = document.getElementById("lightboxFechar");
-
+  
+  // BOTAO DE FECHAR
+  lightboxFechar.addEventListener("click", function() {
+    lightbox.classList.remove("active");
+  })
+  
   // ABRIR ALERTA
   const linkConta = document.querySelectorAll(".linkConta");
   linkConta.forEach((link) => {
@@ -23,10 +28,6 @@ if (!contaLogada) {
   //   });
   // });
 
-  // BOTAO DE FECHAR
-  lightboxFechar.addEventListener("click", function () {
-    lightbox.classList.remove("active");
-  });
 
   // ABRIR ALERTA - BOTÃO DAS MÚSICAS
   const cardButtons = document.querySelectorAll(".card-button");
@@ -54,12 +55,14 @@ buttons.forEach((button) => {
 });
 
 // BARRA DE PESQUISA
-document.getElementById("pesquisaInput").addEventListener("input", function () {
-  const filtro = this.value.toLowerCase();
-  const cards = document.querySelectorAll(".card-music");
-
-  cards.forEach((card) => {
-    const titulo = card.querySelector(".text-music").textContent.toLowerCase();
-    card.style.display = titulo.includes(filtro) ? "" : "none";
+if (document.getElementById("pesquisaInput")) {
+  document.getElementById("pesquisaInput").addEventListener("input", function () {
+    const filtro = this.value.toLowerCase();
+    const cards = document.querySelectorAll(".card-music");
+  
+    cards.forEach((card) => {
+      const titulo = card.querySelector(".text-music").textContent.toLowerCase();
+      card.style.display = titulo.includes(filtro) ? "" : "none";
+    });
   });
-});
+}

@@ -1,0 +1,57 @@
+  // ADICIONAR USUARIO
+  document.getElementById('formUsuario').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const nome = document.getElementById('nome').value;
+  const email = document.getElementById('email').value;
+  const senha = document.getElementById('senha').value;
+
+// O http://localhost:4000/algumacoisa serve para você fazer um pedido para o backend, obs: ele só vai funcionar se você rodar o servidor(npm run dev).
+// E depois do 4000/ tem que existir esse caminho do backend, isso você pode ver em routes
+  try {
+    const response = await fetch('http://localhost:4000/usuario', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nome, email, senha })
+    });
+
+    const data = await response.json();
+
+    if (response.status === 201) {
+      alert('Usuário registrado com sucesso!');
+      document.getElementById('formUsuario').reset();
+    } else {
+      alert(data.error || 'Erro ao registrar usuário');
+    }
+  } catch (error) {
+    alert('Erro de conexão com o servidor');
+    console.error(error);
+  }}
+);
+
+// EXIBIR USUARIOS
+document.getElementById('showUsuarios').addEventListener('click', async (e) => {
+  e.preventDefault();
+
+  const demo = document.getElementById('demo');
+
+  try {
+    const response = await fetch('http://localhost:4000/usuario', {
+      method: 'GET',
+      headers: { 'Content-type': 'application/json' },
+    });
+
+    const usuarios = await response.json();
+
+    // Exibe os usuários formatados
+    demo.innerHTML = usuarios.map(u => `
+      <p><strong>Nome:</strong> ${u.nome} 
+      <br><strong>Email:</strong> ${u.email}</p>
+      `
+    ).join('');
+
+    } catch (error) {
+      demo.innerHTML = 'Erro ao buscar usuários';
+      console.error(error);
+    }
+  });
