@@ -1,10 +1,10 @@
 {
   "name": "waysound",
   "version": "1.0.0",
-  "main": "src/js/sever.js",
+  "main": "src/sever.js",
   "scripts": {
-    "start": "node src/js/Server.js",
-    "dev": "nodemon src/js/Server.js"
+    "start": "node src/Server.js",
+    "dev": "nodemon src/Server.js"
   },
   "keywords": [
     "Tatto",
@@ -25,12 +25,10 @@
     "sucrase": "^3.35.0"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.8",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "mysql2": "^3.14.1",
-    "sequelize": "^6.37.7",
-    "tailwindcss": "^4.1.8"
+    "sequelize": "^6.37.7"
   }
 }
