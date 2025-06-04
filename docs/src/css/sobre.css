@@ -15,7 +15,7 @@ img {
     flex-direction: column;
     align-items: center;
     gap: 4em;
-    background-image: url(../../imgs/bg-sobre.png);
+    background-image: url(../../imgs/wallpaper-sobre.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -147,6 +147,41 @@ img {
     z-index: 1;
 }
 
+.botao-interativo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #424449, #a777e3);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    position: absolute;
+    overflow: hidden;
+  }
+
+  .botao-interativo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  }
+
+  .botao-interativo ion-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .botao-interativo:hover ion-icon {
+    transform: translateX(-4px);
+  }
+
+  .botao-interativo:active {
+    transform: scale(0.95);
+  }
+
 @media (max-width: 755px) {
     .sobre-membros {
         display: flex;
@@ -187,3 +222,158 @@ img {
         margin: 0;
     }
 }
+
+.sobre-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+.sobre-rafael:hover {
+    border-color: #e91e63;
+    box-shadow: 0 8px 20px rgba(233, 30, 99, 0.6);
+}
+.sobre-daniel:hover {
+    border-color: #03a9f4;
+    box-shadow: 0 8px 20px rgba(3, 169, 244, 0.6);
+}
+.sobre-ws:hover {
+    border-color: #4caf50;
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.6);
+}
+.sobre-cassio:hover {
+    border-color: #ff9800;
+    box-shadow: 0 8px 20px rgba(255, 152, 0, 0.6);
+}
+.sobre-matheus:hover {
+    border-color: #9c27b0;
+    box-shadow: 0 8px 20px rgba(156, 39, 176, 0.6);
+}
+
+.modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+}
+
+.modal-box {
+    background: #121212;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 400px;
+    width: 90%;
+    color: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    position: relative;
+    text-align: center;
+    animation: grow 0.4s ease forwards;
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.perfil-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: all 0.3s ease;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .perfil-conteudo {
+    background: #1e1e1e;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    gap: 20px;
+    color: white;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    animation: zoomIn 0.4s ease;
+    position: relative;
+  }
+  
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.7);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .fechar-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: #ccc;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  
+  .perfil-esquerda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    text-align: center;
+  }
+  
+  .perfil-esquerda img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .perfil-esquerda h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #a777e3;
+  }
+  
+  .perfil-direita {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .perfil-descricao {
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+  
