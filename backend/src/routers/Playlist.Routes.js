@@ -5,8 +5,8 @@ const routerPlaylist = new Router()
 
 routerPlaylist.get('/', playlistController.index)
 routerPlaylist.post('/', playlistController.store)
-routerPlaylist.get('/:email', playlistController.show)
-routerPlaylist.put('/:email', playlistController.update)
+routerPlaylist.get('/:nome', playlistController.show)
+routerPlaylist.put('/:nome', playlistController.update)
 routerPlaylist.delete('/:id', playlistController.delete)
 
 export default routerPlaylist

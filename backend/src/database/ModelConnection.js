@@ -4,8 +4,9 @@ import Usuario from '../models/Usuario.js'
 import Musica from '../models/Musica.js'
 import Artista from '../models/Artista.js'
 import Playlist from '../models/Playlist.js'
+import Album from '../models/Album.js'
 
-const models = [Usuario, Musica, Artista, Playlist]
+const models = [Usuario, Musica, Artista, Playlist, Album]
 
 class ModelConnection {
     constructor() {
