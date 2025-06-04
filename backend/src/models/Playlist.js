@@ -1,16 +1,14 @@
 import Sequelize, { Model } from 'sequelize'
 
-export default class Usuario extends Model {
+export default class Playlist extends Model {
     static init(sequelize) {
         super.init({
             nome: Sequelize.STRING,
-            email: Sequelize.STRING,
-            senha: Sequelize.STRING,
-            plano: Sequelize.STRING,
+            descricao: Sequelize.STRING,
             avatar: Sequelize.STRING,
         }, {
             sequelize,
-            tableName: 'usuarios',
+            tableName: 'playlists',
         }
     )
         return this

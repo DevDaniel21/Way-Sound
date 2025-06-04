@@ -6,6 +6,7 @@ import homeRoutes from './routers/Home.Routes.js'
 import usuarioRoutes from './routers/Usuario.Routes.js'
 import musicaRoutes from './routers/Musica.Routes.js'
 import artistaRoutes from './routers/Artista.Routes.js'
+import playlistRoutes from './routers/Playlist.Routes.js'
 
 dotenv.config()
 
@@ -27,6 +28,7 @@ class App {
         this.app.use('/usuario', usuarioRoutes)
         this.app.use('/musica', musicaRoutes)
         this.app.use('/artista', artistaRoutes)
+        this.app.use('/playlist', playlistRoutes)
     }
 }
 

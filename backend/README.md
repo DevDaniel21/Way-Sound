@@ -17,10 +17,21 @@
 - npm i dotenv
 - npm i express
 
+
 ## Conectando ao Banco de Dados
 - npm i sequelize
 - npm i -D sequelize-cli
 - npm i mysql2
+
+## Ordem de criação de tabela
+Ordem para criar uma Tabela:
+- Model
+- ModelConnection
+- Controller
+- Routes
+- App
+- npx sequelize migration:create --name=tabelNome
+- npx sequelize db:migrate
 
 ## Migrando para o banco de dados
 - npx sequelize migration:create --name=nomeTabela

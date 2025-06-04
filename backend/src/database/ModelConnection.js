@@ -3,8 +3,9 @@ import databaseConfig from '../config/Database.js'
 import Usuario from '../models/Usuario.js'
 import Musica from '../models/Musica.js'
 import Artista from '../models/Artista.js'
+import Playlist from '../models/Playlist.js'
 
-const models = [Usuario, Musica, Artista]
+const models = [Usuario, Musica, Artista, Playlist]
 
 class ModelConnection {
     constructor() {

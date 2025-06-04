@@ -4,7 +4,7 @@ class UsuarioController {
     async store(req, res) {
         const { nome, email, senha } = req.body
         try {
-            const usuario = await Usuario.create({ nome, email, senha })
+            const usuario = await Usuario.create({ nome, email, senha, plano: 'free', avatar: null })
             console.log(usuario)
             return res.status(201).json(usuario)
         } catch (error) {
