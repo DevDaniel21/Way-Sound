@@ -1,0 +1,1 @@
+let artistList = document.querySelector(".artistas-list")
