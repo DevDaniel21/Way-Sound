@@ -89,42 +89,81 @@ button {
 header {
     grid-area: header;
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-between;
     padding: var(--padding-header-main);
     background-color: var(--black-dark-hover);
-}
-
-.planos {
+  }
+  
+  .left-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .right-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .right-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .planos {
     margin-right: 20px;
-}
-
-.planos-button {
-    color:var(--white);
+  }
+  
+  .planos-button {
+    color: var(--white);
     background-color: var(--purple);
-    padding: 8px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 8px 30px;
     font-size: var(--fs-20);
     font-weight: var(--fw-semibold);
     border: 2px solid var(--purple-dark);
     border-radius: 30px;
     transition: 0.3s;
-}
-
-.planos-button:is(:hover, :focus) {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .planos-button:is(:hover, :focus) {
     background-color: var(--purple-darker);
-}
-
-.perfil {
+  }
+  
+  .playlist-button,
+  .album-button {
+    color: var(--white);
+    padding: 8px 30px;
+    font-size: var(--fs-20);
+    font-weight: var(--fw-semibold);
+    border-radius: 30px;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .playlist-button:hover,
+  .album-button:hover {
+    color: var(--purple);
+  }
+  
+  .perfil {
     position: relative;
     display: inline-block;
     font-size: var(--fs-32);
     cursor: pointer;
     height: 36px;
     z-index: 10;
-}
-
-.perfil-links {
+  }
+  
+  .perfil-links {
     display: none;
     position: absolute;
     right: 0;
@@ -133,20 +172,21 @@ header {
     z-index: 1;
     min-width: 150px;
     border-radius: 5px;
-}
-
-.perfil-links a {
+  }
+  
+  .perfil-links a {
     display: block;
     color: whitesmoke;
     font-size: var(--fs-20);
     padding: 0.5em 1em;
     text-decoration: none;
-}
-
-.perfil-links a:hover {
+  }
+  
+  .perfil-links a:hover {
     background-color: var(--black-dark-hover);
     color: rgb(199, 199, 199);
-}
+  }
+  
 
 aside {
     grid-area: aside;

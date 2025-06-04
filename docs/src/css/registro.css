@@ -102,6 +102,7 @@ span {
 }
 
 .login-titulo {
+    font-size: var(--fs-24);
     text-align: center;
 }
 
@@ -110,13 +111,26 @@ span {
     flex-wrap: wrap;
     border-radius: 20px;
     overflow: hidden;
-    height: 80vh;
+    height: 70vh;
     width: 70vw;
 }
 
-.logo,
+.logo {
+    flex: 0.4; /* Reduzido de 0.5 para 0.4 */
+    background-color: var(--purple-active);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .login-informacoes {
-    flex: .5;
+    flex: 0.6; /* Aumentado de 0.5 para 0.6 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 20px;
+    background-color: var(--black-dark-active);
 }
 
 .logo {
@@ -126,7 +140,7 @@ span {
     align-items: center;
 }
 
-.logo>img {
+.logo > img {
     width: 60%;
     height: auto;
     object-fit: cover;
@@ -136,7 +150,7 @@ span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     padding: 0 20px;
     background-color: var(--black-dark-active);
 }
@@ -156,12 +170,14 @@ span {
 }
 
 .input {
-    background-color: var(--purple-active);
-    border: 2px solid var(--white);
-    color: var(--white-active);
-    border-radius: 10px;
-    width: 432px;
-    height: 48px;
+  background-color: var(--black);
+  border: 2px solid var(--purple);
+  color: var(--white-active);
+  border-radius: 10px;
+  width: 432px;
+  height: 48px;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
 .input-label {
@@ -183,6 +199,10 @@ span {
     cursor: pointer;
 }
 
+  .btn-registrar:hover {
+    border-color: var(--white);
+  }
+
 .registre-se {
     display: flex;
     align-items: center;
@@ -192,7 +212,7 @@ span {
 .botoes-acoes {
     display: flex;
     gap: 1rem;
-    margin-top: 4rem;
+    margin-top: 20px;
   }
   
   .btn-voltar {
@@ -210,6 +230,8 @@ span {
   
   .btn-voltar:hover {
     background-color: var(--white-dark-active);
+    color: var(--white);
+    border-color: var(--purple-active);
   }  
 
 hr {
@@ -217,31 +239,61 @@ hr {
     height: 2px;
 }
 
-.input {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+@media (max-width: 768px) {
 
-@media (max-width: 425px) {
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
     .container {
-        padding: unset;
+        padding: 0;
         background: none;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .form-login {
         width: 100%;
         gap: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .logo {
-        height: 30%;
+        width: 100vw;
+        height: 30vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .logo img {
+        max-height: 90%;
+        max-width: 90%;
+        height: auto;
+        width: auto;
     }
 
     .login {
-        border-radius: unset;
-        overflow: unset;
+        border-radius: 0;
+        overflow: hidden;
         height: 100%;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .login-titulo {
@@ -249,32 +301,45 @@ hr {
     }
 
     .login-informacoes {
-        padding: unset;
+        padding: 0;
         width: 100%;
         height: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .logo,
     .login-informacoes {
-        flex: unset;
+        flex: 0 0 auto;
     }
 
     .input-usuario,
     .input-email,
     .input-senha {
         width: 100%;
+        display: flex;
+        flex-direction: column;
         align-items: center;
     }
 
     .input-label {
         width: 90%;
+        text-align: left;
     }
 
     .input {
         width: 90%;
-        background-color: var(--black-dark-active);
-        border: 3px solid var(--purple-dark-active);
-        color: var(--white-light);
         padding-left: 1rem;
+    }
+
+    .botoes-acoes {
+        width: 90%;
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
     }
 }

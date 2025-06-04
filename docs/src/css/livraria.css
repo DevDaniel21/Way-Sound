@@ -73,6 +73,21 @@
     --tamanho-1: var(--fs-36);
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+  }
+  
+  .right-group {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 20px;
+  }
+
 .planos {
     margin-right: 20px;
 }

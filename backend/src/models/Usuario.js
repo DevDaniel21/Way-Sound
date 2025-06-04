@@ -9,6 +9,7 @@ export default class Usuario extends Model {
             avatar: Sequelize.STRING,
         }, {
             sequelize,
+            tableName: 'usuarios',
         }
     )
         return this

@@ -9,6 +9,7 @@ export default class Musica extends Model {
             audio: Sequelize.STRING,
         }, {
             sequelize,
+            tableName: 'musicas',
         }
     )
         return this

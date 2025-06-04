@@ -24,19 +24,26 @@
 <body>
     <div class="container">
         <header>
-            <div class="planos">
-                <button class="planos-button">
-                    <a href="planos.html">Planos</a>
-                </button>
+            <div class="left-group">
+              <a href="../html/livraria.html" class="playlist-button">&lt; Voltar</a>
+              <a href="../html/album.html" class="album-button">&lt; Álbum</a>
             </div>
-            <div class="perfil" id="perfilIcon">
-                <img src="../../imgs/perfil.svg" class="icone-perf" id="perfilImg">
+          
+            <div class="right-group">
+              <div class="planos">
+                <a href="planos.html" class="planos-button">Planos</a>
+              </div>
+          
+              <div class="perfil" id="perfilIcon">
+                <img src="../../imgs/perfil.svg" class="icone">
                 <div class="perfil-links" id="perfilLinks">
-                    <a href="config-user.html" class="perfil-link">Configurações</a>
-                    <a href="../../index.html" class="perfil-link">Sair</a>
+                  <a href="config-user.html" class="perfil-link">Configurações</a>
+                  <a href="../../index.html" class="perfil-link">Sair</a>
                 </div>
+              </div>
             </div>
-        </header>
+          </header>
+          
         <aside>
             <a href="sobre.html">
                 <picture>
@@ -87,7 +94,7 @@
                 <li class="list-item conta-list">
                     <button class="list-button">
                         <a href="" class="list-link">
-                            <img src="../../imgs/perfil.svg" class="icone"></ion-icon>
+                            <img src="../../imgs/perfil.svg" class="icone">
                         </a>
                     </button>
                 </li>
@@ -102,23 +109,30 @@
                     </button>
                     <div class="pl-titles">
                         <div class="pl-custom-name">
-                            <h1 class="pl-nome">Playlist #1</h1><button class="custom-name infos-pl">
-                                <div class="custom-img-name-fundo"><img class="custom-img-name"
-                                        src="../../imgs/lapis-fill.svg" alt="privacidade"></div>
-                            </button>
-
+                            <h1 class="pl-nome">Playlist #1</h1>
+                            <button class="custom-name infos-pl">
+                                <div class="custom-img-name-fundo">
+                                    <img class="custom-img-name" src="../../imgs/lapis-fill.svg" alt="privacidade">
+                                </div>
                             </button>
                         </div>
 
                         <div class="pl-info">
-                            <h2 class="N-mus-album infos-pl">X músicas</h2>
+                            <button class="privacidade infos-pl">Privacidade<div class="priv-img-fundo"><img
+                                        class="priv-img" src="../../imgs/lapis-fill.svg" alt="privacidade"></div></button>
+                            <span class="infos-pl">•</span>
+                            <h2 class="data-criacao infos-pl">XXXX</h2>
+                            <span class="infos-alb">•</span>
+                            <h2 class="N-mus-akbum infos-pl">X músicas</h2>
+                            <span class="infos-pl">•</span>
+                            <h2 class="H-mus-akbum infos-pl">X min e X seg</h2>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="opcoes-playlist-cont">
                 <div class="opcoes-pl">
-                    <button class="botao-pl add-mus">Adcionar Músicas<span class="maiszinho-add">+</span></button>
+                    <button class="botao-pl add-mus">Adicionar Músicas<span class="maiszinho-add">+</span></button>
                     <button class="botao-pl org-mus">Editar Ordem</button>
                     <button class="botao-pl share-mus">Compartilhar</button>
                 </div>
@@ -138,7 +152,7 @@
                     </li>
                     <li class="musicaTESTE">
                         <div class="musica-info">
-                            <span class="numero-musica play-M">1</span>
+                            <span class="numero-musica play-M">2</span>
                             <ion-icon class="play-musica play-M" name="play"></ion-icon>
                             <div class="musica-desc">
                                 <span class="nome-musica">I can do what i want</span>
@@ -148,7 +162,7 @@
                     </li>
                     <li class="musicaTESTE">
                         <div class="musica-info">
-                            <span class="numero-musica play-M">1</span>
+                            <span class="numero-musica play-M">3</span>
                             <ion-icon class="play-musica play-M" name="play"></ion-icon>
                             <div class="musica-desc">
                                 <span class="nome-musica">I can do what i want</span>
@@ -158,7 +172,7 @@
                     </li>
                     <li class="musicaTESTE">
                         <div class="musica-info">
-                            <span class="numero-musica play-M">1</span>
+                            <span class="numero-musica play-M">4</span>
                             <ion-icon class="play-musica play-M" name="play"></ion-icon>
                             <div class="musica-desc">
                                 <span class="nome-musica">I can do what i want</span>
@@ -168,7 +182,7 @@
                     </li>
                     <li class="musicaTESTE">
                         <div class="musica-info">
-                            <span class="numero-musica play-M">1</span>
+                            <span class="numero-musica play-M">5</span>
                             <ion-icon class="play-musica play-M" name="play"></ion-icon>
                             <div class="musica-desc">
                                 <span class="nome-musica">I can do what i want</span>
