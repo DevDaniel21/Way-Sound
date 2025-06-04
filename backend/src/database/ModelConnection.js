@@ -2,8 +2,9 @@ import { Sequelize } from 'sequelize'
 import databaseConfig from '../config/Database.js'
 import Usuario from '../models/Usuario.js'
 import Musica from '../models/Musica.js'
+import Artista from '../models/Artista.js'
 
-const models = [Usuario, Musica]
+const models = [Usuario, Musica, Artista]
 
 class ModelConnection {
     constructor() {
