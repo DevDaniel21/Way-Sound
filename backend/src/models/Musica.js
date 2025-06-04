@@ -14,4 +14,18 @@ export default class Musica extends Model {
     )
         return this
     }
+    
+    static associate(models) {
+        this.belongsToMany(models.Playlist, {
+          through: 'Playlist_Musica',
+          foreignKey: 'musica_id',
+          otherKey: 'playlist_id',
+        })
+        
+        this.belongsToMany(models.Artista, {
+            through: 'Artista_Musica',
+            foreignKey: 'artista_id',
+            otherKey: 'musica_id',
+        })
+      }
 }

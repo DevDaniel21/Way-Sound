@@ -9,8 +9,15 @@ export default class Playlist extends Model {
         }, {
             sequelize,
             tableName: 'playlists',
-        }
-    )
+        })
         return this
+    }
+
+    static associate(models) {
+        this.belongsToMany(models.Musica, {
+            through: 'Playlist_Musica',
+            foreignKey: 'playlist_id',
+            otherKey: 'musica_id',
+        })
     }
 }
