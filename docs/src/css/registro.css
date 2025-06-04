@@ -2,37 +2,37 @@
     /* PALETA DE CORES */
     /* BRANCO */
     --white-light: #fefefd;
-    --white-light-hover: #FDFDFC;
-    --white-light-active: #FBFBF8;
-    --white: #F2F2E8;
-    --white-hover: #DADAD1;
-    --white-active: #C2C2BA;
-    --white-dark: #B6B6AE;
-    --white-dark-hover: #91918B;
-    --white-dark-active: #6D6D68;
+    --white-light-hover: #fdfdfc;
+    --white-light-active: #fbfbf8;
+    --white: #f2f2e8;
+    --white-hover: #dadad1;
+    --white-active: #c2c2ba;
+    --white-dark: #b6b6ae;
+    --white-dark-hover: #91918b;
+    --white-dark-active: #6d6d68;
     --white-darker: #555551;
     /* PRETO */
-    --black-light: #EDEDED;
-    --black-light-hover: #E3E3E4;
-    --black-light-active: #C6C6C7;
+    --black-light: #ededed;
+    --black-light-hover: #e3e3e4;
+    --black-light-active: #c6c6c7;
     --black: #474649;
-    --black-hover: #403F42;
-    --black-active: #39383A;
+    --black-hover: #403f42;
+    --black-active: #39383a;
     --black-dark: #353537;
-    --black-dark-hover: #2B2A2C;
-    --black-dark-active: #201F21;
-    --black-darker: #19191A;
+    --black-dark-hover: #2b2a2c;
+    --black-dark-active: #201f21;
+    --black-darker: #19191a;
     /* ROXO */
-    --purple-light: #F2EDF8;
-    --purple-light-hover: #EBE4F5;
-    --purple-light-active: #D5C8E9;
-    --purple: #784DB9;
-    --purple-hover: #6C45A7;
-    --purple-active: #603E94;
-    --purple-dark: #5A3A8B;
-    --purple-dark-hover: #482E6F;
+    --purple-light: #f2edf8;
+    --purple-light-hover: #ebe4f5;
+    --purple-light-active: #d5c8e9;
+    --purple: #784db9;
+    --purple-hover: #6c45a7;
+    --purple-active: #603e94;
+    --purple-dark: #5a3a8b;
+    --purple-dark-hover: #482e6f;
     --purple-dark-active: #362353;
-    --purple-darker: #2A1B41;
+    --purple-darker: #2a1b41;
 
     /* TIPOGRAFIA */
     --ff-poppins: "Poppins", sans-serif;
@@ -43,7 +43,7 @@
     --fs-24: 1.5rem;
     --fs-20: 1.25rem;
     --fs-16: 1rem;
-    --fs-14: .875rem;
+    --fs-14: 0.875rem;
 
     --fw-thin: 100;
     --fw-extralight: 200;
@@ -61,13 +61,12 @@
     --br-1: 27px;
 
     /* TRANSIÇÃO */
-    --transition-1: .25s;
-    --transition-2: .5s;
-    --transition-3: .1s;
+    --transition-1: 0.25s;
+    --transition-2: 0.5s;
+    --transition-3: 0.1s;
 
     /* LISTA */
     --margin-1: 15px;
-
 
     /* ICONE */
     --tamanho-1: var(--fs-36);
@@ -81,7 +80,7 @@
 
 body {
     font-family: var(--ff-poppins);
-    color: #784DB9;
+    color: #784db9;
 }
 
 span {
@@ -98,7 +97,6 @@ span {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
 }
 
 .login-titulo {
@@ -109,28 +107,31 @@ span {
 .login {
     display: flex;
     flex-wrap: wrap;
+    height: 60vh;
+    width: 70vw;
     border-radius: 20px;
     overflow: hidden;
-    height: 70vh;
-    width: 70vw;
 }
 
 .logo {
-    flex: 0.4; /* Reduzido de 0.5 para 0.4 */
+    flex: 0.4;
+    width: 50%;
     background-color: var(--purple-active);
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .login-informacoes {
-    flex: 0.6; /* Aumentado de 0.5 para 0.6 */
+    flex: 0.6;
+    width: 50%;
+    background-color: var(--black-dark-active);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     padding: 0 20px;
-    background-color: var(--black-dark-active);
 }
 
 .logo {
@@ -170,14 +171,14 @@ span {
 }
 
 .input {
-  background-color: var(--black);
-  border: 2px solid var(--purple);
-  color: var(--white-active);
-  border-radius: 10px;
-  width: 432px;
-  height: 48px;
-  padding: 0 16px;
-  box-sizing: border-box;
+    background-color: var(--black);
+    border: 2px solid var(--purple);
+    color: var(--white-active);
+    border-radius: 10px;
+    width: 432px;
+    height: 48px;
+    padding: 0 16px;
+    box-sizing: border-box;
 }
 
 .input-label {
@@ -185,7 +186,7 @@ span {
     font-weight: bolder;
     margin-bottom: 10px;
     margin-top: 10px;
-  }
+}
 
 .btn-registrar {
     width: 151px;
@@ -199,9 +200,9 @@ span {
     cursor: pointer;
 }
 
-  .btn-registrar:hover {
+.btn-registrar:hover {
     border-color: var(--white);
-  }
+}
 
 .registre-se {
     display: flex;
@@ -213,34 +214,43 @@ span {
     display: flex;
     gap: 1rem;
     margin-top: 20px;
-  }
-  
-  .btn-voltar {
-    width: 151px;
-    height: 40px;
-    border-radius: 30px;
-    background-color: var(--white-dark);
-    color: var(--purple-active);
-    font-family: var(--ff-poppins);
-    font-weight: bold;
-    border: 2px solid var(--white);
+}
+
+.logo {
+    position: relative;
+    flex: 0.4;
+    background-color: var(--purple-active);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-voltar-topo {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
     cursor: pointer;
-    transition: background-color var(--transition-1);
-  }
-  
-  .btn-voltar:hover {
-    background-color: var(--white-dark-active);
-    color: var(--white);
-    border-color: var(--purple-active);
-  }  
+    transition: color 0.25s;
+}
+
+.btn-voltar-topo:hover {
+    color: var(--black-dark-active);
+}
 
 hr {
     width: 30%;
     height: 2px;
 }
 
-@media (max-width: 768px) {
 
+
+
+@media (max-width: 768px) {
     html,
     body {
         margin: 0;
