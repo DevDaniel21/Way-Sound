@@ -16,7 +16,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
-     <!-- ICONE -->
+    <!-- ICONE -->
     <link rel="shortcut icon" href="../../imgs/logo-p-comfundo.png" type="image/x-icon">
 
 </head>
@@ -24,14 +24,23 @@
 <body>
     <div class="container">
         <header>
-            <div class="perfil" id="perfilIcon">
-                <img src="../../imgs/perfil.svg" class="icone-perf" id="perfilImg">
-                <div class="perfil-links" id="perfilLinks">
-                    <a href="config-user_comercial.html" class="perfil-link">Configurações</a>
-                    <a href="../../index.html" class="perfil-link">Sair</a>
+            <div class="left-group">
+                <a href="../html/livraria_comercial.html" class="playlist-button">&lt; Voltar</a>
+                <a href="../html/album_comercial.html" class="album-button">&lt; Álbum</a>
+            </div>
+
+            <div class="right-group">
+
+                <div class="perfil" id="perfilIcon">
+                    <img src="../../imgs/perfil.svg" class="icone">
+                    <div class="perfil-links" id="perfilLinks">
+                        <a href="config-user.html" class="perfil-link">Configurações</a>
+                        <a href="../../index.html" class="perfil-link">Sair</a>
+                    </div>
                 </div>
             </div>
         </header>
+
         <aside>
             <a href="sobre.html" style="display: flex; flex-direction: column; align-items: end;">
                 <picture>
@@ -39,64 +48,66 @@
                     <source media="(max-width: 1024px)" srcset="../../imgs/logos/logo-media.png">
                     <img src="../../imgs/logos/logo-grande.png" class="logo-responsiva">
                 </picture>
-                <span style="font-size: 20px; font-weight: 600; position: absolute; margin-top: 80px; rotate: -5deg; color: #b38aef; text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.700);">Conta Comercial</span>
+                <span
+                    style="font-size: 20px; font-weight: 600; position: absolute; margin-top: 80px; rotate: -5deg; color: #b38aef; text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.700);">Conta
+                    Comercial</span>
             </a>
 
             <ul class="list">
                 <li class="list-item">
                     <button class="list-button">
                         <a href="../../src/html/exemplo_comercial.html" class="list-link">
-                        <img src="../../imgs/Home.svg" class="icone">Início
+                            <img src="../../imgs/Home.svg" class="icone">Início
                         </a>
                     </button>
                 </li>
-                
+
                 <li class="list-item">
                     <button class="list-button">
                         <a href="../html/pesquisa_comercial.html" class="list-link">
-                        <img src="../../imgs/Pesquisar.svg" class="icone">Pesquisar
+                            <img src="../../imgs/Pesquisar.svg" class="icone">Pesquisar
                         </a>
                     </button>
                 </li>
-                
+
                 <li class="list-item playLibrary">
                     <button class="list-button">
                         <a href="playlist.html" class="list-link">
-                        <img src="../../imgs/playlists.svg" class="icone">
+                            <img src="../../imgs/playlists.svg" class="icone">
                         </a>
                     </button>
                 </li>
-                
+
                 <li class="list-item list-playlist">
                     <p>Playlists</p>
                     <hr>
                 </li>
-                
+
                 <li class="list-item conta-list">
                     <button class="list-button">
                         <a href="index.html" class="list-link">
-                        <img src="../../imgs/perfil.svg" class="icone">
+                            <img src="../../imgs/perfil.svg" class="icone">
                         </a>
                     </button>
                 </li>
-                
+
                 <li class="list-item playlist-add">
                     <button class="list-button">
-                        <a href="playlist.html" class="list-link">
-                        <img src="../../imgs/adcionar.svg" class="icone">Criar playlist
+                        <a href="livraria_comercial.html" class="list-link">
+                            <img src="../../imgs/adcionar.svg" class="icone">Criar playlist
                         </a>
                     </button>
                 </li>
-                
+
                 <li class="list-item list-playlist">
                     <p>Publicar</p>
                     <hr>
                 </li>
-                
+
                 <li class="list-item playlist-add">
                     <button class="list-button">
                         <a href="publicacoes.html" class="list-link">
-                        <img src="../../imgs/adcionar.svg" class="icone">Adicionar música
+                            <img src="../../imgs/adcionar.svg" class="icone">Adicionar música
                         </a>
                     </button>
                 </li>
@@ -113,10 +124,10 @@
                         <div class="pl-custom-name">
                             <h1 class="pl-nome">Playlist #1</h1><button class="custom-name infos-pl">
                                 <div class="custom-img-name-fundo"><img class="custom-img-name"
-                                        src="../../imgs/lapis-fill.svg" alt="privacidade"></div>
+                                        src="../../imgs/lapis-fill.svg" alt="privacidade">
+                                </div>
                             </button>
 
-                            </button>
                         </div>
 
                         <div class="pl-info">
@@ -147,7 +158,7 @@
                     </li>
                     <li class="musicaTESTE">
                         <div class="musica-info">
-                            <span class="numero-musica play-M">1</span>
+                            <span class="numero-musica play-M">2</span>
                             <ion-icon class="play-musica play-M" name="play"></ion-icon>
                             <div class="musica-desc">
                                 <span class="nome-musica">I can do what i want</span>
@@ -157,7 +168,7 @@
                     </li>
                     <li class="musicaTESTE">
                         <div class="musica-info">
-                            <span class="numero-musica play-M">1</span>
+                            <span class="numero-musica play-M">3</span>
                             <ion-icon class="play-musica play-M" name="play"></ion-icon>
                             <div class="musica-desc">
                                 <span class="nome-musica">I can do what i want</span>
@@ -167,7 +178,7 @@
                     </li>
                     <li class="musicaTESTE">
                         <div class="musica-info">
-                            <span class="numero-musica play-M">1</span>
+                            <span class="numero-musica play-M">4</span>
                             <ion-icon class="play-musica play-M" name="play"></ion-icon>
                             <div class="musica-desc">
                                 <span class="nome-musica">I can do what i want</span>
@@ -177,7 +188,7 @@
                     </li>
                     <li class="musicaTESTE">
                         <div class="musica-info">
-                            <span class="numero-musica play-M">1</span>
+                            <span class="numero-musica play-M">5</span>
                             <ion-icon class="play-musica play-M" name="play"></ion-icon>
                             <div class="musica-desc">
                                 <span class="nome-musica">I can do what i want</span>
