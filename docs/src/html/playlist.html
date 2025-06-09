@@ -26,7 +26,6 @@
         <header>
             <div class="left-group">
                 <a href="../html/livraria.html" class="playlist-button">&lt; Voltar</a>
-                <a href="../html/album.html" class="album-button">&lt; Playlist</a>
             </div>
 
             <div class="right-group">
@@ -105,12 +104,12 @@
             <div class="esconder"></div>
             <div class="playlist-viewer">
                 <div class="playlist-header">
-                    <button class="img-custom-fundo">
+                    <button id="playlistAvatar" class="img-custom-fundo">
                         <img class="img-custom" src="../../imgs/lapis.svg" alt="Imagem-custom">
                     </button>
                     <div class="pl-titles">
                         <div class="pl-custom-name">
-                            <h1 class="pl-nome">Playlist #1</h1><button class="custom-name infos-pl">
+                            <h1 id="playlistNome" class="pl-nome"></h1><button class="custom-name infos-pl">
                                 <div class="custom-img-name-fundo"><img class="custom-img-name"
                                         src="../../imgs/lapis-fill.svg" alt="privacidade">
                                 </div>
@@ -230,6 +229,7 @@
         <audio src=""></audio>
     </div>
     <script src="../js/playlist.js"></script>
+    <script src="../js/Conta.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

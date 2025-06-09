@@ -73,9 +73,10 @@ else if (janelaAtual === 'entre.html') {
 }
 
 else if (janelaAtual === 'livraria.html') {
+    // LISTAR PLAYLISTS
     document.addEventListener('DOMContentLoaded', async () => {
         try {
-            const response = await fetch('http://localhost:4000/playlist');
+            const response = await fetch('http://localhost:4000/playlist/usuario/' + usuarioLogado.id);
             const playlists = await response.json();
 
             if (response.status === 200) {
@@ -88,7 +89,10 @@ else if (janelaAtual === 'livraria.html') {
                         playlist.avatar = '../../imgs/playlist.png';
                     }
 
-                    playlistItem.id = `playlist-${playlist.id}`;
+                    playlistItem.addEventListener('click', () => {
+                        window.location.href = `./playlist.html?id=${playlist.id}`;
+                    })
+                    playlistItem.setAttribute('data-id', playlist.id);
                     playlistItem.className = 'card-liv';
                     playlistItem.innerHTML = `
                         <img src="${playlist.avatar}" class="playlistAvatar">
@@ -137,4 +141,30 @@ else if (janelaAtual === 'livraria.html') {
 }
 
 else if (janelaAtual === 'playlist.html') {
+    const playlistId = new URLSearchParams(window.location.search).get('id');
+    
+    document.addEventListener('DOMContentLoaded', async () => {
+        try {
+            const response = await fetch(`http://localhost:4000/playlist/${playlistId}`);
+            let playlist = await response.json();
+            console.log(playlist)
+
+            if (playlist.avatar == null) {
+                playlist.avatar = 'url(../../imgs/playlist.png)';
+            }
+
+            // ATUALIZAR DADOS DA PLAYLIST
+            if (response.status === 200) {
+                document.getElementById('playlistNome').textContent = playlist.nome;
+                document.getElementById('playlistAvatar').style.backgroundImage = `url(${playlist.avatar})`;
+            } else {
+                alert(playlist.error || 'Erro ao carregar playlist');
+            }
+        } catch (error) {
+            alert('Erro de conexão com o servidor');
+            console.error(error);
+        }
+    })
+
+
 }

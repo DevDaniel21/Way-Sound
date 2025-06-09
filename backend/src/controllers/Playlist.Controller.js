@@ -44,15 +44,26 @@ class PlaylistController {
     }
 
     async show(req, res) {
-        const { usuario_id } = req.params
+        const { playlistID } = req.params
         try {
-            const playlist = await Playlist.findOne({ where: { usuario_id } })
+            const playlist = await Playlist.findOne({ where: { id: playlistID } })
             if (!playlist) {
                 return res.status(404).json({ error: 'Playlist não encontrado' })
             }
             return res.status(200).json(playlist)
         } catch (error) {
             return res.status(500).json({ error: 'Erro ao buscar playlist' })
+        }
+    }
+
+    async showByUsuario(req, res) {
+        const { usuarioID } = req.params;
+
+        try {
+            const playlists = await Playlist.findAll({ where: { usuario_id: usuarioID } });
+            return res.status(200).json(playlists);
+        } catch (error) {
+            return res.status(500).json({ error: 'Erro ao listar playlists do usuário' });
         }
     }
 

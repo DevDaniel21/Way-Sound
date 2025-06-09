@@ -326,6 +326,7 @@ main::-webkit-scrollbar-thumb:hover {
 
 .img-custom-fundo {
   background-color: var(--purple);
+  background-size: cover;
   border-radius: 20px;
   height: 230px;
   width: 230px;
