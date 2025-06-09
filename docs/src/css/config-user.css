@@ -249,7 +249,6 @@
     background-color: var(--black-light);
     color: var(--purple);
     font-weight: bold;
-    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -270,7 +269,6 @@
     background-color: var(--black-light);
     color: red;
     font-weight: bold;
-    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -326,7 +324,6 @@
     background-color: var(--purple);
     color: var(--purple-light);
     font-weight: bold;
-    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -340,4 +337,86 @@
 .btn-save:hover {
     background-color: var(--purple-dark-active);
     transition: var(--transition-1);
+}
+
+@media (max-width: 768px) {
+    .title-user-config {
+        font-size: var(--fs-24);
+        padding-top: 30px;
+    }
+
+    .user-config {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        gap: 30px;
+    }
+
+    .img-config {
+        width: 70%;
+        padding: 10px;
+    }
+
+    .input-config {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .email-input {
+        order: 1;
+    }
+
+    .telefone-input {
+        order: 2;
+    }
+
+    .input-container {
+        gap: 3px;
+    }
+
+    .config-title {
+        font-size: var(--fs-20);
+    }
+
+    .input-config-user {
+        font-size: var(--fs-14);
+        padding: 8px;
+    }
+
+    .btn-del,
+    .cc-btn,
+    .ex-btn,
+    .btn-save {
+        font-size: var(--fs-14);
+        height: 35px;
+    }
+
+    .text-send {
+        font-size: var(--fs-14);
+        width: 100%;
+        text-align: center;
+    }
+
+    #profile-container,
+    #profile-img,
+    .profile-img-fundo {
+        width: 100px;
+        height: 100px;
+    }
+
+    #upload-btn {
+        width: 100px;
+        height: 100px;
+    }
+
+    .playerDisplay {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .playerMusic-text p {
+        font-size: var(--fs-14);
+    }
 }
