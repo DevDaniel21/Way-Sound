@@ -1,36 +1,37 @@
 import Playlist from "../models/Playlist.js"
 import Usuario from "../models/Usuario.js"
+import Musica from "../models/Musica.js"
 
 class PlaylistController {
     async store(req, res) {
-    const { usuarioId } = req.body; 
+        const { usuarioId } = req.body; 
 
-    try {
-        // 1) valida usuário
-        const usuario = await Usuario.findByPk(usuarioId);
-        if (!usuario) {
-        return res.status(404).json({ error: 'Usuário não encontrado' });
+        try {
+            // 1) valida usuário
+            const usuario = await Usuario.findByPk(usuarioId);
+            if (!usuario) {
+            return res.status(404).json({ error: 'Usuário não encontrado' });
+            }
+
+            // 2) busca todas as playlists
+            const playlists = await Playlist.findAll({
+            where: { usuario_id: usuarioId }  // ou usuarioId, se tiver mapeado
+            });
+
+            // 3) cria nova playlist
+            const novaPlaylist = await Playlist.create({
+            nome: `Playlist nº ${playlists.length + 1}`,
+            descricao: null,
+            avatar: null,
+            usuario_id: usuarioId
+            });
+
+            return res.status(201).json(novaPlaylist);
+
+        } catch (error) {
+            console.error('Erro ao criar playlist:', error);
+            return res.status(500).json({ error: 'Erro ao criar playlist' });
         }
-
-        // 2) busca todas as playlists
-        const playlists = await Playlist.findAll({
-        where: { usuario_id: usuarioId }  // ou usuarioId, se tiver mapeado
-        });
-
-        // 3) cria nova playlist
-        const novaPlaylist = await Playlist.create({
-        nome: `Playlist nº ${playlists.length + 1}`,
-        descricao: null,
-        avatar: null,
-        usuario_id: usuarioId
-        });
-
-        return res.status(201).json(novaPlaylist);
-
-    } catch (error) {
-        console.error('Erro ao criar playlist:', error);
-        return res.status(500).json({ error: 'Erro ao criar playlist' });
-    }
     }
 
     async index(req, res) {
@@ -67,31 +68,56 @@ class PlaylistController {
         }
     }
 
-    async update(req, res) {
-        const { nome } = req.params
-        const { descricao, avatar } = req.body
+    async showMusicas(req, res) {
+        const { playlistID } = req.params
+    
         try {
-            const playlist = await Playlist.findOne({ where: { nome } })
-            console.log(email)
+            const playlist = await Playlist.findByPk(playlistID, {
+                include: {
+                    model: Musica,
+                    through: { attributes: [] } // remove colunas da tabela intermediária da resposta
+                }
+            })
+    
             if (!playlist) {
-                return res.status(404).json({ error: 'Playlist não encontrado' })
+                return res.status(404).json({ error: 'Playlist não encontrada' })
             }
-            playlist.nome = nome || playlist.nome
-            playlist.descricao = descricao || playlist.descricao
-            playlist.avatar = avatar || playlist.avatar
-            await playlist.save()
-            return res.status(200).json(playlist)
+    
+            return res.status(200).json(playlist.Musicas) // ou playlist.musicas
         } catch (error) {
+            return res.status(500).json({ error: 'Erro ao buscar músicas da playlist' })
+        }
+    }
+
+    async update(req, res) {
+        const { id } = req.params
+        const { nome, avatar } = req.body
+    
+        try {
+            const [updated] = await Playlist.update(
+                { nome, avatar },
+                { where: { id } }
+            )
+    
+            if (updated === 0) {
+                return res.status(404).json({ error: 'Playlist não encontrada' })
+            }
+    
+            const playlistAtualizada = await Playlist.findByPk(id)
+            return res.status(200).json(playlistAtualizada)
+        } catch (error) {
+            console.error('Erro ao atualizar playlist:', error)
             return res.status(500).json({ error: 'Erro ao atualizar playlist' })
         }
     }
+    
 
     async delete(req, res) {
         const { id } = req.params
         try {
             const playlist = await Playlist.findByPk(id)
             if (!playlist) {
-                return res.status(404).json({ error: 'Playlist não encontrado' })
+                return res.status(404).json({ error: 'Playlist não encontrada' })
             }
             await playlist.destroy()
             return res.status(204).send()

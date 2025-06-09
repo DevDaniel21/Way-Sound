@@ -388,6 +388,9 @@ main::-webkit-scrollbar-thumb:hover {
   font-size: 55px;
   font-weight: var(--fw-extrabold);
   color: var(--white-light);
+  width: 80%;
+  background-color: unset;
+  border: unset;
 }
 
 .infos-pl {

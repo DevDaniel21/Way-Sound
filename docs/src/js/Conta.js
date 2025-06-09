@@ -127,7 +127,7 @@ else if (janelaAtual === 'livraria.html') {
                 if (response.status === 201) {
                     alert('Playlist criada com sucesso!');
                     document.getElementById('playlistForm').reset();
-                    // window.location.href = '';
+                    window.location.href = './playlist.html?id=' + data.id;
                     } else {
                         alert(data.error || 'Erro ao criar playlist');
                     }
@@ -144,19 +144,16 @@ else if (janelaAtual === 'playlist.html') {
     const playlistId = new URLSearchParams(window.location.search).get('id');
     
     document.addEventListener('DOMContentLoaded', async () => {
+        // CARREGAR PLAYLIST
         try {
             const response = await fetch(`http://localhost:4000/playlist/${playlistId}`);
             let playlist = await response.json();
-            console.log(playlist)
 
-            if (playlist.avatar == null) {
-                playlist.avatar = 'url(../../imgs/playlist.png)';
-            }
-
-            // ATUALIZAR DADOS DA PLAYLIST
             if (response.status === 200) {
-                document.getElementById('playlistNome').textContent = playlist.nome;
+                // CARREGAR DADOS DA PLAYLIST
+                document.getElementById('playlistNome').placeholder = playlist.nome;
                 document.getElementById('playlistAvatar').style.backgroundImage = `url(${playlist.avatar})`;
+
             } else {
                 alert(playlist.error || 'Erro ao carregar playlist');
             }
@@ -164,7 +161,61 @@ else if (janelaAtual === 'playlist.html') {
             alert('Erro de conexão com o servidor');
             console.error(error);
         }
+
+        // MOSTRAR A QUANTIDADE DE MÚSICAS NA PLAYLIST
+        try {
+            const response = await fetch(`http://localhost:4000/playlist/${playlistId}/musicas`);
+            let musicas = await response.json();
+
+            // ATUALIZAR DADOS DA PLAYLIST
+            if (response.status === 200) {
+                document.getElementById('totalMusicas').textContent = musicas.length + ' músicas';
+            } else {
+                alert(musicas.error || 'Erro ao carregar musicas');
+            }
+        } catch (error) {
+            alert('Erro de conexão com o servidor');
+            console.error(error);
+        }
+
+        // ATUALIZAR NOME DA PLAYLIST
+        // HABILITAR EDIÇÃO DO NOME DA PLAYLIST
+        document.getElementById('habilitarEdicao').addEventListener('click', async () => {
+            const inputDesabilitado = document.getElementById('playlistNome').disabled;
+
+            if (inputDesabilitado == true) {
+                document.getElementById('playlistNome').disabled = false;
+                document.getElementById('playlistNome').focus();
+            } else {
+                // SALVA EDIÇÕES
+                try {
+                    const nome = document.getElementById('playlistNome').value;
+                    let avatar = document.getElementById('avatar').getAttribute('src');
+
+                    if (avatar === '../../imgs/lapis.svg') {
+                        avatar = '';   
+                    }
+                    console.log(avatar)
+                    
+                    const response = await fetch(`http://localhost:4000/playlist/${playlistId}`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ nome, avatar })
+                    });
+
+                    const data = await response.json();
+                    if (response.status === 200) {
+                        alert('Playlist atualizada com sucesso!');
+                        window.location.reload();
+                    } else {
+                        alert(data.error || 'Erro ao atualizar playlist');
+                    }
+                } catch (error) {
+                    alert('Erro de conexão com o servidor');
+                    console.error(error);
+                }
+            }
+        })
+        // ADICIONAR MÚSICA NA PLAYLIST
     })
-
-
 }

@@ -105,20 +105,20 @@
             <div class="playlist-viewer">
                 <div class="playlist-header">
                     <button id="playlistAvatar" class="img-custom-fundo">
-                        <img class="img-custom" src="../../imgs/lapis.svg" alt="Imagem-custom">
+                        <img id="avatar" class="img-custom" src="../../imgs/lapis.svg" alt="Imagem-custom">
                     </button>
                     <div class="pl-titles">
                         <div class="pl-custom-name">
-                            <h1 id="playlistNome" class="pl-nome"></h1><button class="custom-name infos-pl">
-                                <div class="custom-img-name-fundo"><img class="custom-img-name"
-                                        src="../../imgs/lapis-fill.svg" alt="privacidade">
+                            <input type="text" id="playlistNome" placeholder="" class="pl-nome" disabled>
+                            <button id="habilitarEdicao" class="custom-name infos-pl">
+                                <div class="custom-img-name-fundo">
+                                    <img class="custom-img-name" src="../../imgs/lapis-fill.svg" alt="privacidade">
                                 </div>
                             </button>
-
                         </div>
 
                         <div class="pl-info">
-                            <h2 class="N-mus-album infos-pl">X músicas</h2>
+                            <h2 id="totalMusicas" class="N-mus-album infos-pl"> músicas</h2>
                         </div>
                     </div>
                 </div>
