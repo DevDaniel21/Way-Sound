@@ -1,224 +1,352 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WaySound</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/player.css" />
+        <link rel="stylesheet" href="../css/planos.css" />
+        <!-- FONTE -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaySound</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/player.css">
-    <link rel="stylesheet" href="../css/planos.css">
-    <!-- FONTE -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+        <!-- ICONE -->
+        <link
+            rel="shortcut icon"
+            href="../../imgs/logo-p-comfundo.png"
+            type="image/x-icon"
+        />
+    </head>
 
-     <!-- ICONE -->
-    <link rel="shortcut icon" href="../../imgs/logo-p-comfundo.png" type="image/x-icon">
-
-</head>
-
-<body>
-    <div class="container" id="container">
-        <header>
-            <div class="perfil" id="perfilIcon">
-                <img src="../../imgs/perfil.svg" class="icone-perf" id="perfilImg">
-                <div class="perfil-links" id="perfilLinks">
-                    <a href="config-user_comercial.html" class="perfil-link">Configurações</a>
-                    <a href="../../index.html" class="perfil-link">Sair</a>
+    <body>
+        <div class="container" id="container">
+            <header>
+                <div class="perfil" id="perfilIcon">
+                    <img
+                        src="../../imgs/perfil.svg"
+                        class="icone-perf"
+                        id="perfilImg"
+                    />
+                    <div class="perfil-links" id="perfilLinks">
+                        <a href="config-user_comercial.html" class="perfil-link"
+                            >Configurações</a
+                        >
+                        <a href="../../index.html" class="perfil-link">Sair</a>
+                    </div>
                 </div>
-            </div>
-        </header>
-        <aside>
-            <a href="sobre.html" style="display: flex; flex-direction: column; align-items: end;">
-                <picture>
-                    <source media="(max-width: 600px)" srcset="../../imgs/logo-pequena.png">
-                    <source media="(max-width: 1024px)" srcset="../../imgs/logos/logo-media.png">
-                    <img src="../../imgs/logos/logo-grande.png" class="logo-responsiva">
-                </picture>
-                <span style="font-size: 20px; font-weight: 600; position: absolute; margin-top: 80px; rotate: -5deg; color: #b38aef; text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.700);">Conta Comercial</span>
-            </a>
+            </header>
+            <aside>
+                <a
+                    href="sobre.html"
+                    style="
+                        display: flex;
+                        flex-direction: column;
+                        align-items: end;
+                    "
+                >
+                    <picture>
+                        <source
+                            media="(max-width: 600px)"
+                            srcset="../../imgs/logo-pequena.png"
+                        />
+                        <source
+                            media="(max-width: 1024px)"
+                            srcset="../../imgs/logos/logo-media.png"
+                        />
+                        <img
+                            src="../../imgs/logos/logo-grande.png"
+                            class="logo-responsiva"
+                        />
+                    </picture>
+                    <span
+                        style="
+                            font-size: 20px;
+                            font-weight: 600;
+                            position: absolute;
+                            margin-top: 80px;
+                            rotate: -5deg;
+                            color: #b38aef;
+                            text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7);
+                        "
+                        >Conta Comercial</span
+                    >
+                </a>
 
-            <ul class="list">
-                <li class="list-item">
-                    <button class="list-button">
-                        <a href="../../src/html/exemplo_comercial.html" class="list-link">
-                        <img src="../../imgs/Home.svg" class="icone">Início
-                        </a>
-                    </button>
-                </li>
-                
-                <li class="list-item">
-                    <button class="list-button">
-                        <a href="../html/pesquisa_comercial.html" class="list-link">
-                        <img src="../../imgs/Pesquisar.svg" class="icone">Pesquisar
-                        </a>
-                    </button>
-                </li>
-                
-                <li class="list-item playLibrary">
-                    <button class="list-button">
-                        <a href="playlist.html" class="list-link">
-                        <img src="../../imgs/playlists.svg" class="icone">
-                        </a>
-                    </button>
-                </li>
-                
-                <li class="list-item list-playlist">
-                    <p>Playlists</p>
-                    <hr>
-                </li>
-                
-                <li class="list-item conta-list">
-                    <button class="list-button">
-                        <a href="index.html" class="list-link">
-                        <img src="../../imgs/perfil.svg" class="icone">
-                        </a>
-                    </button>
-                </li>
-                
-                <li class="list-item playlist-add">
-                    <button class="list-button">
-                        <a href="../../src/html/livraria_comercial.html" class="list-link">
-                        <img src="../../imgs/adcionar.svg" class="icone">Criar playlist
-                        </a>
-                    </button>
-                </li>
-                
-                <li class="list-item list-playlist">
-                    <p>Publicar</p>
-                    <hr>
-                </li>
-                
-                <li class="list-item playlist-add">
-                    <button class="list-button">
-                        <a href="publicacoes.html" class="list-link">
-                        <img src="../../imgs/adcionar.svg" class="icone">Adicionar música
-                        </a>
-                    </button>
-                </li>
-            </ul>
-        </aside>
-        <main>
-            <article class="artistas">
-                <h1>Artistas em alta</h1>
-                <ul class="artistas-list">
-                    <!-- <ion-icon name="play" class="artistas-card-play"></ion-icon> -->
-                    <li class="artistas-card">
-                        <figure style="background-image: url(https://portalperifacon.com/wp-content/uploads/2024/09/imagem-2-1.jpg);" class="artistas-card-img"></figure>
-                        <p class="artistas-card-titulo">Tupac</p>
-                        <p class="artistas-card-subtitulo">Artista</p>
+                <ul class="list">
+                    <li class="list-item">
+                        <button class="list-button">
+                            <a
+                                href="../../src/html/exemplo_comercial.html"
+                                class="list-link"
+                            >
+                                <img
+                                    src="../../imgs/Home.svg"
+                                    class="icone"
+                                />Início
+                            </a>
+                        </button>
                     </li>
-                    <li class="artistas-card">
-                        <figure style="background-image: url(https://yt3.googleusercontent.com/pJorPo6qJ22X0ZBYI40JBW3P7tMyC4N3cAUZyNC07GPwx2bKcRsqUqzEhFD6V3Oax2bam13YIg=s900-c-k-c0x00ffffff-no-rj);" class="artistas-card-img"></figure>
-                        <p class="artistas-card-titulo">Isadora Pompeo</p>
-                        <p class="artistas-card-subtitulo">Artista</p>
+
+                    <li class="list-item">
+                        <button class="list-button">
+                            <a
+                                href="../html/pesquisa_comercial.html"
+                                class="list-link"
+                            >
+                                <img
+                                    src="../../imgs/Pesquisar.svg"
+                                    class="icone"
+                                />Pesquisar
+                            </a>
+                        </button>
                     </li>
-                    <li class="artistas-card">
-                        <figure style="background-image: url(https://www.jambase.com/wp-content/uploads/2023/01/panchiko.png);" class="artistas-card-img"></figure>
-                        <p class="artistas-card-titulo">Panchiko</p>
-                        <p class="artistas-card-subtitulo">Banda</p>
+
+                    <li class="list-item playLibrary">
+                        <button class="list-button">
+                            <a href="playlist.html" class="list-link">
+                                <img
+                                    src="../../imgs/playlists.svg"
+                                    class="icone"
+                                />
+                            </a>
+                        </button>
                     </li>
-                    <li class="artistas-card">
-                        <figure style="background-image: url(https://i.scdn.co/image/dd031b9c5d1b6eba4a691cd89c954255aae787f2);" class="artistas-card-img"></figure>
-                        <p class="artistas-card-titulo">50 cent</p>
-                        <p class="artistas-card-subtitulo">Artista</p>
+
+                    <li class="list-item list-playlist">
+                        <p>Playlists</p>
+                        <hr />
                     </li>
-                    <li class="artistas-card">
-                        <figure style="background-image: url(https://yt3.googleusercontent.com/uMN1cJrCTrxqooWElNv5LRQlPpLpK_p9QoYzJpOCxdUdbcQSA2lRkttVWvLfT66x1FiGnwoO9Q=s900-c-k-c0x00ffffff-no-rj);" class="artistas-card-img"></figure>
-                        <p class="artistas-card-titulo">VMZ</p>
-                        <p class="artistas-card-subtitulo">Artista</p>
+
+                    <li class="list-item conta-list">
+                        <button class="list-button">
+                            <a href="index.html" class="list-link">
+                                <img
+                                    src="../../imgs/perfil.svg"
+                                    class="icone"
+                                />
+                            </a>
+                        </button>
+                    </li>
+
+                    <li class="list-item playlist-add">
+                        <button class="list-button">
+                            <a
+                                href="../../src/html/livraria_comercial.html"
+                                class="list-link"
+                            >
+                                <img
+                                    src="../../imgs/adcionar.svg"
+                                    class="icone"
+                                />Criar playlist
+                            </a>
+                        </button>
+                    </li>
+
+                    <li class="list-item list-playlist">
+                        <p>Publicar</p>
+                        <hr />
+                    </li>
+
+                    <li class="list-item playlist-add">
+                        <button class="list-button">
+                            <a href="publicacoes.html" class="list-link">
+                                <img
+                                    src="../../imgs/adcionar.svg"
+                                    class="icone"
+                                />Adicionar música
+                            </a>
+                        </button>
                     </li>
                 </ul>
-            </article>
+            </aside>
+            <main>
+                <article class="artistas">
+                    <h1>Artistas em alta</h1>
+                    <ul class="artistas-list">
+                        <!-- <ion-icon name="play" class="artistas-card-play"></ion-icon> -->
+                        <li class="artistas-card">
+                            <figure
+                                style="
+                                    background-image: url(https://portalperifacon.com/wp-content/uploads/2024/09/imagem-2-1.jpg);
+                                "
+                                class="artistas-card-img"
+                            ></figure>
+                            <p class="artistas-card-titulo">Tupac</p>
+                            <p class="artistas-card-subtitulo">Artista</p>
+                        </li>
+                        <li class="artistas-card">
+                            <figure
+                                style="
+                                    background-image: url(https://yt3.googleusercontent.com/pJorPo6qJ22X0ZBYI40JBW3P7tMyC4N3cAUZyNC07GPwx2bKcRsqUqzEhFD6V3Oax2bam13YIg=s900-c-k-c0x00ffffff-no-rj);
+                                "
+                                class="artistas-card-img"
+                            ></figure>
+                            <p class="artistas-card-titulo">Isadora Pompeo</p>
+                            <p class="artistas-card-subtitulo">Artista</p>
+                        </li>
+                        <li class="artistas-card">
+                            <figure
+                                style="
+                                    background-image: url(https://www.jambase.com/wp-content/uploads/2023/01/panchiko.png);
+                                "
+                                class="artistas-card-img"
+                            ></figure>
+                            <p class="artistas-card-titulo">Panchiko</p>
+                            <p class="artistas-card-subtitulo">Banda</p>
+                        </li>
+                        <li class="artistas-card">
+                            <figure
+                                style="
+                                    background-image: url(https://i.scdn.co/image/dd031b9c5d1b6eba4a691cd89c954255aae787f2);
+                                "
+                                class="artistas-card-img"
+                            ></figure>
+                            <p class="artistas-card-titulo">50 cent</p>
+                            <p class="artistas-card-subtitulo">Artista</p>
+                        </li>
+                        <li class="artistas-card">
+                            <figure
+                                style="
+                                    background-image: url(https://yt3.googleusercontent.com/uMN1cJrCTrxqooWElNv5LRQlPpLpK_p9QoYzJpOCxdUdbcQSA2lRkttVWvLfT66x1FiGnwoO9Q=s900-c-k-c0x00ffffff-no-rj);
+                                "
+                                class="artistas-card-img"
+                            ></figure>
+                            <p class="artistas-card-titulo">VMZ</p>
+                            <p class="artistas-card-subtitulo">Artista</p>
+                        </li>
+                    </ul>
+                </article>
 
-            <article class="musicas">
-                <h2>Musicas em alta</h2>
-                <ul class="musicas-list">
-                    <!-- <ion-icon name="play" class="artistas-card-play"></ion-icon> -->
-                    <li class="musicas-card">
-                        <figure style="background-image: url(https://i.ytimg.com/vi/2csOMGFFgJ0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB11nm0Cnjt67qYxpdyTaTcifsdow);" class="musicas-card-img">
-                        </figure>
-                        <p class="musicas-card-titulo">Denial is a river</p>
-                        <p class="musicas-card-subtitulo">Doechii</p>
-                    </li>
-                    <li class="musicas-card">
-                        <figure style="background-image: url(https://i.scdn.co/image/ab67616d0000b273b95ec67486445b1c81e55b32);" class="musicas-card-img">
-                        </figure>
-                        <p class="musicas-card-titulo">Resenha do arrocha</p>
-                        <p class="musicas-card-subtitulo">J. Eskine</p>
-                    </li>
-                    <li class="musicas-card">
-                        <figure style="background-image: url(https://akamai.sscdn.co/letras/360x360/albuns/f/7/d/c/2475161734385435.jpg);" class="musicas-card-img">
-                        </figure>
-                        <p class="musicas-card-titulo">Última noite</p>
-                        <p class="musicas-card-subtitulo">Léo Foguete</p>
-                    </li>
-                    <li class="musicas-card">
-                        <figure style="background-image: url(https://cdn-images.dzcdn.net/images/cover/5dc1617ec4b0aae08e259139fa616df6/0x1900-000000-80-0-0.jpg);" class="musicas-card-img">
-                        </figure>
-                        <p class="musicas-card-titulo">Oh garota eu qu...</p>
-                        <p class="musicas-card-subtitulo">Oruam, Zé Felipe, MC Rodrigo do CN, MC Tuto</p>
-                    </li>
-                    <li class="musicas-card">
-                        <figure style="background-image: url(https://i.scdn.co/image/ab67616d0000b273ebdb1b9e90bc232b97a48410);" class="musicas-card-img">
-                        </figure>
-                        <p class="musicas-card-titulo">Coração partido</p>
-                        <p class="musicas-card-subtitulo">Grupo Menos é Mais</p>
-                    </li>
-                </ul>
-            </article>
+                <article class="musicas">
+                    <h2>Musicas em alta</h2>
+                    <ul class="musicas-list">
+                        <!-- <ion-icon name="play" class="artistas-card-play"></ion-icon> -->
+                        <li class="musicas-card">
+                            <figure
+                                style="
+                                    background-image: url(https://i.ytimg.com/vi/2csOMGFFgJ0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB11nm0Cnjt67qYxpdyTaTcifsdow);
+                                "
+                                class="musicas-card-img"
+                            ></figure>
+                            <p class="musicas-card-titulo">Denial is a river</p>
+                            <p class="musicas-card-subtitulo">Doechii</p>
+                        </li>
+                        <li class="musicas-card">
+                            <figure
+                                style="
+                                    background-image: url(https://i.scdn.co/image/ab67616d0000b273b95ec67486445b1c81e55b32);
+                                "
+                                class="musicas-card-img"
+                            ></figure>
+                            <p class="musicas-card-titulo">
+                                Resenha do arrocha
+                            </p>
+                            <p class="musicas-card-subtitulo">J. Eskine</p>
+                        </li>
+                        <li class="musicas-card">
+                            <figure
+                                style="
+                                    background-image: url(https://akamai.sscdn.co/letras/360x360/albuns/f/7/d/c/2475161734385435.jpg);
+                                "
+                                class="musicas-card-img"
+                            ></figure>
+                            <p class="musicas-card-titulo">Última noite</p>
+                            <p class="musicas-card-subtitulo">Léo Foguete</p>
+                        </li>
+                        <li class="musicas-card">
+                            <figure
+                                style="
+                                    background-image: url(https://cdn-images.dzcdn.net/images/cover/5dc1617ec4b0aae08e259139fa616df6/0x1900-000000-80-0-0.jpg);
+                                "
+                                class="musicas-card-img"
+                            ></figure>
+                            <p class="musicas-card-titulo">
+                                Oh garota eu qu...
+                            </p>
+                            <p class="musicas-card-subtitulo">
+                                Oruam, Zé Felipe, MC Rodrigo do CN, MC Tuto
+                            </p>
+                        </li>
+                        <li class="musicas-card">
+                            <figure
+                                style="
+                                    background-image: url(https://i.scdn.co/image/ab67616d0000b273ebdb1b9e90bc232b97a48410);
+                                "
+                                class="musicas-card-img"
+                            ></figure>
+                            <p class="musicas-card-titulo">Coração partido</p>
+                            <p class="musicas-card-subtitulo">
+                                Grupo Menos é Mais
+                            </p>
+                        </li>
+                    </ul>
+                </article>
 
-            
-            <footer>
-                <div class="footer-links">
-                    <p class="footer-links-titulo">Empresa</p>
-                    <a href="sobre.html" class="footer-links-link">Sobre</a>
+                <footer>
+                    <div class="footer-links">
+                        <p class="footer-links-titulo">Empresa</p>
+                        <a href="sobre.html" class="footer-links-link">Sobre</a>
+                    </div>
+
+                    <div class="footer-copyright">
+                        Copyright &copy 2025 Way Sound
+                    </div>
+                </footer>
+            </main>
+            <div class="playerDisplay">
+                <div class="playerMusic">
+                    <figure class="playerIcon esqueleto"></figure>
+                    <div class="playerMusic-text">
+                        <p class="playerMusic-titulo esqueleto"></p>
+                        <p class="playerMusic-subtitulo esqueleto"></p>
+                    </div>
                 </div>
-                
-                <div class="footer-copyright">
-                    Copyright &copy 2025 Way Sound
+                <div class="playPainel">
+                    <div class="playerControl">
+                        <!-- VOLTAR -->
+                        <a class="player" id="skipBack"
+                            ><ion-icon name="play-back"></ion-icon
+                        ></a>
+                        <!-- PAUSE -->
+                        <a class="player" id="pause" style="display: none"
+                            ><ion-icon name="pause"></ion-icon
+                        ></a>
+                        <!-- PLAY -->
+                        <a class="player" id="play"
+                            ><ion-icon name="play"></ion-icon
+                        ></a>
+                        <!-- AVANCAR -->
+                        <a class="player" id="skipForward"
+                            ><ion-icon name="play-forward"></ion-icon
+                        ></a>
+                    </div>
+
+                    <div class="playerTime">
+                        <p>00:00</p>
+                        <hr />
+                        <p>00:00</p>
+                    </div>
                 </div>
-            </footer>
-        </main>
-        <div class="playerDisplay">
-            <div class="playerMusic">
-                <figure class="playerIcon esqueleto"></figure>
-                <div class="playerMusic-text">
-                    <p class="playerMusic-titulo esqueleto"></p>
-                    <p class="playerMusic-subtitulo esqueleto"></p>
-                </div>
+                <div class="playerVolume"></div>
             </div>
-            <div class="playPainel">
-                <div class="playerControl">
-                    <!-- VOLTAR -->
-                    <a class="player" id="skipBack"><ion-icon name="play-back"></ion-icon></a>
-                    <!-- PAUSE -->
-                    <a class="player" id="pause" style="display: none;"><ion-icon name="pause"></ion-icon></a>
-                    <!-- PLAY -->
-                    <a class="player" id="play"><ion-icon name="play"></ion-icon></a>
-                    <!-- AVANCAR -->
-                    <a class="player" id="skipForward"><ion-icon name="play-forward"></ion-icon></a>
-                </div>
 
-                <div class="playerTime">
-                    <p>00:00</p>
-                    <hr>
-                    <p>00:00</p>
-                </div>
-            </div>
-            <div class="playerVolume"></div>
+            <audio src=""></audio>
         </div>
 
-
-        <audio src=""></audio>
-    </div>
-
-    <script src="../js/main.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</body>
-
+        <script src="../js/Conta.js"></script>
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+        ></script>
+    </body>
 </html>

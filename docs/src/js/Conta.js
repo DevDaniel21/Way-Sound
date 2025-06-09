@@ -1,6 +1,40 @@
 const janelaAtual = window.location.pathname.split('/').pop();
 const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
 
+// DROPDOWN PERFIL
+if (document.getElementById("perfilIcon")) {
+    const perfilLinks = document.getElementById("perfilLinks");
+    const perfilIcon = document.getElementById("perfilIcon");
+    
+    document.getElementById("perfilIcon").addEventListener("click", function () {
+        if (perfilLinks.style.display === "block") {
+            perfilLinks.style.display = "none";
+        } else {
+            perfilLinks.style.display = "block";
+        }
+    })
+    
+    // FECHAR O DROPDOWN AO CLICAR FORA
+    document.addEventListener("click", function (event) {
+        const isClickInside =
+          perfilIcon.contains(event.target) || perfilLinks.contains(event.target);
+      
+        if (!isClickInside) {
+          perfilLinks.style.display = "none";
+        }
+    })
+    
+    // OPÇÃO PARA SAIR DA CONTA
+    document.querySelectorAll('.sairConta').forEach((e) => {
+        if (e.innerHTML == 'Sair') {
+            e.addEventListener('click', () => {
+                localStorage.removeItem('usuarioLogado');
+                window.location.href = '../../index.html';
+            });
+        }
+    })
+}
+
 // CADASTRAR USUÁRIO
 if (janelaAtual === 'registro.html') {
     document.addEventListener('DOMContentLoaded', () => { 
