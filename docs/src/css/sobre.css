@@ -62,11 +62,13 @@ img {
 }
 
 .sobre-descricao {
+    margin-top: 30px;
     max-width: 900px;
     border-radius: 50px;
     padding: 0 10px;
     padding-bottom: 40px;
     background-color: var(--black-dark-active);
+    line-height: 1.5;
 }
 
 .sobre-titulo {
@@ -127,20 +129,24 @@ img {
     margin-top: 2.8em;
     z-index: 1;
 }
+
 .sobre-daniel {
     transform: rotate(-10deg);
     margin-top: 1em;
     z-index: 2;
 }
+
 .sobre-ws > .sobre-card-foto {
     width: 80%;
     z-index: 3;
 }
+
 .sobre-cassio {
     transform: rotate(10deg);
     margin-top: 0.8em;
     z-index: 2;
 }
+
 .sobre-matheus {
     transform: rotate(22deg);
     margin-top: 2.8em;
@@ -163,6 +169,7 @@ img {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     position: absolute;
     overflow: hidden;
+    margin: 20px 20px 0 20px;
 }
 
 .botao-interativo:hover {
@@ -227,6 +234,7 @@ img {
     transform: translateY(-10px) scale(1.03);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    z-index: 10;
 }
 
 .sobre-rafael:hover {
@@ -363,7 +371,6 @@ img {
         opacity: 1;
     }
 }
-
 
 @keyframes zoomIn {
     from {
