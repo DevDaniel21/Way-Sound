@@ -101,11 +101,12 @@
                 <h1 class="titulo-livraria">Biblioteca</h1>
                 <ul class="artistas-list">
                     <li class="playlist-elemnt">
-                        <a href="playlist.html" class="card-liv">
+                        <a class="card-liv">
                             <div class="fundo-maiszinho"><span class="maiszinho">+</span></div>
-                            <p class="artistas-card-titulo">Criar playlist</p>
+                            <form action="#" id="playlistForm" method="POST"> <!-- action="playlist.html" method="post" -->
+                                <button type="submit" id="criarPlaylist" class="artistas-card-titulo">Criar playlist</button>
+                            </form>
                         </a>
-
                     </li>
                 </ul>
                 <h1 class="titulo-livraria">Albuns Salvos</h1>
@@ -113,9 +114,10 @@
                     <li class="playlist-elemnt">
                         <a href="album.html" class="card-liv">
                             <div class="fundo-maiszinho"><span class="maiszinho">+</span></div>
-                            <p class="artistas-card-titulo">Adicionar Album</p>
+                            <form id="albumForm"> <!-- action="album.html" method="post" -->
+                                <button type="submit" id="criarAlbum" class="artistas-card-titulo">Adicionar Album</button>
+                            </form>
                         </a>
-
                     </li>
                 </ul>
             </article>
@@ -163,6 +165,7 @@
 
         <audio src=""></audio>
     </div>
+    <script src="../js/Conta.js"></script>
     <script src="../js/livraria.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

@@ -19,5 +19,9 @@ export default class Playlist extends Model {
             foreignKey: 'playlist_id',
             otherKey: 'musica_id',
         })
+        this.belongsTo(models.Usuario, {
+            foreignKey: 'usuario_id',
+            as: 'usuario',
+        })
     }
 }
