@@ -1,82 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bem-vindo de volta ao WaySound</title>
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Fonte -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Ícone -->
+        <link
+            rel="shortcut icon"
+            href="../../imgs/logos/logo-p-comfundo.png"
+            type="image/x-icon"
+        />
+        <!-- CSS externo -->
+        <link rel="stylesheet" href="../css/entre.css" />
+        <style>
+            body {
+                font-family: "Poppins", sans-serif;
+            }
+        </style>
+    </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bem-vindo de volta ao WaySound</title>
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Fonte -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
-  <!-- Ícone -->
-  <link rel="shortcut icon" href="../../imgs/logos/logo-p-comfundo.png" type="image/x-icon" />
-  <!-- CSS externo -->
-  <link rel="stylesheet" href="../css/entre.css" />
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
-  </style>
-</head>
+    <body
+        class="text-[#784db9] min-h-screen flex items-center justify-center bg-cover bg-center"
+        style="background-image: url('../../imgs/bg-login.png')"
+    >
+        <div
+            class="flex flex-wrap w-[70vw] h-[60vh] rounded-2xl overflow-hidden shadow-lg"
+        >
+            <div
+                class="flex items-center justify-center w-1/2 bg-black relative"
+            >
+                <a
+                    href="../../index.html"
+                    class="absolute top-5 left-5 text-white text-lg font-bold hover:text-[#784db9] transition"
+                    >&lt; Voltar</a
+                >
+                <img
+                    src="../../imgs/logo-entrar.png"
+                    alt="Logo"
+                    class="w-3/5"
+                />
+            </div>
 
+            <div
+                class="flex flex-col items-center justify-center w-1/2 bg-[#fefefd] p-8"
+            >
+                <h1 class="text-3xl font-bold mb-8 text-[#784db9]">
+                    Entre no WaySound!
+                </h1>
 
-<body class="text-[#784db9] min-h-screen flex items-center justify-center bg-cover bg-center"
-  style="background-image: url('../../imgs/bg-login.png');">
-  <div class="flex flex-wrap w-[70vw] h-[60vh] rounded-2xl overflow-hidden shadow-lg">
-    <div class="flex items-center justify-center w-1/2 bg-black relative">
-      <a href="../../index.html"
-        class="absolute top-5 left-5 text-white text-lg font-bold hover:text-[#784db9] transition">&lt; Voltar</a>
-      <img src="../../imgs/logo-entrar.png" alt="Logo" class="w-3/5">
-    </div>
+                <form id="loginForm"
+                    class="flex flex-col items-center w-full max-w-md space-y-6"
+                >
+                    <div class="w-full">
+                        <label
+                            class="text-xl font-bold text-[#784db9] block mb-2"
+                            >Email</label
+                        >
+                        <input
+                            id="loginEmail"
+                            type="email"
+                            placeholder="Digite seu Email aqui"
+                            required
+                            class="w-full h-12 rounded-lg border-4 border-[#784db9] bg-gray-800 text-gray-200 px-4"
+                        />
+                    </div>
 
-    <div class="flex flex-col items-center justify-center w-1/2 bg-[#fefefd] p-8">
-      <h1 class="text-3xl font-bold mb-8 text-[#784db9]">Entre no WaySound!</h1>
+                    <div class="w-full">
+                        <label
+                            class="text-xl font-bold text-[#784db9] block mb-2"
+                            >Senha</label
+                        >
+                        <input
+                            id="loginSenha"
+                            type="password"
+                            placeholder="Digite sua Senha aqui"
+                            required
+                            class="w-full h-12 rounded-lg border-4 border-[#784db9] bg-gray-800 text-gray-200 px-4"
+                        />
+                    </div>
 
-      <form action="#" class="flex flex-col items-center w-full max-w-md space-y-6">
-        <div class="w-full">
-          <label class="text-xl font-bold text-[#784db9] block mb-2">Email</label>
-          <input type="email" placeholder="Digite seu Email aqui" required
-            class="w-full h-12 rounded-lg border-4 border-[#784db9] bg-gray-800 text-gray-200 px-4">
+                    <div class="flex flex-col items-center w-full mt-12">
+                        <!-- Botão Entrar -->
+                        <a href="exemplo.html" class="mb-6">
+                            <button
+                                type="submit"
+                                class="w-44 h-14 rounded-full border-4 border-gray-900 bg-[#784db9] text-white font-bold text-lg hover:bg-gray-800 hover:text-[#784db9] hover:border-[#784db9] transition"
+                            >
+                                Entrar
+                            </button>
+                        </a>
+
+                        <!-- Separador com texto -->
+                        <div
+                            class="flex items-center justify-center w-full gap-2"
+                        >
+                            <hr class="flex-1 border-gray-400" />
+                            <p
+                                class="text-sm font-semibold text-[#784db9] whitespace-nowrap"
+                            >
+                                ou registre-se agora!
+                            </p>
+                            <hr class="flex-1 border-gray-400" />
+                        </div>
+
+                        <!-- Botão Registre-se -->
+                        <a href="registro.html" class="mt-6">
+                            <button
+                                type="button"
+                                class="w-44 h-14 rounded-full border-4 border-[#784db9] bg-[#fbfbf8] text-[#784db9] font-bold text-lg hover:bg-[#784db9] hover:text-white hover:border-gray-900 transition"
+                            >
+                                Registre-se
+                            </button>
+                        </a>
+                    </div>
+                </form>
+            </div>
         </div>
-
-        <div class="w-full">
-          <label class="text-xl font-bold text-[#784db9] block mb-2">Senha</label>
-          <input type="password" placeholder="Digite sua Senha aqui" required
-            class="w-full h-12 rounded-lg border-4 border-[#784db9] bg-gray-800 text-gray-200 px-4">
-        </div>
-
-        <div class="flex flex-col items-center w-full mt-12">
-          <!-- Botão Entrar -->
-          <a href="exemplo.html" class="mb-6">
-            <button type="submit"
-              class="w-44 h-14 rounded-full border-4 border-gray-900 bg-[#784db9] text-white font-bold text-lg hover:bg-gray-800 hover:text-[#784db9] hover:border-[#784db9] transition">
-              Entrar
-            </button>
-          </a>
-
-          <!-- Separador com texto -->
-          <div class="flex items-center justify-center w-full gap-2">
-            <hr class="flex-1 border-gray-400">
-            <p class="text-sm font-semibold text-[#784db9] whitespace-nowrap">ou registre-se agora!</p>
-            <hr class="flex-1 border-gray-400">
-          </div>
-
-          <!-- Botão Registre-se -->
-          <a href="registro.html" class="mt-6">
-            <button type="button"
-              class="w-44 h-14 rounded-full border-4 border-[#784db9] bg-[#fbfbf8] text-[#784db9] font-bold text-lg hover:bg-[#784db9] hover:text-white hover:border-gray-900 transition">
-              Registre-se
-            </button>
-          </a>
-        </div>
-
-      </form>
-    </div>
-  </div>
-</body>
-
+        <script src="../js/Conta.js"></script>
+    </body>
 </html>

@@ -30,6 +30,10 @@ module.exports = {
                 type: Sequelize.DATE,
                 allowNull: false,
             },
+            usuarioId: {
+                type: DataTypes.INTEGER,
+                allowNull: false
+            }
         });
     },
 

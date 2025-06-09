@@ -1,15 +1,37 @@
 import Playlist from "../models/Playlist.js"
+import Usuario from "../models/Usuario.js"
 
 class PlaylistController {
     async store(req, res) {
-        const { nome, descricao, avatar } = req.body
-        try {
-            const playlist = await Playlist.create({ nome, descricao, avatar })
-            console.log(playlist)
-            return res.status(201).json(playlist)
-        } catch (error) {
-            return res.status(500).json({ error: 'Erro ao criar playlist' })
+    const { usuarioId } = req.body; 
+
+    try {
+        // 1) valida usuário
+        const usuario = await Usuario.findByPk(usuarioId);
+        if (!usuario) {
+        return res.status(404).json({ error: 'Usuário não encontrado' });
         }
+
+        // 2) busca todas as playlists (opcional, só pra log)
+        const playlists = await Playlist.findAll({
+        where: { usuario_id: usuarioId }  // ou usuarioId, se tiver mapeado
+        });
+        console.log('Playlists existentes:', playlists);
+
+        // 3) cria nova playlist
+        const novaPlaylist = await Playlist.create({
+        nome: null,
+        descricao: null,
+        avatar: null,
+        usuario_id: usuarioId   // ou usuarioId, se tiver mapeado
+        });
+
+        return res.status(201).json(novaPlaylist);
+
+    } catch (error) {
+        console.error('Erro ao criar playlist:', error);
+        return res.status(500).json({ error: 'Erro ao criar playlist' });
+    }
     }
 
     async index(req, res) {
@@ -23,9 +45,9 @@ class PlaylistController {
     }
 
     async show(req, res) {
-        const { nome } = req.params
+        const { usuario_id } = req.params
         try {
-            const playlist = await Playlist.findOne({ where: { nome } })
+            const playlist = await Playlist.findOne({ where: { usuario_id } })
             if (!playlist) {
                 return res.status(404).json({ error: 'Playlist não encontrado' })
             }

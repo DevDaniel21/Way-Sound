@@ -382,6 +382,8 @@ main {
 .artistas-card-titulo {
     font-size: 1.3em;
     width: 100%;
+    background-color: unset;
+    border: unset;
 }
 
 .artistas-card-subtitulo {

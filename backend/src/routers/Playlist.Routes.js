@@ -5,7 +5,7 @@ const routerPlaylist = new Router()
 
 routerPlaylist.get('/', playlistController.index)
 routerPlaylist.post('/', playlistController.store)
-routerPlaylist.get('/:nome', playlistController.show)
+routerPlaylist.get('/:usuarioId', playlistController.show)
 routerPlaylist.put('/:nome', playlistController.update)
 routerPlaylist.delete('/:id', playlistController.delete)
 
