@@ -43,7 +43,7 @@
         <aside>
             <a href="sobre.html">
                 <picture>
-                    <source media="(max-width: 600px)" srcset="../../imgs/logo-pequena.png">
+                    <source media="(max-width: 600px)" srcset="../../imgs/logos/logo-pequena.png">
                     <source media="(max-width: 1024px)" srcset="../../imgs/logos/logo-media.png">
                     <img src="../../imgs/logos/logo-grande.png" class="logo-responsiva">
                 </picture>
@@ -99,14 +99,14 @@
         <main>
             <article class="livraria">
                 <h1 class="titulo-livraria">Biblioteca</h1>
-                <ul class="artistas-list">
+                <ul class="artistas-list" id="playlistList">
                     <li class="playlist-elemnt">
-                        <a class="card-liv">
-                            <div class="fundo-maiszinho"><span class="maiszinho">+</span></div>
-                            <form action="#" id="playlistForm" method="POST"> <!-- action="playlist.html" method="post" -->
-                                <button type="submit" id="criarPlaylist" class="artistas-card-titulo">Criar playlist</button>
-                            </form>
-                        </a>
+                        <form action="#" id="playlistForm" method="POST">
+                            <button type="submit" class="card-liv">
+                                <div class="fundo-maiszinho"><span class="maiszinho">+</span></div>
+                                <p id="criarPlaylist" class="artistas-card-titulo">Criar playlist</p>
+                            </button>
+                        </form>
                     </li>
                 </ul>
                 <h1 class="titulo-livraria">Albuns Salvos</h1>

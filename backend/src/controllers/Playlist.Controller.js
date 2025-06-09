@@ -12,18 +12,17 @@ class PlaylistController {
         return res.status(404).json({ error: 'Usuário não encontrado' });
         }
 
-        // 2) busca todas as playlists (opcional, só pra log)
+        // 2) busca todas as playlists
         const playlists = await Playlist.findAll({
         where: { usuario_id: usuarioId }  // ou usuarioId, se tiver mapeado
         });
-        console.log('Playlists existentes:', playlists);
 
         // 3) cria nova playlist
         const novaPlaylist = await Playlist.create({
-        nome: null,
+        nome: `Playlist nº ${playlists.length + 1}`,
         descricao: null,
         avatar: null,
-        usuario_id: usuarioId   // ou usuarioId, se tiver mapeado
+        usuario_id: usuarioId
         });
 
         return res.status(201).json(novaPlaylist);

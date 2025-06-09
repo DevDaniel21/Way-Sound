@@ -170,6 +170,18 @@ header {
     transition: 0.3s;
 }
 
+.playlistAvatar {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 16px
+}
+
+.artistas-card-titulo {
+    text-align: center;
+    overflow: hidden;
+}
+
 .card-liv {
     display: flex;
     flex-direction: column;
@@ -178,10 +190,13 @@ header {
     overflow: hidden;
     border-radius: 20px;
     border: 3px dashed var(--white-light-active);
+    background: unset;
+    width: 180px;
     height: 180px;
     justify-content: center;
     cursor: pointer;
     transition: 0.3s;
+    gap: 10px;;
 }
 
 .card-liv:is(:hover, :focus) {

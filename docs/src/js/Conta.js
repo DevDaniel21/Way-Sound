@@ -72,38 +72,69 @@ else if (janelaAtual === 'entre.html') {
     });
 }
 
-// CADASTRAR PLAYLIST
 else if (janelaAtual === 'livraria.html') {
-    document.addEventListener('DOMContentLoaded', () => {
-        console.log(janelaAtual)
-        console.log(usuarioLogado.id)
-    if (document.getElementById('playlistForm')) {
-        document.getElementById('playlistForm').addEventListener('submit', async (e) => {
-        e.preventDefault();
+    document.addEventListener('DOMContentLoaded', async () => {
         try {
-            const usuarioId = usuarioLogado.id;
+            const response = await fetch('http://localhost:4000/playlist');
+            const playlists = await response.json();
 
-            const response = await fetch('http://localhost:4000/playlist', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ usuarioId })
-            });
+            if (response.status === 200) {
+                const playlistList = document.getElementById('playlistList');
 
-            const data = await response.json();
-            console.log(data)
+                playlists.forEach(playlist => {
+                    const playlistItem = document.createElement('li');
+                
+                    if (playlist.avatar == null) {
+                        playlist.avatar = '../../imgs/playlist.png';
+                    }
 
-            if (response.status === 201) {
-                alert('Playlist criada com sucesso!');
-                document.getElementById('playlistForm').reset();
-                // window.location.href = '';
-                } else {
-                    alert(data.error || 'Erro ao criar playlist');
-                }
-                } catch (error) {
-                    alert('Erro de conexão com o servidor');
-                    console.error(error);
-                }
-            });
+                    playlistItem.id = `playlist-${playlist.id}`;
+                    playlistItem.className = 'card-liv';
+                    playlistItem.innerHTML = `
+                        <img src="${playlist.avatar}" class="playlistAvatar">
+                        <p class="artistas-card-titulo">${playlist.nome}</p>
+                    `;
+                    playlistList.appendChild(playlistItem);
+                });
+            } else {
+                alert(playlists.error || 'Erro ao listar playlists');
+            }
+        } catch (error) {
+            alert('Erro de conexão com o servidor');
+            console.error(error);
+        }        
+        
+        // CADASTRAR PLAYLIST
+        if (document.getElementById('playlistForm')) {
+            document.getElementById('playlistForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            try {
+                const usuarioId = usuarioLogado.id;
+
+                const response = await fetch('http://localhost:4000/playlist', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ usuarioId })
+                });
+
+                const data = await response.json();
+                console.log(data)
+
+                if (response.status === 201) {
+                    alert('Playlist criada com sucesso!');
+                    document.getElementById('playlistForm').reset();
+                    // window.location.href = '';
+                    } else {
+                        alert(data.error || 'Erro ao criar playlist');
+                    }
+                    } catch (error) {
+                        alert('Erro de conexão com o servidor');
+                        console.error(error);
+                    }
+                });
         }
     });
+}
+
+else if (janelaAtual === 'playlist.html') {
 }
