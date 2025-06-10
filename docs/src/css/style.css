@@ -569,6 +569,48 @@ main::-webkit-scrollbar-thumb:hover {
     border: 2px solid white;
 }
 
+/* Tela de loading */
+#loading-screen {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #111;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease, visibility 1s ease;
+  }
+  
+  /* Classe para transição de saída */
+  #loading-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+  /* Conteúdo principal */
+  #main-content {
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  #main-content.show {
+    opacity: 1;
+  }
+
+  .ativo {
+    display: block;
+  }
+
+  .inativo {
+    display: none;
+  }
+  
+
 @media (max-width:1365px) {
     .image-area {
         flex-wrap: wrap;
