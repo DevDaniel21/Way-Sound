@@ -1,4 +1,5 @@
 import Musica from "../models/Musica.js"
+const { Op } = require('sequelize');
 
 class MusicaController {
     async store(req, res) {
@@ -31,6 +32,26 @@ class MusicaController {
             return res.status(200).json(musica)
         } catch (error) {
             return res.status(500).json({ error: 'Erro ao buscar música' })
+        }
+    }
+
+    async search(req, res) {
+        const { nome } = req.query
+        try {
+            const musicas = await Musica.findAll({
+                where: {
+                    nome: {
+                        [Op.like]: `%${nome}%`
+                    }
+                }
+            })
+
+            if (musicas.length === 0) {
+                return res.status(404).json({ error: 'Nenhuma música encontrada' })
+            }
+            return res.status(200).json(musicas)
+        } catch (error) {
+            return res.status(500).json({ error: 'Erro ao buscar músicas' })
         }
     }
 

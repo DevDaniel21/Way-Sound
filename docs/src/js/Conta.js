@@ -253,3 +253,27 @@ else if (janelaAtual === 'playlist.html') {
         // ADICIONAR MÚSICA NA PLAYLIST
     })
 }
+
+else if (janelaAtual === 'pesquisa.html') {
+    document.addEventListener('DOMContentLoaded', async () => {
+        pesquisaInput = document.getElementById('pesquisaInput');
+
+        pesquisaInput.addEventListener('input', async () => {
+            try {
+                const nome = pesquisaInput.value
+
+                const response = await fetch(`http://localhost:4000/musica/search?nome=${nome}`, {
+                    method: 'GET',
+                    headers: { 'Content-Type': 'application/json' },
+                });
+
+                const musicas = await response.json()
+
+                console.log(JSON.parse(musicas));
+            } catch (error) {
+                alert('Erro de conexão com o servidor');
+                console.error(error);
+            }
+        })
+    })
+}
