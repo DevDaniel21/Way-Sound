@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:4000/';
+const BASE_URL = 'http://localhost:4000';
 
 // Função criar usuario (POST)
 async function criarUsuario(nome, email, senha) {
@@ -19,13 +19,14 @@ async function listarUsuarios() {
 // Função para buscar usuario por email (GET)
 async function buscarUsuarioPorEmail(email) {
     console.log(`Buscando usuário com email: ${email}`);
-    const response = await fetch(`${BASE_URL}/usuario/${email}`);
+    const response = await fetch(`${BASE_URL}/usuario/${encodeURIComponent(email)}`);
     return response.json();
 }
 
 // Função para buscar usuario por email (PUT)
 async function atualizarUsuario(email, nome, senha) {
-    const response = await fetch(`${BASE_URL}/usuario/${encodeURIComponent(email)}`,
+    const response = await fetch(
+        `${BASE_URL}/usuario/${encodeURIComponent(email)}`,
         {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
@@ -43,4 +44,10 @@ async function deletarUsuario(id) {
     return response.status === 204;
 }
 
-export { criarUsuario, listarUsuarios, buscarUsuarioPorEmail, atualizarUsuario, deletarUsuario};
+export {
+    criarUsuario,
+    listarUsuarios,
+    buscarUsuarioPorEmail,
+    atualizarUsuario,
+    deletarUsuario,
+};

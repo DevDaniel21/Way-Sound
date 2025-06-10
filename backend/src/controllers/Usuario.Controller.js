@@ -39,7 +39,6 @@ class UsuarioController {
         const { nome, senha, avatar } = req.body
         try {
             const usuario = await Usuario.findOne({ where: { email } })
-            console.log(email)
             if (!usuario) {
                 return res.status(404).json({ error: 'Usuário não encontrado' })
             }
