@@ -90,6 +90,9 @@ button {
     cursor: pointer;
 }
 
+.usuario-ativo {
+    display: inline-block;
+  }
 
 .lightbox {
     display: none;
@@ -208,7 +211,7 @@ header>button:hover {
 
 .perfil {
     position: relative;
-    display: inline-block;
+    display: none;
     font-size: var(--fs-32);
     cursor: pointer;
     height: 36px;

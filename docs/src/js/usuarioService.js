@@ -1,5 +1,45 @@
 import { buscarUsuarioPorEmail, criarUsuario } from "./usuarioApi.js";
 
+let usuarioAtivo = localStorage.getItem('Usuario');
+console.log(usuarioAtivo)
+
+if (!usuarioAtivo) {
+    const lightbox = document.getElementById("alerta-conta");
+    const lightboxFechar = document.getElementById("lightboxFechar");
+    
+    // BOTAO DE FECHAR
+    if (lightbox) {
+        lightboxFechar.addEventListener("click", function() {
+          lightbox.classList.remove("active");
+        })
+        
+        // ABRIR ALERTA
+        const linkConta = document.querySelectorAll(".linkConta");
+        linkConta.forEach((link) => {
+          link.addEventListener("click", function () {
+            lightbox.classList.add("active");
+          });
+        });
+    
+        // ABRIR ALERTA - BOTÃO DAS MÚSICAS
+        const cardButtons = document.querySelectorAll(".card-button");
+        cardButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            lightbox.classList.add("active");
+          });
+        });
+    }
+} else {
+    const plano = document.getElementById('plano')
+    if (plano) {
+        plano.classList.add('usuario-ativo')
+    }
+    const perfil = document.getElementById('perfil')
+    if (perfil) {
+        perfil.classList.add('usuario-ativo')
+    }
+}
+
 async function handleLoginSubmit(e) {
     e.preventDefault();
     const email = document.getElementById('loginEmail').value;
@@ -22,6 +62,7 @@ async function handleRegisterSubmit(e) {
     const email = document.getElementById("regEmail").value;
     const senha = document.getElementById("regSenha").value;
 
+    const jaRegistrado = await buscarUsuarioPorEmail(email)
 
     if (jaRegistrado.email != email) {
         try {
