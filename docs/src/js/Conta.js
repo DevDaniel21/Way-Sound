@@ -81,7 +81,7 @@ else if (janelaAtual === 'entre.html') {
             const senha = document.getElementById('loginSenha').value;
 
             try {
-                const response = await fetch(`http://localhost:4000/usuario/${email}`, {
+                const response = await fetch(`http://localhost:4000/usuario/${encodeURIComponent(email)}`, {
                     headers: { 'Content-Type': 'application/json' }
                 });
 
@@ -255,25 +255,62 @@ else if (janelaAtual === 'playlist.html') {
 }
 
 else if (janelaAtual === 'pesquisa.html') {
-    document.addEventListener('DOMContentLoaded', async () => {
-        pesquisaInput = document.getElementById('pesquisaInput');
+    let debounceTimeout;
 
-        pesquisaInput.addEventListener('input', async () => {
-            try {
-                const nome = pesquisaInput.value
+    document.addEventListener('DOMContentLoaded', () => {
+        const pesquisaInput = document.getElementById('pesquisaInput');
+    
+        pesquisaInput.addEventListener('input', () => {
+            clearTimeout(debounceTimeout);
+            debounceTimeout = setTimeout(async () => {
+                try {
+                    const nome = pesquisaInput.value;
+    
+                    if (!nome) return; // evita requisição vazia
+    
+                    const response = await fetch(`http://localhost:4000/musica/search/${nome}`, {
+                        method: 'GET',
+                        headers: { 'Content-Type': 'application/json' },
+                    });
+    
+                    if (!response.ok) {
+                        const error = await response.json();
+                        console.error(error.error);
+                        return;
+                    }
+    
+                    const musicas = await response.json();
+                    const musicasList = document.getElementById('musicasList');
+                    musicasList.innerHTML = '';
 
-                const response = await fetch(`http://localhost:4000/musica/search?nome=${nome}`, {
-                    method: 'GET',
-                    headers: { 'Content-Type': 'application/json' },
-                });
+                    musicas.forEach(musica => {
+                        const musicaItem = document.createElement('div');
+                        musicaItem.className = 'card-music';
+                        musicaItem.innerHTML = `
+                            <div class="foto-music">
+                                <img src="${musica.foto}" alt="" class="img-cantor">
+                            </div>
+                            <div class="text-music">
+                                ${musica.nome}<br>
+                                <div class="text-music">${musica.autor}</div>
+                            </div>
+                            <div class="icones">
+                                <button class="btn-toggle">
+                                    <ion-icon name="play-outline" class="icon-toggle"></ion-icon>
+                                </button>
+                            </div>
+                        `;
 
-                const musicas = await response.json()
+                        musicasList.appendChild(musicaItem);
+                    })
 
-                console.log(JSON.parse(musicas));
-            } catch (error) {
-                alert('Erro de conexão com o servidor');
-                console.error(error);
-            }
-        })
-    })
+                    console.log(musicas);
+                } catch (error) {
+                    alert('Erro de conexão com o servidor');
+                    console.error(error);
+                }
+            }, 500); // 500ms de espera
+        });
+    });
+    
 }

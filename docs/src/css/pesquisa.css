@@ -360,6 +360,7 @@ header, main, aside {
     padding: 20px;
     text-align: center;
     width: 100%;
+    min-height: 80vh;
 }
 
 .music ul h2 {

@@ -54,15 +54,3 @@ buttons.forEach((button) => {
   });
 });
 
-// BARRA DE PESQUISA
-if (document.getElementById("pesquisaInput")) {
-  document.getElementById("pesquisaInput").addEventListener("input", function () {
-    const filtro = this.value.toLowerCase();
-    const cards = document.querySelectorAll(".card-music");
-  
-    cards.forEach((card) => {
-      const titulo = card.querySelector(".text-music").textContent.toLowerCase();
-      card.style.display = titulo.includes(filtro) ? "" : "none";
-    });
-  });
-}

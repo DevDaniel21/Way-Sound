@@ -36,25 +36,28 @@ class MusicaController {
     }
 
     async search(req, res) {
-        const { nome } = req.query
+        const { nome } = req.params;
+    
         try {
+            if (!nome || nome.trim() === '') {
+                return res.status(400).json({ error: 'Parâmetro "nome" é obrigatório' });
+            }
+    
             const musicas = await Musica.findAll({
                 where: {
                     nome: {
-                        [Op.like]: `%${nome}%`
+                        [Op.like]: `${nome}%`
                     }
                 }
-            })
-
-            if (musicas.length === 0) {
-                return res.status(404).json({ error: 'Nenhuma música encontrada' })
-            }
-            return res.status(200).json(musicas)
+            });
+    
+            return res.status(200).json(musicas); // mesmo se vazio
         } catch (error) {
-            return res.status(500).json({ error: 'Erro ao buscar músicas' })
+            console.error(error);
+            return res.status(500).json({ error: 'Erro ao buscar músicas' });
         }
     }
-
+    
     async update(req, res) {
         const { nome } = req.params
         const { foto, audio } = req.body
