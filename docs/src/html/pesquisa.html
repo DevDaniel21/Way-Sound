@@ -36,14 +36,21 @@
     </div>
 
     <div class="container">
-
-        <header class="header">
-            <div class="header-container">
-                <input type="text" id="pesquisaInput" class="barra" placeholder="Pesquisar...">
+        <header>
+            <button id="entrar" class="entrar-button"><a href="src/html/entre.html">Entrar</a></button>
+            <div id="plano" class="planos">
+                <button class="planos-button">
+                    <a href="planos.html">Planos</a>
+                </button>
             </div>
-            <button class="entrar-button"><a href="entre.html">Entrar</a></button>
+            <div id="perfil" class="perfil">
+                <img src="./imgs/perfil.svg" class="icone-perf" id="perfilImg">
+                <div class="perfil-links" id="perfilLinks">
+                    <a href="./src/html/config-user.html" class="perfil-link">Configurações</a>
+                    <a id="sair" href="" class="perfil-link">Sair</a>
+                </div>
+            </div>
         </header>
-
         <aside>
             <a href="sobre.html">
                 <picture>
