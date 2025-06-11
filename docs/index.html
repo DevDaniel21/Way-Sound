@@ -21,6 +21,11 @@
 </head>
 
 <body>
+    <!-- Tela de carregamento -->
+    <div id="data-container">
+        <div id="loading-screen">Carregando dados...</div>
+     </div>
+
     <div class="lightbox" id="alerta-conta">
         <div class="lightbox-container">
             <span class="fechar-container">
@@ -35,17 +40,17 @@
 
     <div class="container">
         <header>
-            <button class="entrar-button"><a href="src/html/entre.html">Entrar</a></button>
+            <button id="entrar" class="entrar-button"><a href="src/html/entre.html">Entrar</a></button>
             <div id="plano" class="planos">
                 <button class="planos-button">
                     <a href="planos.html">Planos</a>
                 </button>
             </div>
-            <div id="perfil" class="perfil" id="perfilIcon">
+            <div id="perfil" class="perfil">
                 <img src="./imgs/perfil.svg" class="icone-perf" id="perfilImg">
                 <div class="perfil-links" id="perfilLinks">
-                    <a href="config-user.html" class="perfil-link">Configurações</a>
-                    <a href="../../index.html" class="perfil-link">Sair</a>
+                    <a href="./src/html/config-user.html" class="perfil-link">Configurações</a>
+                    <a id="sair" href="" class="perfil-link">Sair</a>
                 </div>
             </div>
         </header>
@@ -115,34 +120,6 @@
                             style="background-image: url(https://portalperifacon.com/wp-content/uploads/2024/09/imagem-2-1.jpg);"
                             class="artistas-card-img"></figure>
                         <p class="artistas-card-titulo">Tupac</p>
-                        <p class="artistas-card-subtitulo">Artista</p>
-                    </li>
-                    <li class="artistas-card">
-                        <figure
-                            style="background-image: url(https://yt3.googleusercontent.com/pJorPo6qJ22X0ZBYI40JBW3P7tMyC4N3cAUZyNC07GPwx2bKcRsqUqzEhFD6V3Oax2bam13YIg=s900-c-k-c0x00ffffff-no-rj);"
-                            class="artistas-card-img"></figure>
-                        <p class="artistas-card-titulo">Isadora Pompeo</p>
-                        <p class="artistas-card-subtitulo">Artista</p>
-                    </li>
-                    <li class="artistas-card">
-                        <figure
-                            style="background-image: url(https://www.jambase.com/wp-content/uploads/2023/01/panchiko.png);"
-                            class="artistas-card-img"></figure>
-                        <p class="artistas-card-titulo">Panchiko</p>
-                        <p class="artistas-card-subtitulo">Banda</p>
-                    </li>
-                    <li class="artistas-card">
-                        <figure
-                            style="background-image: url(https://i.scdn.co/image/dd031b9c5d1b6eba4a691cd89c954255aae787f2);"
-                            class="artistas-card-img"></figure>
-                        <p class="artistas-card-titulo">50 cent</p>
-                        <p class="artistas-card-subtitulo">Artista</p>
-                    </li>
-                    <li class="artistas-card">
-                        <figure
-                            style="background-image: url(https://yt3.googleusercontent.com/uMN1cJrCTrxqooWElNv5LRQlPpLpK_p9QoYzJpOCxdUdbcQSA2lRkttVWvLfT66x1FiGnwoO9Q=s900-c-k-c0x00ffffff-no-rj);"
-                            class="artistas-card-img"></figure>
-                        <p class="artistas-card-titulo">VMZ</p>
                         <p class="artistas-card-subtitulo">Artista</p>
                     </li>
                 </ul>

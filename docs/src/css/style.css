@@ -90,8 +90,46 @@ button {
     cursor: pointer;
 }
 
+#loading-screen {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #111;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease, visibility 1s ease;
+  }
+
+  #loading-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  #main-content {
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  #main-content.show {
+    opacity: 1;
+  }
+
+  .ativo {
+    display: block;
+  }
+
+  .inativo {
+    display: none;
+  }
+
 .usuario-ativo {
-    display: inline-block;
+    display: inline-block !important;
   }
 
 .lightbox {
