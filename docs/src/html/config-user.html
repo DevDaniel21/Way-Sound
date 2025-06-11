@@ -18,7 +18,7 @@
         rel="stylesheet">
 
      <!-- ICONE -->
-    <link rel="shortcut icon" href="../../imgs/logo-p-comfundo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../imgs/logos/logo-p-comfundo.png" type="image/x-icon">
 
 </head>
 
@@ -83,7 +83,7 @@
         <main>
             <h2 class="title-user-config">Configurações do Usuário</h2>
             <section class="cont-config">
-                <div class="user-config">
+                <form id="updateForm" class="user-config">
                     <div class="img-config">
                         <div class="profile-img-fundo">
                             <div id="profile-container">
@@ -105,36 +105,23 @@
                             </div>
                             <input type="text" class="input-config-user" id="name" placeholder="Digite seu nome" autocomplete="off">
                         </div>
-
-                        <div class="input-container">                     
-                            <label class="config-title" for="username">Nome de usuário</label>
-                            <input type="text" class="input-config-user" id="username"
-                                placeholder="Digite seu nome de usuário" autocomplete="off">
-                        </div>
                         
                         <div class="input-container">
                             <label class="config-title" for="email">Email</label>
                             <input type="email" class="input-config-user" id="email" placeholder="Digite seu email" autocomplete="off">
                         </div>
 
-                        <div class="input-container">
-                            <label class="config-title" for="phone">Telefone</label>
-                            <input type="tel" class="input-config-user" id="phone" placeholder="Digite seu telefone" autocomplete="off">
-                        </div>
-
-                            <div class="">
-                                <a href="exemplo_comercial.html" class="cc-btn">Conta Comercial</a>
-                            </div>
-
-                            <div class="" id="btn-save-config">
+                        <div class="config-buttons">
+                            <button type="submit" class="btn-save" id="btn-save-config">
                                 <span class="btn-save">Salvar alterações</span>
-                            </div>
+                            </button>
 
-                            <div class="">
+                            <button class="ex-btn">
                                 <span class="ex-btn">Excluir conta</span>
-                            </div>
+                            </button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </section>
         </main>
 
@@ -169,8 +156,7 @@
 
         <audio src=""></audio>
     </div>
-    <script src="../js/Conta.js"></script>
-    <script src="../js/config-user.js"></script>
+    <script type="module" src="../js/usuarioService.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

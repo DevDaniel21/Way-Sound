@@ -216,9 +216,10 @@
 }
 
 .input-config {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
+    width: 100%;
 }
 
 .input-container {
@@ -262,17 +263,23 @@
     transition: var(--transition-1);
 }
 
+.config-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
 .ex-btn {
     background-color: var(--black-light);
+    flex: 1;
     color: red;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     height: 40px;
     border-radius: 10px;
     cursor: pointer;
+    border: none;
     transition: 0.3s ease;
 }
 
@@ -317,14 +324,19 @@
     border-radius: 50%;
 }
 
-.btn-save {
+#btn-save-config {
+    background: none;
+    border: none;
+}
+
+.btn-save { 
     background-color: var(--purple);
+    flex: 1;
     color: var(--purple-light);
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     height: 40px;
     border-radius: 10px;
     cursor: pointer;
