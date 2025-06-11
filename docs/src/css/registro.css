@@ -141,10 +141,12 @@ span {
     align-items: center;
 }
 
-.logo > img {
-    width: 60%;
+.logo img {
+    width: 80%;
     height: auto;
-    object-fit: cover;
+    max-width: 300px;
+    min-width: 120px;
+    transition: width 0.3s ease;
 }
 
 .login-informacoes {
@@ -248,7 +250,16 @@ hr {
 }
 
 
-
+@media (max-width: 1024px) {
+    .input {
+        width: 300px;
+        height: 40px;
+    }
+    .logo img {
+        width: 80%;
+        height: auto;
+    }
+}
 
 @media (max-width: 768px) {
     html,
@@ -290,8 +301,8 @@ hr {
     }
 
     .logo img {
-        max-height: 90%;
-        max-width: 90%;
+        max-height: 80%;
+        max-width: 80%;
         height: auto;
         width: auto;
     }
@@ -340,6 +351,7 @@ hr {
     }
 
     .input {
+        height: 40px;
         width: 90%;
         padding-left: 1rem;
     }

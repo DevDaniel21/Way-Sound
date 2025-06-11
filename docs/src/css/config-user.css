@@ -73,6 +73,14 @@
     --tamanho-1: var(--fs-36);
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+
 .btn-1 {
     margin-top: 20px;
     text-align: center;
@@ -336,7 +344,32 @@
     transition: var(--transition-1);
 }
 
+@media (max-width: 1024px) {
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow-x: hidden;
+    }
+
+    main {
+        width: 100vw;
+        overflow: auto;
+    }
+
+}
+
+
+
 @media (max-width: 768px) {
+    
+    main {
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+    }
+    
     .title-user-config {
         font-size: var(--fs-24);
         padding-top: 30px;
@@ -386,7 +419,6 @@
     .ex-btn,
     .btn-save {
         font-size: var(--fs-14);
-        height: 35px;
     }
 
     .text-send {
@@ -408,7 +440,6 @@
     }
 
     .playerDisplay {
-        flex-direction: column;
         gap: 10px;
         padding: 10px;
     }

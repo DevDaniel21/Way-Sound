@@ -590,7 +590,6 @@ main::-webkit-scrollbar-thumb:hover {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto;
         grid-template-areas:
-            "header"
             "main"
             "aside"
         ;
