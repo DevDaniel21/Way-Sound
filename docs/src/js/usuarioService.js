@@ -1,4 +1,4 @@
-import { atualizarUsuario, buscarUsuarioPorEmail, criarUsuario } from "./usuarioApi.js";
+import { atualizarUsuario, buscarUsuarioPorEmail, criarUsuario, deletarUsuario } from "./usuarioApi.js";
 
 let usuarioAtivo = localStorage.getItem('Usuario');
 
@@ -147,7 +147,7 @@ async function handleRegisterSubmit(e) {
     }
 }
 
-// PARTE DE CONFIGURAÇÃO
+// ATUALIZAR O USUARIO
 async function handleUpdateSubmit(e) {
     e.preventDefault()
     const usuarioAtivo = localStorage.getItem('Usuario');
@@ -164,10 +164,29 @@ async function handleUpdateSubmit(e) {
     try {
         const usuarioAtualizado = await atualizarUsuario(email, nomeEscolhido, senhaEscolhido);
         alert("Usuário atualizado com sucesso!")
-        return localStorage.setItem('Usuario', email)
+        localStorage.setItem('Usuario', email)
     } catch (error) {
         console.log(error)
         alert("Erro ao atualizar usuário.");
+    }
+}
+
+// DELETAR CONTA
+async function handleDeleteUser(e) {
+    e.preventDefault()
+    const usuarioAtivo = localStorage.getItem('Usuario');
+    const usuario = await buscarUsuarioPorEmail(usuarioAtivo);
+    
+    let id = usuario.id;
+    
+    try {
+        const usuarioDeletado = await deletarUsuario(id);
+        alert("Usuário deletado com sucesso!");
+        localStorage.removeItem('Usuario');
+        window.location.href = '../../index.html';
+    } catch (error) {
+        console.log(error)
+        alert("Erro ao deletar usuário.");
     }
 }
 
@@ -180,6 +199,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const registerForm = document.getElementById("registerForm");
     if (registerForm) registerForm.addEventListener("submit", handleRegisterSubmit);
     // CARREGAR O BOTAO DE UPDATE
-    const updateForm = document.getElementById("updateForm")
+    const updateForm = document.getElementById("updateForm");
     if (updateForm) updateForm.addEventListener("submit", handleUpdateSubmit);
+    // CARREGAR O BOTAO DE DELETAR
+    const deleteUserBtn = document.getElementById("deleteUserBtn");
+    if (deleteUserBtn) deleteUserBtn.addEventListener("click", handleDeleteUser);
 });
