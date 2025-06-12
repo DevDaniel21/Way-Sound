@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Waysound | ADM</title>
+
+        <!-- CSS -->
+    <link rel="stylesheet" href="../css/adm.musica.css">
+    <!-- FONTE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+        <!-- ICONE -->
+        <link
+            rel="shortcut icon"
+            href="../../imgs/logos/logo-p-comfundo.png"
+            type="image/x-icon"
+        />
+    </head>
+
+    <body>
+      <div class="containerAdm">
+      <header>
+        <h1 class="header-titulo"> Adiministração do Way-Sound! </h1>
+      </header>
+      <div class="stats-container">
+        <div class="stats-block">
+          <span class="stats-icon">
+            <!-- Ícone de música -->
+            <svg width="32" height="32" fill="none" stroke="#a259ff" stroke-width="2" viewBox="0 0 32 32">
+              <circle cx="9" cy="24" r="3"/>
+              <circle cx="21" cy="21" r="3"/>
+              <path d="M12 24V8l16-3v16"/>
+            </svg>
+          </span>
+          <div class="stats-info">
+            <span class="stats-title">Músicas</span>
+            <span class="stats-number">20</span>
+          </div>
+        </div>
+        <div class="stats-block">
+          <span class="stats-icon">
+            <!-- Ícone de usuário -->
+            <svg width="32" height="32" fill="none" stroke="#a259ff" stroke-width="2" viewBox="0 0 32 32">
+              <circle cx="16" cy="12" r="6"/>
+              <rect x="6" y="22" width="20" height="8" rx="4"/>
+            </svg>
+          </span>
+          <div class="stats-info">
+            <span class="stats-title">Usuários</span>
+            <span class="stats-number">10</span>
+          </div>
+        </div>
+        <div class="stats-block">
+          <span class="stats-icon">
+            <!-- Ícone de álbum -->
+            <svg width="32" height="32" fill="none" stroke="#a259ff" stroke-width="2" viewBox="0 0 32 32">
+              <rect x="6" y="10" width="20" height="16" rx="3"/>
+              <rect x="10" y="6" width="12" height="4" rx="1"/>
+            </svg>
+          </span>
+          <div class="stats-info">
+            <span class="stats-title">Albuns</span>
+            <span class="stats-number">30</span>
+          </div>
+        </div>
+      </div>
+    
+      <h2 class="section-title">Gerenciamento de Faixas</h2>
+      <div class="search-box">
+        <ion-icon name="search-outline"></ion-icon>
+        <input type="text" placeholder="Pesquisar Músicas">
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome da Música</th>
+              <th>Artista</th>
+              <th>Plays</th>
+              <th>Curtidas</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Música A</td>
+              <td>Artista A</td>
+              <td>5 milhões</td>
+              <td>5 Mil</td>
+              <td>
+                <button class="btn-edit">Editar</button>
+                <button class="btn-delete">Excluir</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Música B</td>
+              <td>Artista B</td>
+              <td>45 milhões</td>
+              <td>4 Mil</td>
+              <td>
+                <button class="btn-edit">Editar</button>
+                <button class="btn-delete">Excluir</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Música C</td>
+              <td>Artista C</td>
+              <td>50 Milhões</td>
+              <td>3 Mil</td>
+              <td>
+                <button class="btn-edit">Editar</button>
+                <button class="btn-delete">Excluir</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Música D</td>
+              <td>Artista D</td>
+              <td>25 Milhões</td>
+              <td>2 Mil</td>
+              <td>
+                <button class="btn-edit">Editar</button>
+                <button class="btn-delete">Excluir</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Música E</td>
+              <td>Artista E</td>
+              <td>15 Milhões</td>
+              <td>1 Mil</td>
+              <td>
+                <button class="btn-edit">Editar</button>
+                <button class="btn-delete">Excluir</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+      <h2 class="section-title">Gerenciamento de Usuários</h2>
+      <div class="search-box">
+        <ion-icon name="search-outline"></ion-icon>
+        <input type="text" placeholder="Pesquisar usuário">
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>weslley da igrejinha</td>
+              <td>w3@gmail.com</td>
+              <td>
+                <button class="btn-edit">Editar</button>
+                <button class="btn-delete">Excluir</button>
+              </td>
+            </tr>
+            <tr>
+              <td>weslley da igrejinha</td>
+              <td>w3@gmail.com</td>
+              <td>
+                <button class="btn-edit">Editar</button>
+                <button class="btn-delete">Excluir</button>
+              </td>
+            </tr>
+            <tr>
+              <td>weslley da igrejinha</td>
+              <td>w3@gmail.com</td>
+              <td>
+                <button class="btn-edit">Editar</button>
+                <button class="btn-delete">Excluir</button>
+              </td>
+            </tr>
+            <tr>
+              <td>weslley da igrejinha</td>
+              <td>w3@gmail.com</td>
+              <td>
+                <button class="btn-edit">Editar</button>
+                <button class="btn-delete">Excluir</button>
+              </td>
+            </tr>
+            <tr>
+              <td>weslley da igrejinha</td>
+              <td>w3@gmail.com</td>
+              <td>
+                <button class="btn-edit">Editar</button>
+                <button class="btn-delete">Excluir</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>    
+    </div>
+      
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>

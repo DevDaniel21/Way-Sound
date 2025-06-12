@@ -73,14 +73,6 @@
     --tamanho-1: var(--fs-36);
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden;
-}
-
-
 .btn-1 {
     margin-top: 20px;
     text-align: center;
@@ -147,12 +139,13 @@ html, body {
 .img-config {
     display: flex;
     flex-direction: column;
-    flex: .7;
+    flex: 0.4;
     align-items: center;
-    padding: 20px;
-    gap: 20px;
-    background-color: var(--black-dark-hover);
-    border-radius: 16px;
+    padding: 16px;
+    gap: 12px;
+    background: var(--black-dark-hover);
+    border-radius: 12px;
+    margin-inline: 20px;
 }
 
 .profile-img-fundo {
@@ -338,7 +331,7 @@ html, body {
     border: none;
 }
 
-.btn-save { 
+.btn-save {
     background-color: var(--purple);
     flex: 1;
     color: var(--purple-light);
@@ -357,12 +350,13 @@ html, body {
     transition: var(--transition-1);
 }
 
-@media (max-width: 1024px) {
+.logo-waysound {
+    display: none;
+}
 
-    html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
+@media (min-width: 601px) and (max-width: 1100px) {
+    html,
+    body {
         overflow-x: hidden;
     }
 
@@ -371,18 +365,42 @@ html, body {
         overflow: auto;
     }
 
-}
+    .user-config {
+        justify-content: center;
+        gap: 25px;
+    }
 
+    .input-config-user {
+        width: 60%;
+    }
 
+    .config-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        align-items: center;
+    }
 
-@media (max-width: 768px) {
-    
+    .btn-save,
+    .ex-btn {
+        width: 60%;
+    }
+}   
+
+@media (max-width: 600px) {
     main {
         width: 100vw;
-        height: 100vh;
+        height: 125vh;
         overflow: auto;
     }
-    
+
+    .logo-waysound {
+        display: block;
+        width: 200px;
+        margin: 20px auto;
+    }
+
     .title-user-config {
         font-size: var(--fs-24);
         padding-top: 30px;
@@ -396,6 +414,7 @@ html, body {
     }
 
     .img-config {
+        margin-top: 20px;
         width: 70%;
         padding: 10px;
     }
@@ -404,14 +423,6 @@ html, body {
         display: flex;
         flex-direction: column;
         width: 100%;
-    }
-
-    .email-input {
-        order: 1;
-    }
-
-    .telefone-input {
-        order: 2;
     }
 
     .input-container {

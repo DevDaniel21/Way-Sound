@@ -746,7 +746,6 @@ main::-webkit-scrollbar-thumb:hover {
     main {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         overflow-y: visible;
         margin-bottom: 80px;
     }
