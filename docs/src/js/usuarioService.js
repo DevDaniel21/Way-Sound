@@ -42,6 +42,7 @@ window.addEventListener('load', () => {
     }, 5000);
 });
 
+// CARREGAR ICONES DE PERFIL OU ALERTA PARA ENTRAR EM CONTA
 document.addEventListener('DOMContentLoaded', () => {
     if (usuarioAtivo == null) {
         const lightbox = document.getElementById("alerta-conta");
@@ -105,7 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 })
-
 
 // PARTE DE LOGIN
 async function handleLoginSubmit(e) {
