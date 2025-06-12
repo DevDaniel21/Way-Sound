@@ -57,10 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // ABRIR ALERTA
             const linkConta = document.querySelectorAll(".linkConta");
             linkConta.forEach((link) => {
-              link.addEventListener("click", function () {
-                lightbox.classList.add("active");
-              });
-            });
+                link.classList.add("desativado");
+                link.addEventListener("click", (e) => {
+                  e.preventDefault();
+                  lightbox.classList.add("active");
+                });
+              });              
         
             // ABRIR ALERTA - BOTÃO DAS MÚSICAS
             const cardButtons = document.querySelectorAll(".card-button");

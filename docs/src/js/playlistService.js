@@ -106,13 +106,9 @@ async function handleEditPlaylist() {
 
             const response = await atualizarPlaylist(playlistId, nome, avatar);
 
-            const data = await response.json();
-            if (response.status === 200) {
-                alert("Playlist atualizada com sucesso!");
-                window.location.reload();
-            } else {
-                alert(data.error || "Erro ao atualizar playlist");
-            }
+            const data = await response;
+            alert("Playlist atualizada com sucesso!");
+            window.location.reload();
         } catch (error) {
             alert("Erro de conexão com o servidor");
             console.error(error);

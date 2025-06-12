@@ -26,6 +26,17 @@
     </head>
 
     <body>
+        <!-- Tela de carregamento -->
+        <div id="data-container">
+            <div id="loading-screen">Carregando dados...
+                <div id="loading-screen-bolhinha">
+                    <div class="bolhinha" style="--i: 1"></div>
+                    <div class="bolhinha" style="--i: 1.3"></div>
+                    <div class="bolhinha" style="--i: 1.6"></div>
+                </div>
+            </div>
+        </div>
+
         <div class="container">
             <header>
                 <button id="entrar" class="entrar-button"><a href="src/html/entre.html">Entrar</a></button>
@@ -37,7 +48,7 @@
                 <div id="perfil" class="perfil">
                     <img src="../../imgs/perfil.svg" class="icone-perf" id="perfilImg">
                     <div class="perfil-links" id="perfilLinks">
-                        <a href="./src/html/config-user.html" class="perfil-link">Configurações</a>
+                        <a href="./config-user.html" class="perfil-link">Configurações</a>
                         <a id="sair" href="" class="perfil-link">Sair</a>
                     </div>
                 </div>
@@ -70,85 +81,56 @@
                 <ul class="list">
                     <li class="list-item">
                         <button class="list-button">
-                            <a
-                                href="../../src/html/exemplo_comercial.html"
-                                class="list-link"
-                            >
-                                <img
-                                    src="../../imgs/Home.svg"
-                                    class="icone"
-                                />Início
+                            <a href="../../index.html" class="list-link">
+                                <img src="../../imgs/Home.svg" class="icone">Início
                             </a>
                         </button>
                     </li>
-
+    
                     <li class="list-item">
                         <button class="list-button">
-                            <a
-                                href="../html/pesquisa_comercial.html"
-                                class="list-link"
-                            >
-                                <img
-                                    src="../../imgs/Pesquisar.svg"
-                                    class="icone"
-                                />Pesquisar
+                            <a href="./pesquisa.html" class="list-link">
+                                <img src="../../imgs/Pesquisar.svg" class="icone">Pesquisar
                             </a>
                         </button>
                     </li>
-
+    
                     <li class="list-item playLibrary">
                         <button class="list-button">
-                            <a href="playlist.html" class="list-link">
-                                <img
-                                    src="../../imgs/playlists.svg"
-                                    class="icone"
-                                />
+                            <a href="" class="list-link">
+                                <img src="../../imgs/playlists.svg" class="icone">
                             </a>
                         </button>
                     </li>
-
+    
                     <li class="list-item list-playlist">
-                        <p>Playlists</p>
-                        <hr />
+                        <p>Biblioteca</p>
+                        <hr>
                     </li>
-
-                    <li class="list-item conta-list">
-                        <button class="list-button">
-                            <a href="index.html" class="list-link">
-                                <img
-                                    src="../../imgs/perfil.svg"
-                                    class="icone"
-                                />
-                            </a>
-                        </button>
-                    </li>
-
+    
                     <li class="list-item playlist-add">
                         <button class="list-button">
-                            <a
-                                href="../../src/html/livraria_comercial.html"
-                                class="list-link"
-                            >
-                                <img
-                                    src="../../imgs/adcionar.svg"
-                                    class="icone"
-                                />Criar playlist
+                            <a href="livraria.html" class="list-link">
+                                <img src="../../imgs/playlists.svg" class="icone">Playlists/Albuns
                             </a>
                         </button>
                     </li>
-
+                    
                     <li class="list-item list-playlist">
                         <p>Publicar</p>
                         <hr />
                     </li>
-
+    
                     <li class="list-item playlist-add">
+                        <a class="list-button linkConta" href="./publicacoes.html">
+                          <img src="../../imgs/adcionar.svg" class="icone">Publicar músicas
+                        </a>
+                    </li>  
+    
+                    <li class="list-item conta-list">
                         <button class="list-button">
-                            <a href="./src/html/publicacoes.html" class="list-link">
-                                <img
-                                    src="../../imgs/adcionar.svg"
-                                    class="icone"
-                                />Adicionar música
+                            <a href="" class="list-link">
+                                <img src="../../imgs/perfil.svg" class="icone"></ion-icon>
                             </a>
                         </button>
                     </li>

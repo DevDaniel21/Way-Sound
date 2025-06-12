@@ -146,12 +146,17 @@ header {
     display: flex;
     flex-direction: column;
     padding: var(--padding-header-main);
-    gap: 30px;
+    gap: 12px;
     padding-bottom: 100px;
 }
 
 .titulo-livraria {
     font-size: var(--fs-40);
+}
+
+h2.titulo-livraria {
+    font-size: var(--fs-36);
+    font-weight: var(--fw-medium);
 }
 
 .maiszinho {

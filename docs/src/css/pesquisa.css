@@ -383,6 +383,23 @@ header, main, aside {
     width: 100%;
 }
 
+.container-card-pesquise {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container-card-pesquise > img {
+    width: 40%;
+}
+
+.pesquiseMusica {
+    color: var(--white-active);
+    font-size: var(--fs-24);
+}
+
 .card-music {
     background: var(--white-light);
     padding: 15px;

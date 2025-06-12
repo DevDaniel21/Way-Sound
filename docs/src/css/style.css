@@ -90,6 +90,11 @@ button {
     cursor: pointer;
 }
 
+.desativado {
+    pointer-events: none;
+    cursor: default;
+}  
+
 #loading-screen {
     position: fixed;
     width: 100vw;
@@ -120,19 +125,25 @@ button {
     height: 1.7rem;
     width: 1.7rem;
     border-radius: 100%;
-    animation: bounce 3s ease-in-out infinite;
+    animation: bounce 3s ease-in infinite;
     animation-delay: calc(1s * var(--i));
 }
 
 @keyframes bounce {
-    25% {
-        margin-bottom: 15px;
+    0% {
+        transform: translateY(0px);
+    }
+    30% {
+        transform: translateY(-20px);
     }
     50% {
-        margin-bottom: 0px;
+        transform: translateY(0px);
     }
-    75% {
-        margin-top: 15px;
+    70% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
     }
 }
 
@@ -647,6 +658,10 @@ main::-webkit-scrollbar-thumb:hover {
     .image-area {
         flex-wrap: wrap;
         width: 50%;
+    }
+
+    .responsa {
+        display: none;
     }
 }
 

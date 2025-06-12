@@ -41,12 +41,19 @@
 
     <div class="container">
         <header>
-            <button id="entrar" class="entrar-button"><a href="./entre.html">Entrar</a></button>
-            <div id="plano" class="planos">
-                <button class="planos-button">
-                    <a href="planos.html">Planos</a>
-                </button>
+            <div class="left-group">
+                <a href="./ivraria.html" class="playlist-button">&lt; Voltar</a>
+                <p class="album-button">&lt; Playlists</p>
             </div>
+
+            <div class="right-group">
+                <button id="entrar" class="entrar-button"><a href="./entre.html">Entrar</a></button>
+                <div id="plano" class="planos">
+                    <button class="planos-button">
+                        <a href="planos.html">Planos</a>
+                    </button>
+                </div>
+            <div>
             <div id="perfil" class="perfil">
                 <img src="../../imgs/perfil.svg" class="icone-perf" id="perfilImg">
                 <div class="perfil-links" id="perfilLinks">
@@ -67,7 +74,7 @@
             <ul class="list">
                 <li class="list-item">
                     <button class="list-button">
-                        <a href="exemplo.html" class="list-link">
+                        <a href="../../index.html" class="list-link">
                             <img src="../../imgs/Home.svg" class="icone">Início
                         </a>
                     </button>
@@ -75,7 +82,7 @@
 
                 <li class="list-item">
                     <button class="list-button">
-                        <a href="pesquisa_conta.html" class="list-link">
+                        <a href="./pesquisa.html" class="list-link">
                             <img src="../../imgs/Pesquisar.svg" class="icone">Pesquisar
                         </a>
                     </button>
@@ -83,29 +90,40 @@
 
                 <li class="list-item playLibrary">
                     <button class="list-button">
-                        <a href="livraria.html" class="list-link">
+                        <a href="" class="list-link">
                             <img src="../../imgs/playlists.svg" class="icone">
                         </a>
                     </button>
                 </li>
 
                 <li class="list-item list-playlist">
-                    <p>Playlists</p>
+                    <p>Biblioteca</p>
                     <hr>
                 </li>
 
                 <li class="list-item playlist-add">
                     <button class="list-button">
                         <a href="livraria.html" class="list-link">
-                            <img src="../../imgs/adcionar.svg" class="icone">Criar playlist
+                            <img src="../../imgs/playlists.svg" class="icone">Playlists/Albuns
                         </a>
                     </button>
                 </li>
+                
+                <li class="list-item list-playlist">
+                    <p>Publicar</p>
+                    <hr />
+                </li>
+
+                <li class="list-item playlist-add">
+                    <a class="list-button linkConta" href="./publicacoes.html">
+                      <img src="../../imgs/adcionar.svg" class="icone">Publicar músicas
+                    </a>
+                </li>  
 
                 <li class="list-item conta-list">
                     <button class="list-button">
                         <a href="" class="list-link">
-                            <img src="../../imgs/perfil.svg" class="icone">
+                            <img src="../../imgs/perfil.svg" class="icone"></ion-icon>
                         </a>
                     </button>
                 </li>
@@ -113,7 +131,6 @@
         </aside>
 
         <main>
-            <div class="esconder"></div>
             <div class="playlist-viewer">
                 <div class="playlist-header">
                     <button id="playlistAvatar" class="img-custom-fundo">

@@ -23,8 +23,14 @@
 <body>
     <!-- Tela de carregamento -->
     <div id="data-container">
-        <div id="loading-screen">Carregando dados...</div>
-     </div>
+        <div id="loading-screen">Carregando dados...
+            <div id="loading-screen-bolhinha">
+                <div class="bolhinha" style="--i: 1"></div>
+                <div class="bolhinha" style="--i: 1.3"></div>
+                <div class="bolhinha" style="--i: 1.6"></div>
+            </div>
+        </div>
+    </div>
 
     <div class="lightbox" id="alerta-conta">
         <div class="lightbox-container">
@@ -100,14 +106,12 @@
                         </a>
                     </button>
                 </li>
-
-                <li class="list-item playlist-add linkConta">
-                    <button class="list-button">
-                        <a class="list-link" href="./src/html/livraria.html">
-                            <img src="imgs/adcionar.svg" class="icone">Criar playlist
-                        </a>
-                    </button>
-                </li>
+                
+                <li class="list-item playlist-add">
+                    <a class="list-button linkConta" href="./src/html/livraria.html">
+                      <img src="imgs/adcionar.svg" class="icone">Criar playlist
+                    </a>
+                </li>                  
 
                 <li class="list-item list-playlist">
                     <p>Publicar</p>
@@ -115,15 +119,10 @@
                 </li>
 
                 <li class="list-item playlist-add">
-                    <button class="list-button">
-                        <a href="./src/html/publicacoes.html" class="list-link">
-                            <img
-                                src="./imgs/adcionar.svg"
-                                class="icone"
-                            />Adicionar música
-                        </a>
-                    </button>
-                </li>
+                    <a class="list-button linkConta" href="./src/html/publicacoes.html">
+                      <img src="imgs/adcionar.svg" class="icone">Publicar músicas
+                    </a>
+                </li>                  
             </ul>
         </aside>
         <main>
