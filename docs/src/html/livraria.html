@@ -23,23 +23,44 @@
 </head>
 
 <body>
-    <div class="container">
-        <header>          
-            <div class="right-group">
-              <div class="planos">
-                <a href="planos.html" class="planos-button">Planos</a>
-              </div>
-          
-              <div class="perfil" id="perfilIcon">
-                <img src="../../imgs/perfil.svg" class="icone">
-                <div class="perfil-links" id="perfilLinks">
-                  <a href="config-user.html" class="perfil-link">Configurações</a>
-                  <a href="../../index.html" class="perfil-link">Sair</a>
-                </div>
-              </div>
+        <!-- Tela de carregamento -->
+    <div id="data-container">
+        <div id="loading-screen">Carregando dados...
+            <div id="loading-screen-bolhinha">
+                <div class="bolhinha" style="--i: 1"></div>
+                <div class="bolhinha" style="--i: 1.3"></div>
+                <div class="bolhinha" style="--i: 1.6"></div>
             </div>
-          </header>
-          
+        </div>
+    </div>
+
+    <div class="lightbox" id="alerta-conta">
+        <div class="lightbox-container">
+            <span class="fechar-container">
+                <ion-icon name="close-outline" class="fechar" id="lightboxFechar"></ion-icon>
+            </span>
+            <h3 class="lightbox-title">Entre em sua conta</h3>
+            <p class="lightbox-text">Use uma conta para criar playlists e acessar as suas playlists</p>
+            <a href="../html/entre.html" class="btn-registrar">Entrar</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <button id="entrar" class="entrar-button"><a href="./entre.html">Entrar</a></button>
+            <div id="plano" class="planos">
+                <button class="planos-button">
+                    <a href="planos.html">Planos</a>
+                </button>
+            </div>
+            <div id="perfil" class="perfil">
+                <img src="../../imgs/perfil.svg" class="icone-perf" id="perfilImg">
+                <div class="perfil-links" id="perfilLinks">
+                    <a href="./config-user.html" class="perfil-link">Configurações</a>
+                    <a id="sair" href="" class="perfil-link">Sair</a>
+                </div>
+            </div>
+        </header>
         <aside>
             <a href="sobre.html">
                 <picture>
@@ -101,12 +122,10 @@
                 <h1 class="titulo-livraria">Biblioteca</h1>
                 <ul class="artistas-list" id="playlistList">
                     <li class="playlist-elemnt">
-                        <form action="#" id="playlistForm" method="POST">
-                            <button type="submit" class="card-liv">
-                                <div class="fundo-maiszinho"><span class="maiszinho">+</span></div>
-                                <p id="criarPlaylist" class="artistas-card-titulo">Criar playlist</p>
-                            </button>
-                        </form>
+                        <button id="createPlaylist" class="card-liv">
+                            <div class="fundo-maiszinho"><span class="maiszinho">+</span></div>
+                            <p id="criarPlaylist" class="artistas-card-titulo">Criar playlist</p>
+                        </button>
                     </li>
                 </ul>
                 <h1 class="titulo-livraria">Albuns Salvos</h1>
@@ -114,9 +133,7 @@
                     <li class="playlist-elemnt">
                         <a href="album.html" class="card-liv">
                             <div class="fundo-maiszinho"><span class="maiszinho">+</span></div>
-                            <form id="albumForm"> <!-- action="album.html" method="post" -->
                                 <button type="submit" id="criarAlbum" class="artistas-card-titulo">Adicionar Album</button>
-                            </form>
                         </a>
                     </li>
                 </ul>
@@ -165,7 +182,8 @@
 
         <audio src=""></audio>
     </div>
-    <script src="../js/Conta.js"></script>
+    <script type="module" src="../js/playlistService.js"></script>
+    <script type="module" src="../js/usuarioService.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

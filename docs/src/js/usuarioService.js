@@ -1,4 +1,4 @@
-import { buscarUsuarioPorEmail, criarUsuario } from "./usuarioApi.js";
+import { atualizarUsuario, buscarUsuarioPorEmail, criarUsuario, deletarUsuario } from "./usuarioApi.js";
 
 let usuarioAtivo = localStorage.getItem('Usuario');
 
@@ -15,55 +15,35 @@ async function carregarDadosDoBanco() {
     }
   }
   
-  async function iniciarSite() {
+async function iniciarSite() {
     const dados = await carregarDadosDoBanco();
-  
+
     const container = document.getElementById('data-container');
     if (!container) {
-      console.error('Elemento com ID "data-container" não encontrado.');
-      return;
+        // console.error('Elemento com ID "data-container" não encontrado.');
+        return;
     }
-  
-        console.log(dados[0])
-
-        for(i = 0; i < 10; i++) {
-            dados[i]
-            nome = dados[i].nome
-        }
-    //   const p = document.createElement('p');
-    //   p.textContent = nome || JSON.stringify(item);
-    //   artistasList.appendChild(p);  
-
-    // <li class="artistas-card">
-    //     <figure
-    //     style="background-image: url(https://portalperifacon.com/wp-content/uploads/2024/09/imagem-2-1.jpg);"
-    //     class="artistas-card-img"></figure>
-    //     <p class="artistas-card-titulo">${nome}</p>
-    //     <p class="artistas-card-subtitulo">Artista</p>
-    // </li>
-
 
     document.getElementById('loading-screen')?.classList.add("inativo");
     document.getElementById('container')?.classList.add("ativo");
-  }
+}
   
-  iniciarSite();
+iniciarSite();
   
-  window.addEventListener('load', () => {
+window.addEventListener('load', () => {
     const loadingScreen = document.getElementById('loading-screen');
     const mainContent = document.getElementById('main-content');
-  
+
     loadingScreen?.classList.add('fade-out');
-  
+
     setTimeout(() => {
-      loadingScreen?.classList.add("inativo");
-      mainContent?.classList.add("ativo");
+        loadingScreen?.classList.add("inativo");
+        mainContent?.classList.add("ativo");
     }, 5000);
-  });
+});
 
+// CARREGAR ICONES DE PERFIL OU ALERTA PARA ENTRAR EM CONTA
 document.addEventListener('DOMContentLoaded', () => {
-    // Coloca aqui para aparecer a tela
-
     if (usuarioAtivo == null) {
         const lightbox = document.getElementById("alerta-conta");
         const lightboxFechar = document.getElementById("lightboxFechar");
@@ -93,21 +73,21 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         // USUARIO LOGADO
         const entrar = document.getElementById('entrar');
-        entrar.style.display = 'none'
+        if (entrar) entrar.style.display='none'
 
         const plano = document.getElementById('plano')
-        plano.classList.add('usuario-ativo')
+        if (plano) plano.classList.add('usuario-ativo')
         
         const perfil = document.getElementById('perfil')
-        perfil.classList.add('usuario-ativo')
+        if (perfil) perfil.classList.add('usuario-ativo')
         
         const sair = document.getElementById('sair');
-        sair.addEventListener('click', () => {localStorage.removeItem('Usuario')})
-        
+        if (sair) sair.addEventListener('click', () => {localStorage.removeItem('Usuario')})
+
         // ABRIR DROPDOWN PERFIL
         const perfilLinks = document.getElementById("perfilLinks");
 
-        perfil.addEventListener("click", function () {
+        if (perfilLinks && perfil) perfil.addEventListener("click", function () {
             if (perfilLinks.style.display == "block") {
             perfilLinks.style.display = "none";
             } else {
@@ -116,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // FECHAR O DROPDOWN AO CLICAR FORA
-        document.addEventListener("click", function (event) {
+        if (perfil) document.addEventListener("click", function (event) {
         const isClickInside =
             perfil.contains(event.target) || perfilLinks.contains(event.target);
 
@@ -126,7 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 })
-
 
 // PARTE DE LOGIN
 async function handleLoginSubmit(e) {
@@ -168,16 +147,63 @@ async function handleRegisterSubmit(e) {
     }
 }
 
+// ATUALIZAR O USUARIO
+async function handleUpdateSubmit(e) {
+    e.preventDefault()
+    const usuarioAtivo = localStorage.getItem('Usuario');
+    const usuario = await buscarUsuarioPorEmail(usuarioAtivo);
+
+    let email = usuario.email;
+
+    let nomeEscolhido = document.getElementById("name").value;
+    if (nomeEscolhido.trim() == '') nomeEscolhido = usuario.nome;
+
+    let senhaEscolhido = document.getElementById("senha").value;
+    if (senhaEscolhido.trim() == '') senhaEscolhido = usuario.senha;
+
+    try {
+        const usuarioAtualizado = await atualizarUsuario(email, nomeEscolhido, senhaEscolhido);
+        alert("Usuário atualizado com sucesso!")
+        localStorage.setItem('Usuario', email)
+    } catch (error) {
+        console.log(error)
+        alert("Erro ao atualizar usuário.");
+    }
+}
+
+// DELETAR CONTA
+async function handleDeleteUser(e) {
+    e.preventDefault()
+    const usuarioAtivo = localStorage.getItem('Usuario');
+    const usuario = await buscarUsuarioPorEmail(usuarioAtivo);
+    
+    let id = usuario.id;
+    
+    try {
+        const usuarioDeletado = await deletarUsuario(id);
+        alert("Usuário deletado com sucesso!");
+        localStorage.removeItem('Usuario');
+        window.location.href = '../../index.html';
+    } catch (error) {
+        console.log(error)
+        alert("Erro ao deletar usuário.");
+    }
+}
+
 // Inicialização do listener
 document.addEventListener("DOMContentLoaded", function () {
     // CARREGAR O BOTAO DE LOGIN
     const loginForm = document.getElementById("loginForm");
-    if (loginForm) {
-        loginForm.addEventListener("submit", handleLoginSubmit);
-    }
+    if (loginForm) loginForm.addEventListener("submit", handleLoginSubmit);
     // CARREGAR O BOTAO DE REGISTRAR
     const registerForm = document.getElementById("registerForm");
-    if (registerForm) {
-        registerForm.addEventListener("submit", handleRegisterSubmit);
-    }
+    if (registerForm) registerForm.addEventListener("submit", handleRegisterSubmit);
+    // CARREGAR O BOTAO DE UPDATE
+    const updateForm = document.getElementById("updateForm");
+    if (updateForm) updateForm.addEventListener("submit", handleUpdateSubmit);
+    // CARREGAR O BOTAO DE DELETAR
+    const deleteUserBtn = document.getElementById("deleteUserBtn");
+    if (deleteUserBtn) deleteUserBtn.addEventListener("click", handleDeleteUser);
 });
+
+export { usuarioAtivo }

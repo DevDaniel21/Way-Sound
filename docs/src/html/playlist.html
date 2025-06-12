@@ -22,29 +22,41 @@
 </head>
 
 <body>
+    <!-- Tela de carregamento -->
+    <div id="data-container">
+        <div id="loading-screen">Carregando dados...</div>
+     </div>
+
+    <div class="lightbox" id="alerta-conta">
+        <div class="lightbox-container">
+            <span class="fechar-container">
+                <ion-icon name="close-outline" class="fechar" id="lightboxFechar"></ion-icon>
+            </span>
+            <h3 class="lightbox-title">Entre em sua conta</h3>
+            <p class="lightbox-text">Use uma conta para ouvir nossas músicas, criar playlists e acessar as suas
+                playlists</p>
+            <a href="./entre.html" class="btn-registrar">Entrar</a>
+        </div>
+    </div>
+
     <div class="container">
         <header>
-            <div class="left-group">
-                <a href="../html/livraria.html" class="playlist-button">&lt; Voltar</a>
+            <button id="entrar" class="entrar-button"><a href="./entre.html">Entrar</a></button>
+            <div id="plano" class="planos">
+                <button class="planos-button">
+                    <a href="planos.html">Planos</a>
+                </button>
             </div>
-
-            <div class="right-group">
-                <div class="planos">
-                    <a href="planos.html" class="planos-button">Planos</a>
-                </div>
-
-                <div class="perfil" id="perfilIcon">
-                    <img src="../../imgs/perfil.svg" class="icone">
-                    <div class="perfil-links" id="perfilLinks">
-                        <a href="config-user.html" class="perfil-link">Configurações</a>
-                        <a href="../../index.html" class="perfil-link">Sair</a>
-                    </div>
+            <div id="perfil" class="perfil">
+                <img src="../../imgs/perfil.svg" class="icone-perf" id="perfilImg">
+                <div class="perfil-links" id="perfilLinks">
+                    <a href="./config-user.html" class="perfil-link">Configurações</a>
+                    <a id="sair" href="" class="perfil-link">Sair</a>
                 </div>
             </div>
         </header>
-
         <aside>
-            <a href="sobre.html">
+            <a href="./sobre.html">
                 <picture>
                     <source media="(max-width: 600px)" srcset="../../imgs/logo-pequena.png">
                     <source media="(max-width: 1024px)" srcset="../../imgs/logos/logo-media.png">
@@ -128,6 +140,7 @@
                     <button class="botao-pl add-mus">Adicionar Músicas<span class="maiszinho-add">+</span></button>
                     <button class="botao-pl org-mus">Editar Ordem</button>
                     <button class="botao-pl share-mus">Compartilhar</button>
+                    <button id="deletePlaylist" class="botao-pl delete-mus">Deletar playlist</button>
                 </div>
 
             </div>
@@ -228,7 +241,8 @@
 
         <audio src=""></audio>
     </div>
-    <script src="../js/Conta.js"></script>
+    <script type="module" src="../js/playlistService.js"></script>
+    <script type="module" src="../js/usuarioService.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

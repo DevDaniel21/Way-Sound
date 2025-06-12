@@ -45,9 +45,9 @@ class PlaylistController {
     }
 
     async show(req, res) {
-        const { playlistID } = req.params
+        const { id } = req.params
         try {
-            const playlist = await Playlist.findOne({ where: { id: playlistID } })
+            const playlist = await Playlist.findOne({ where: { id } })
             if (!playlist) {
                 return res.status(404).json({ error: 'Playlist não encontrado' })
             }
@@ -69,10 +69,10 @@ class PlaylistController {
     }
 
     async showMusicas(req, res) {
-        const { playlistID } = req.params
+        const { id } = req.params
     
         try {
-            const playlist = await Playlist.findByPk(playlistID, {
+            const playlist = await Playlist.findByPk(id, {
                 include: {
                     model: Musica,
                     through: { attributes: [] } // remove colunas da tabela intermediária da resposta
@@ -82,7 +82,7 @@ class PlaylistController {
             if (!playlist) {
                 return res.status(404).json({ error: 'Playlist não encontrada' })
             }
-    
+            
             return res.status(200).json(playlist.Musicas) // ou playlist.musicas
         } catch (error) {
             return res.status(500).json({ error: 'Erro ao buscar músicas da playlist' })

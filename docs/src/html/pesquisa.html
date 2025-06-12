@@ -7,6 +7,7 @@
     <title>WaySound | Pesquisar</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/planos.css">
     <link rel="stylesheet" href="../css/pesquisa.css">
     <link rel="stylesheet" href="../css/player.css">
     <!-- FONTE -->
@@ -22,7 +23,16 @@
 </head>
 
 <body>
-
+        <!-- Tela de carregamento -->
+    <div id="data-container">
+        <div id="loading-screen">Carregando dados...
+            <div id="loading-screen-bolhinha">
+                <div class="bolhinha" style="--i: 1"></div>
+                <div class="bolhinha" style="--i: 1.3"></div>
+                <div class="bolhinha" style="--i: 1.6"></div>
+            </div>
+        </div>
+    </div>
 
     <div class="lightbox" id="alerta-conta">
         <div class="lightbox-container">
@@ -36,14 +46,24 @@
     </div>
 
     <div class="container">
-
         <header class="header">
             <div class="header-container">
                 <input type="text" id="pesquisaInput" class="barra" placeholder="Pesquisar...">
             </div>
-            <button class="entrar-button"><a href="entre.html">Entrar</a></button>
+            <button id="entrar" class="entrar-button"><a href="./entre.html">Entrar</a></button>
+            <div id="plano" class="planos">
+                <button class="planos-button">
+                    <a href="planos.html">Planos</a>
+                </button>
+            </div>
+            <div id="perfil" class="perfil">
+                <img src="../../imgs/perfil.svg" class="icone-perf" id="perfilImg">
+                <div class="perfil-links" id="perfilLinks">
+                    <a href="./config-user.html" class="perfil-link">Configurações</a>
+                    <a id="sair" href="" class="perfil-link">Sair</a>
+                </div>
+            </div>
         </header>
-
         <aside>
             <a href="sobre.html">
                 <picture>
@@ -153,11 +173,10 @@
 
         <audio src=""></audio>
     </div>
+
+    <script type="module" src="../js/searchService.js"></script>
+    <script type="module" src="../js/usuarioService.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-   
-    <script src="../js/semConta.js"></script>
-    <script src="../js/Conta.js"></script>
 </body>
-
 </html>

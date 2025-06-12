@@ -97,40 +97,71 @@ button {
     background-color: #111;
     color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
     font-size: 1.5rem;
     z-index: 9999;
     opacity: 1;
     visibility: visible;
     transition: opacity 1s ease, visibility 1s ease;
-  }
+}
 
-  #loading-screen.fade-out {
+#loading-screen-bolhinha {
+    display: flex;
+    gap: 2rem;
+    display: flex;
+    height: 20px;
+}
+
+.bolhinha {
+    background-color: var(--purple-dark);
+    height: 1.7rem;
+    width: 1.7rem;
+    border-radius: 100%;
+    animation: bounce 3s ease-in-out infinite;
+    animation-delay: calc(1s * var(--i));
+}
+
+@keyframes bounce {
+    25% {
+        margin-bottom: 15px;
+    }
+    50% {
+        margin-bottom: 0px;
+    }
+    75% {
+        margin-top: 15px;
+    }
+}
+
+
+#loading-screen.fade-out {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-  }
+}
 
-  #main-content {
+#main-content {
     opacity: 0;
     transition: opacity 1s ease;
-  }
-  #main-content.show {
+}
+#main-content.show {
     opacity: 1;
-  }
+}
 
-  .ativo {
+.ativo {
     display: block;
-  }
+}
 
-  .inativo {
+.inativo {
     display: none;
-  }
+}
 
 .usuario-ativo {
     display: inline-block !important;
-  }
+}
 
 .lightbox {
     display: none;
