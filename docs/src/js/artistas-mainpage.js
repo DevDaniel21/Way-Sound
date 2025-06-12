@@ -10,6 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(artists => {
+            // Embaralhar artistas (Fisher-Yates)
+            for (let i = artists.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [artists[i], artists[j]] = [artists[j], artists[i]];
+            }
+
             // Clear loading state (if any)
             artistasList.innerHTML = '';
 
