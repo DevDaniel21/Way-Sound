@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // ABRIR DROPDOWN PERFIL
         const perfilLinks = document.getElementById("perfilLinks");
 
-        if (perfilLinks) perfil.addEventListener("click", function () {
+        if (perfilLinks && perfil) perfil.addEventListener("click", function () {
             if (perfilLinks.style.display == "block") {
             perfilLinks.style.display = "none";
             } else {
@@ -205,3 +205,5 @@ document.addEventListener("DOMContentLoaded", function () {
     const deleteUserBtn = document.getElementById("deleteUserBtn");
     if (deleteUserBtn) deleteUserBtn.addEventListener("click", handleDeleteUser);
 });
+
+export { usuarioAtivo }

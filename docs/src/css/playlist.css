@@ -454,9 +454,23 @@ main::-webkit-scrollbar-thumb:hover {
   background: var(--black-dark-active);
   border: 3px solid var(--purple);
   border-radius: 20px;
-  padding-bottom: 6px;
   padding: 13px;
   transition: 0.3s;
+}
+
+.delete-mus {
+  background-color: var(--black-light);
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: red 3px solid;
+}
+
+.delete-mus:hover {
+    background-color: rgb(223, 52, 52)  !important;
+    color: var(--white) !important;
+    transition: var(--transition-1) !important;
 }
 
 .add-mus {
