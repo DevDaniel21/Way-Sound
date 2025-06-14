@@ -88,11 +88,6 @@ a {
 a,
 button {
     cursor: pointer;
-}
-
-.desativado {
-    pointer-events: none;
-    cursor: default;
 }  
 
 #loading-screen {
@@ -356,6 +351,7 @@ aside>picture {
     display: flex;
     flex-direction: row;
     align-items: center;
+    cursor: default;
     font-size: var(--fs-32);
     font-weight: var(--fw-bold);
 }
