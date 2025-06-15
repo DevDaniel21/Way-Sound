@@ -18,7 +18,7 @@ async function listarUsuarios() {
 
 // Função para buscar usuario por email (GET)
 async function buscarUsuarioPorEmail(email) {
-    console.log(`Buscando usuário com email: ${email}`);
+    // console.log(`Buscando usuário com email: ${email}`);
     const response = await fetch(`${BASE_URL}/usuario/${encodeURIComponent(email)}`);
     return response.json();
 }

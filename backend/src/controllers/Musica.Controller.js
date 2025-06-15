@@ -3,9 +3,9 @@ const { Op } = require('sequelize');
 
 class MusicaController {
     async store(req, res) {
-        const { nome, autor, foto, audio } = req.body
+        const { nome, autor, foto, audio, usuario_id } = req.body
         try {
-            const musica = await Musica.create({ nome, autor, foto, audio })
+            const musica = await Musica.create({ nome, autor, foto, audio, usuario_id })
             console.log(musica)
             return res.status(201).json(musica)
         } catch (error) {
@@ -35,6 +35,30 @@ class MusicaController {
         }
     }
 
+    async showById(req, res) {
+        const { id } = req.params
+        try {
+            const musica = await Musica.findOne({ where: { id } })
+            if (!musica) {
+                return res.status(404).json({ error: 'Música não encontrada' })
+            }
+            return res.status(200).json(musica)
+        } catch (error) {
+            return res.status(500).json({ error: 'Erro ao buscar música' })
+        }
+    }
+
+    async showMusicaUsuario(req, res) {
+        const { usuario_id } = req.params;
+
+        try {
+            const musicas = await Musica.findAll({ where: { usuario_id: usuario_id } });
+            return res.status(200).json(musicas);
+        } catch (error) {
+            return res.status(500).json({ error: 'Erro ao listar musicas do usuário' });
+        }
+    }
+
     async search(req, res) {
         const { nome } = req.params;
     
@@ -59,11 +83,10 @@ class MusicaController {
     }
     
     async update(req, res) {
-        const { nome } = req.params
-        const { foto, audio } = req.body
+        const { id } = req.params
+        const { nome, foto, audio } = req.body
         try {
-            const musica = await Musica.findOne({ where: { nome } })
-            console.log(email)
+            const musica = await Musica.findOne({ where: { id } })
             if (!musica) {
                 return res.status(404).json({ error: 'Música não encontrada' })
             }

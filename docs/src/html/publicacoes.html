@@ -6,9 +6,9 @@
         <title>WaySound</title>
         <!-- CSS -->
         <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/planos.css" />
         <link rel="stylesheet" href="../css/publicar.css" />
         <link rel="stylesheet" href="../css/player.css" />
-        <link rel="stylesheet" href="../css/planos.css" />
         <!-- FONTE -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,21 +38,20 @@
         </div>
 
         <div class="container">
-            <header>
-                <button id="entrar" class="entrar-button"><a href="src/html/entre.html">Entrar</a></button>
-                <div id="plano" class="planos">
-                    <button class="planos-button">
-                        <a href="planos.html">Planos</a>
-                    </button>
+        <header class="header">
+            <div id="plano" class="planos">
+                <button class="planos-button">
+                    <a href="planos.html">Planos</a>
+                </button>
+            </div>
+            <div id="perfil" class="perfil">
+                <img src="../../imgs/perfil.svg" class="icone-perf" id="perfilImg">
+                <div class="perfil-links" id="perfilLinks">
+                    <a href="./config-user.html" class="perfil-link">Configurações</a>
+                    <a id="sair" href="../../index.html" class="perfil-link">Sair</a>
                 </div>
-                <div id="perfil" class="perfil">
-                    <img src="../../imgs/perfil.svg" class="icone-perf" id="perfilImg">
-                    <div class="perfil-links" id="perfilLinks">
-                        <a href="./config-user.html" class="perfil-link">Configurações</a>
-                        <a id="sair" href="" class="perfil-link">Sair</a>
-                    </div>
-                </div>
-            </header>
+            </div>
+        </header>
             <aside>
                 <a
                     href="sobre.html"
@@ -140,7 +139,7 @@
             </aside>
             <main>
                 <!-- Botão de publicar com ícone -->
-                <button class="publicar" id="publicar" type="submit">
+                <button class="publicar" id="publicar">
                     Publicar
                     <img
                         src="../../imgs/adcionar.svg"
@@ -155,14 +154,29 @@
 
                 <!-- Popup -->
                 <div class="popup-overlay" id="popupOverlay">
-                    <div class="popup">
+                    <form class="popup" id="formMusic">
                         <h2 class="pop-title">Adicionar Música</h2>
+                        
+                        <input
+                            type="text"
+                            id="nomeMusica"
+                            placeholder="Nome da música"
+                            autocomplete="off"
+                        />
+                        <input
+                            type="text"
+                            id="nomeArtista"
+                            placeholder="Artista"
+                            autocomplete="off"
+                            disabled
+                            />
 
                         <label for="imgUrl">Selecionar foto da música</label>
                         <div class="file-input-wrapper">
                             <div id="imgFileName" class="file-name"></div>
                             <button
                                 type="button"
+                                onclick="document.getElementById('imgUrl').click()"
                                 id="btnSelectImg"
                                 class="file-btn"
                             >
@@ -175,20 +189,7 @@
                                 style="display: none"
                             />
                         </div>
-
-                        <input
-                            type="text"
-                            id="nomeMusica"
-                            placeholder="Nome da música"
-                            autocomplete="off"
-                        />
-                        <input
-                            type="text"
-                            id="nomeArtista"
-                            placeholder="Artista/Banda"
-                            autocomplete="off"
-                        />
-
+                            
                         <label for="musicaAudio"
                             >Selecione o arquivo mp3 da música</label
                         >
@@ -196,6 +197,7 @@
                             <div id="audioFileName" class="file-name"></div>
                             <button
                                 type="button"
+                                onclick="document.getElementById('musicaAudio').click()"
                                 id="btnSelectAudio"
                                 class="file-btn"
                             >
@@ -210,14 +212,14 @@
                         </div>
 
                         <div class="botoes-add-del">
-                            <button class="btn-add" id="btn-add">
+                            <button class="btn-add" id="btn-add" type="submit">
                                 Adicionar
                             </button>
-                            <button class="btn-cancel" id="btn-cancel">
+                            <button class="btn-cancel" id="btn-cancel" type="button">
                                 Cancelar
                             </button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </main>
 
@@ -262,6 +264,7 @@
         </div>
 
         <script type="module" src="../js/usuarioService.js"></script>
+        <script type="module" src="../js/musicaService.js"></script>
         <script
             type="module"
             src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"

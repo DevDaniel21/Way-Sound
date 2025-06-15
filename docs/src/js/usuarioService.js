@@ -16,6 +16,7 @@ async function carregarDadosDoBanco() {
   }
   
 async function iniciarSite() {
+    const janelaAtual = window.location.pathname.split('/').pop();
     const dados = await carregarDadosDoBanco();
 
     const container = document.getElementById('data-container');
@@ -84,7 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (perfil) perfil.classList.add('usuario-ativo')
         
         const sair = document.getElementById('sair');
-        if (sair) sair.addEventListener('click', () => {localStorage.removeItem('Usuario')})
+        if (sair) sair.addEventListener('click', () => {
+            localStorage.removeItem('Usuario'); 
+        })
 
         // ABRIR DROPDOWN PERFIL
         const perfilLinks = document.getElementById("perfilLinks");

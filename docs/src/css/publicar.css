@@ -120,8 +120,11 @@
   padding: 20px;
   border-radius: 10px;
   width: 400px;
+  height: 90%;
+  max-height: 800px;
   box-shadow: 0 0 10px var(--purple);
   gap: 15px;
+  position: static;
 }
 
 /* Titulo */
@@ -157,7 +160,6 @@ label {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 5px;
   margin-bottom: 10px;
 }
@@ -167,6 +169,7 @@ label {
   font-size: 0.9rem;
   min-height: 20px;
   word-break: break-word;
+  text-align: center;
 }
 
 .file-btn {
@@ -239,8 +242,10 @@ label {
   gap: 20px;
   color: #000;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 100vh;
+  width: 60vw;
   position: relative;
+  flex-direction: row;
+  height: min-content;
 }
 
 .card img {
@@ -253,6 +258,7 @@ label {
 .card-content {
   display: flex;
   gap: 30px;
+  flex-direction: row;
   flex-wrap: wrap;
   flex: 1;
 }
@@ -307,8 +313,8 @@ label {
 }
 
 .dropdown-content.show {
-  display: flex;
-  flex-direction: column;
+  display: block;
+  /* flex-direction: column; */
 }
 
 .dropdown-content button {

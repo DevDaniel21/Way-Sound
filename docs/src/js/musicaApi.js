@@ -1,11 +1,11 @@
 const BASE_URL = 'http://localhost:4000';
 
 // Função para criar musica (POST)
-async function criarMusica(nome, autor, foto, audio) {
+async function criarMusica(nome, autor, foto, audio, usuario_id) {
     const response = await fetch(`${BASE_URL}/musica`, {
         method: 'POST',
         headers: { 'Content-type': 'application/json' },
-        body: JSON.stringify({ nome, autor, foto, audio }),
+        body: JSON.stringify({ nome, autor, foto, audio, usuario_id }),
     });
     return response.json();
 }
@@ -13,6 +13,18 @@ async function criarMusica(nome, autor, foto, audio) {
 // Função para listar todas as musicas (GET)
 async function listarMusicas() {
     const response = await fetch(`${BASE_URL}/musica`);
+    return response.json();
+}
+
+// Função para listar todas as musicas de usuario (GET)
+async function listarMusicasUsuario(usuario_id) {
+    const response = await fetch(`${BASE_URL}/musica/usuario/${usuario_id}`);
+    return response.json();
+}
+
+// Função para buscar musica por nome (GET)
+async function buscarMusicaPorId(id) {
+    const response = await fetch(`${BASE_URL}/musica/carregar/${id}`);
     return response.json();
 }
 
@@ -27,12 +39,13 @@ async function pesquisarMusicas(nome) {
     const response = await fetch(`${BASE_URL}/musica/search/${nome}`);
     return response.json();
 }
+
 // Função para atualizar musica por nome (PUT)
-async function atualizarMusica(nome, foto, audio) {
-    const response = await fetch(`${BASE_URL}/musica/${nome}`, {
+async function atualizarMusica(id, nome, foto, audio) {
+    const response = await fetch(`${BASE_URL}/musica/${id}`, {
         method: 'PUT',
         headers: { 'Content-type': 'application/json'},
-        body: JSON.stringify({foto, audio})
+        body: JSON.stringify({nome ,foto, audio})
     });
     return response.json()
 }
@@ -45,4 +58,4 @@ async function deletarMusica(id) {
 }
 
 
-export { criarMusica, listarMusicas, buscarMusicaPorNome, pesquisarMusicas, atualizarMusica, deletarMusica }
+export { criarMusica, listarMusicas, listarMusicasUsuario, buscarMusicaPorId, buscarMusicaPorNome, pesquisarMusicas, atualizarMusica, deletarMusica }

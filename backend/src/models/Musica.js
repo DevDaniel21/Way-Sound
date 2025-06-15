@@ -22,10 +22,9 @@ export default class Musica extends Model {
           otherKey: 'playlist_id',
         })
         
-        this.belongsToMany(models.Artista, {
-            through: 'Artista_Musica',
-            foreignKey: 'artista_id',
-            otherKey: 'musica_id',
+        this.belongsTo(models.Usuario, {
+            foreignKey: 'usuario_id',
+            as: 'usuario',
         })
 
         this.belongsToMany(models.Album, {
