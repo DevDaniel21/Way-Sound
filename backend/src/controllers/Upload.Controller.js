@@ -7,7 +7,7 @@ class UploadController {
         res.status(200).send({ message: "Rota de upload de imagem" });
     }
 
-    uploadImagem(req, res) {
+    async uploadImagem(req, res) {
         const storage = multer.diskStorage({
             destination: function(req, file, cb) {
                 cb(null, path.join(__dirname, '..', 'public', 'images'))
@@ -27,12 +27,14 @@ class UploadController {
             }
     
             console.log(req.file.filename);
-    
-            return res.status(200).send({ message: 'Upload realizado com sucesso'});
+            const url = `../../../backend/src/public/images/${req.file.filename}`;
+            console.log(url)
+            
+            res.status(200).send({ url });
         })
     }
 
-    uploadAudio(req, res) {
+    async uploadAudio(req, res) {
         const storage = multer.diskStorage({
             destination: function(req, file, cb) {
                 cb(null, path.join(__dirname, '..', 'public', 'audios'))
@@ -50,10 +52,11 @@ class UploadController {
             } else if (err) {
                 return res.status(500).send(err);
             }
-    
+            
             console.log(req.file.filename);
+            const url = `../../../backend/src/public/audios/${req.file.filename}`;
     
-            return res.status(200).send({ message: 'Upload realizado com sucesso'});
+            return res.status(200).send({ url }); 
         })
     }
 }

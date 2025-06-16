@@ -154,7 +154,7 @@
 
                 <!-- Popup -->
                 <div class="popup-overlay" id="popupOverlay">
-                    <form class="popup" id="formMusic">
+                    <form class="popup" id="formMusic" enctype="multipart/form-data">
                         <h2 class="pop-title">Adicionar Música</h2>
                         
                         <input
@@ -179,6 +179,7 @@
                                 onclick="document.getElementById('imgUrl').click()"
                                 id="btnSelectImg"
                                 class="file-btn"
+                                name="file"
                             >
                                 Escolher imagem
                             </button>
@@ -200,6 +201,7 @@
                                 onclick="document.getElementById('musicaAudio').click()"
                                 id="btnSelectAudio"
                                 class="file-btn"
+                                name="file"
                             >
                                 Escolher áudio
                             </button>

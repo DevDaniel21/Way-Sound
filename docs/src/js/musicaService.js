@@ -27,8 +27,26 @@ async function handleCreateMusic(e) {
 
     const nome = document.getElementById('nomeMusica').value;
     const artista = document.getElementById('nomeArtista').value;
-    const foto = document.getElementById('imgUrl').value;
-    const audio = document.getElementById('musicaAudio').value;
+
+    // Imagem
+    const formDataImg = new FormData();
+    formDataImg.append('file', document.getElementById('imgUrl').files[0]);
+    const resImg = await fetch('http://localhost:4000/upload/imagem', {
+        method: 'POST',
+        body: formDataImg
+    });
+    const imgData = await resImg.json();
+    const foto = imgData.url;
+
+    // Áudio
+    const formDataAudio = new FormData();
+    formDataAudio.append('file', document.getElementById('musicaAudio').files[0]);
+    const resAudio = await fetch('http://localhost:4000/upload/audio', {
+        method: 'POST',
+        body: formDataAudio
+    });
+    const audioData = await resAudio.json();
+    const audio = audioData.url;
 
     if (!nome.trim() || !foto.trim() || !audio.trim()) {
         alert('Existem campos vazios');
@@ -39,7 +57,8 @@ async function handleCreateMusic(e) {
             try {
                 const novaMusica = await criarMusica(nome, artista, foto, audio, usuario_id);
                 alert('Música publicada com sucesso!');
-                console.log(novaMusica)
+                console.log(novaMusica);
+                alert(JSON.stringify(novaMusica));
                 const btnCancel = document.getElementById('btn-cancel');
                 btnCancel.click();
                 window.location.reload();
@@ -115,11 +134,11 @@ async function carregarMusicasUsuario() {
         musicas.forEach((e) => {
             const musicCard = `
             <div class="card" data-id="${e.id}">
-                <img src="" alt="Capa da música">
+                <img src="${e.foto}" alt="Capa da música">
                 <div class="card-content">
                 <div class="column"><strong>Música: </strong>${e.nome}</div>
                 <div class="column"><strong>Artista: </strong>${e.autor}</div>
-                <audio controls src=""></audio>
+                <audio controls src="${e.audio}"></audio>
                 </div>
                 <div class="dropdown">
                     <button class="dropdown-btn">⋮</button>
