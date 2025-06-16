@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "multer": "^2.0.1",
     "mysql2": "^3.14.1",
     "sequelize": "^6.37.7"
   }
