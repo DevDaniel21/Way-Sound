@@ -274,7 +274,7 @@ hr {
     .container {
         padding: 0;
         background: none;
-        height: 100vh;
+        height: 100svh;
         width: 100vw;
         display: flex;
         flex-direction: column;

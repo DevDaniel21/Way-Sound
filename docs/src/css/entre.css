@@ -54,8 +54,8 @@
 
   .flex.flex-wrap > div:last-child {
     width: 60%;
-    height: auto;
-    overflow-y: auto;
+    height: 100%;
+    overflow-y: unset; /* ou remova essa linha */
   }
 
   .logo {
