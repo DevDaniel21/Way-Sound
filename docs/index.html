@@ -147,7 +147,7 @@
             <article class="musicas" id="secaoMusicas">
                 <h2>Musicas em alta</h2>
                 <ul class="musicas-list" id="musicasList">
-                    <li class="musicas-card">
+                    <li class="musicas-card" data-id="1">
                         <figure
                             style="background-image: url(https://i.ytimg.com/vi/2csOMGFFgJ0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB11nm0Cnjt67qYxpdyTaTcifsdow);"
                             class="musicas-card-img">
@@ -171,10 +171,10 @@
         </main>
         <div class="playerDisplay">
             <div class="playerMusic">
-                <figure class="playerIcon esqueleto"></figure>
+                <figure class="playerIcon esqueleto"><img src=""></figure>
                 <div class="playerMusic-text">
-                    <p class="playerMusic-titulo esqueleto"></p>
-                    <p class="playerMusic-subtitulo esqueleto"></p>
+                    <p id="playerMusic-titulo" class="playerMusic-titulo esqueleto"></p>
+                    <p id="playerMusic-subtitulo" class="playerMusic-subtitulo esqueleto"></p>
                 </div>
             </div>
             <div class="playPainel">
@@ -190,21 +190,28 @@
                 </div>
 
                 <div class="playerTime">
-                    <p>00:00</p>
-                    <hr>
-                    <p>00:00</p>
+                    <p id="tempoAtual">0:00</p>
+                    
+                    <div id="barraFundo">
+                        <div id="barraProgresso"></div>
+                    </div>
+
+                    <p id="tempoTotal">0:00</p>
                 </div>
             </div>
             <div class="playerVolume"></div>
         </div>
 
 
-        <audio src=""></audio>
+        <audio id="audioSite">
+            <source src="" type="audio/mpeg">
+        </audio>
     </div>
 
+    <script type="module" src="src/js/usuarioService.js"></script>
+    <script type="module" src="src/js/musicaService.js"></script>
     <script src="src/js/artistas-mainpage.js"></script>
     <script src="src/js/musicas-alta.js"></script>
-
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

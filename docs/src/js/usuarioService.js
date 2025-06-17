@@ -1,4 +1,5 @@
 import { atualizarUsuario, buscarUsuarioPorEmail, criarUsuario, deletarUsuario } from "./usuarioApi.js";
+import { buscarMusicaPorId } from "./musicaApi.js";
 
 let usuarioAtivo = localStorage.getItem('Usuario');
 
@@ -248,6 +249,83 @@ document.addEventListener("DOMContentLoaded", function () {
     // CARREGAR CONFIG
     const janelaAtual = window.location.pathname.split('/').pop();
     if (janelaAtual == 'config-user.html') loadConfig()
+
+    // CARREGAR PLAYER
+    if (usuarioAtivo) {
+        // CARREGAR DIVS DA MÚSICA
+        const playerIcon = document.querySelector('.playerIcon img');
+        const playerTitulo = document.getElementById('playerMusic-titulo')
+        const playerSubtitulo = document.getElementById('playerMusic-subtitulo')
+        // const teste = document.getElementById('')
+        // TROCAR MUSICA
+        const musicaIndex = document.querySelectorAll('.musicas-card');
+        if (musicaIndex) musicaIndex.forEach( (e) => {
+            e.addEventListener('click', async () => {
+                try {
+                    const id = parseInt(e.getAttribute('data-id'))
+                    const musica = await buscarMusicaPorId(id)
+                    console.log(musica)
+
+                    const audioDesejado = musica.audio;
+                    const audio = document.getElementById('audioSite');
+                    audio.src = audioDesejado;
+
+                    // TOCAR
+                    playDisplay.click();
+                    // ATUALIZAR DISPLAY
+                    playerIcon.src = musica.foto;
+                    playerTitulo.innerHTML = musica.nome;
+                    playerSubtitulo.innerHTML = musica.autor;
+
+                    playerTitulo.classList.remove('esqueleto')
+                    playerSubtitulo.classList.remove('esqueleto')
+                } catch (error) {
+                    console.log(error);
+                }
+            })
+        })
+
+        // CARREGAR BOTOES
+        const playDisplay = document.getElementById('play');
+        const audioAtual = document.getElementById('audioSite');
+        playDisplay.addEventListener('click', () => {
+            if (audioAtual.src != null) {
+                audioAtual.play();
+                playDisplay.style.display = 'none'
+                pauseDisplay.style.display = 'flex'
+            }
+        })
+        const pauseDisplay = document.getElementById('pause');
+        pauseDisplay.addEventListener('click', () => {
+            audioAtual.pause()
+            playDisplay.style.display = 'flex'
+            pauseDisplay.style.display = 'none'
+        })
+
+        // CARREGAR TEMPO
+        const audio = document.getElementById('audioSite');
+        const tempoTotal = document.getElementById('tempoTotal');
+        const tempoAtual = document.getElementById('tempoAtual');
+        const barraProgresso = document.getElementById('barraProgresso');
+
+        function formatarTempo(segundos) {
+            let min = Math.floor(segundos / 60);
+            let seg = Math.floor(segundos % 60);
+            if (seg < 10) seg = '0' + seg;
+            return `${min}:${seg}`;
+        }
+
+        audio.addEventListener('loadedmetadata', function () {
+            tempoTotal.textContent = `${formatarTempo(audio.duration)}`;
+            barraProgresso.style.width = '0%';
+        });
+
+        audio.addEventListener('timeupdate', function () {
+            tempoAtual.textContent = `${formatarTempo(audio.currentTime)}`;
+            let percentual = (audio.currentTime / audio.duration) * 100;
+            barraProgresso.style.width = percentual + '%';
+        });
+    }
 });
 
 export { usuarioAtivo }

@@ -16,6 +16,7 @@
 - npm i --save-dev sucrase
 - npm i dotenv
 - npm i express
+- npm i multer
 
 
 ## Conectando ao Banco de Dados

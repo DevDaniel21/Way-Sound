@@ -26,6 +26,11 @@
     width: 70px;
     height: 70px;
     border-radius: 1em;
+    overflow: hidden;
+}
+
+.playerIcon img {
+    width: 100%;
 }
 
 .playerMusic-text {
@@ -37,11 +42,13 @@
 .playerMusic-titulo {
     width: 200px;
     height: 25px;
+    font-size: 1.3rem;
 }
 
 .playerMusic-subtitulo {
     width: 200px;
     height: 15px;
+    font-size: .8rem;
 }
 
 .esqueleto {
@@ -94,6 +101,25 @@
 
 .playerTime>hr {
     width: 100%;
+}
+
+#barraFundo {
+    width: 300px;
+    height: 20px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+#barraProgresso {
+    height: 100%;
+    width: 0;
+    background: #681da5;
+    transition: width 0.2s linear;
+}
+
+.tempoDisplay {
+    display: flex;
+    gap: 2rem;
 }
 
 @media (max-width:600px) {
