@@ -758,7 +758,7 @@ main::-webkit-scrollbar-thumb:hover {
     }
 
     .icone {
-        font-size: var(--tamanho-1);
+        width: 60%;
     }
 
     .playLibrary {

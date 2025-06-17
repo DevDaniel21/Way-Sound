@@ -141,15 +141,6 @@
                         </button>
                     </li>
                 </ul>
-                <h2 class="titulo-livraria">Albuns salvos</h2>
-                <ul class="artistas-list">
-                    <li class="playlist-elemnt">
-                        <a href="album.html" class="card-liv">
-                            <div class="fundo-maiszinho"><span class="maiszinho">+</span></div>
-                                <button type="submit" id="criarAlbum" class="artistas-card-titulo">Adicionar Album</button>
-                        </a>
-                    </li>
-                </ul>
             </article>
 
             <footer>
@@ -166,10 +157,10 @@
 
         <div class="playerDisplay">
             <div class="playerMusic">
-                <figure class="playerIcon esqueleto"></figure>
+                <figure class="playerIcon esqueleto"><img src=""></figure>
                 <div class="playerMusic-text">
-                    <p class="playerMusic-titulo esqueleto"></p>
-                    <p class="playerMusic-subtitulo esqueleto"></p>
+                    <p id="playerMusic-titulo" class="playerMusic-titulo esqueleto"></p>
+                    <p id="playerMusic-subtitulo" class="playerMusic-subtitulo esqueleto"></p>
                 </div>
             </div>
             <div class="playPainel">
@@ -179,21 +170,27 @@
                     <!-- PAUSE -->
                     <a class="player" id="pause" style="display: none;"><ion-icon name="pause"></ion-icon></a>
                     <!-- PLAY -->
-                    <a class="player" id="play" style="margin-left: 5px;"><ion-icon name="play"></ion-icon></a>
+                    <a class="player" id="play"><ion-icon name="play"></ion-icon></a>
                     <!-- AVANCAR -->
                     <a class="player" id="skipForward"><ion-icon name="play-forward"></ion-icon></a>
                 </div>
 
                 <div class="playerTime">
-                    <p>00:00</p>
-                    <hr>
-                    <p>00:00</p>
+                    <p id="tempoAtual">0:00</p>
+                    
+                    <div id="barraFundo">
+                        <div id="barraProgresso"></div>
+                    </div>
+
+                    <p id="tempoTotal">0:00</p>
                 </div>
             </div>
             <div class="playerVolume"></div>
         </div>
 
-        <audio src=""></audio>
+        <audio id="audioSite">
+            <source src="" type="audio/mpeg">
+        </audio>
     </div>
     <script type="module" src="../js/playlistService.js"></script>
     <script type="module" src="../js/usuarioService.js"></script>

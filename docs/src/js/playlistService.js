@@ -77,18 +77,6 @@ async function carregarDadosPlaylist() {
         console.error(error);
     }
 
-    // MOSTRAR A QUANTIDADE DE MÚSICAS NA PLAYLIST
-    try {
-        // corrigir
-        const response = await buscarMusicaDaPlaylist(id);
-        let musicas = await response;
-
-        // ATUALIZAR DADOS DA PLAYLIST
-        document.getElementById("totalMusicas").textContent = musicas.length + " músicas";
-    } catch (error) {
-        alert("Erro de conexão com o servidor");
-        console.error(error);
-    }
 }
 
 // EDITAR PLAYLIST
