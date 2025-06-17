@@ -90,6 +90,24 @@ async function carregarDadosPlaylist() {
 async function handleEditPlaylist() {
     const playlistId = new URLSearchParams(window.location.search).get("id");
     const inputDesabilitado = document.getElementById("playlistNome").disabled;
+    const playlist = await buscarPlaylistPorId(playlistId);
+    let avatarAntigo = playlist.avatar;
+    let avatar = null;
+
+    const inputDeImagem = document.getElementById('playAvatar').files[0]
+    if (inputDeImagem != undefined) {
+        const formDataImg = new FormData();
+        formDataImg.append('file', document.getElementById('playAvatar').files[0]);
+        const resImg = await fetch('http://localhost:4000/upload/imagem', {
+            method: 'POST',
+            body: formDataImg
+        });
+        const imgData = await resImg.json();
+        avatar = imgData.url;
+        alert(avatar)
+    } else {
+        avatar = null;
+    }
 
     if (inputDesabilitado == true) {
         document.getElementById("playlistNome").disabled = false;
@@ -98,11 +116,7 @@ async function handleEditPlaylist() {
         // SALVA EDIÇÕES
         try {
             const nome = document.getElementById("playlistNome").value;
-            let avatar = document.getElementById("avatar").getAttribute("src");
-
-            if (avatar === "../../imgs/lapis.svg") {
-                avatar = "";
-            }
+            console.log(nome)
 
             const response = await atualizarPlaylist(playlistId, nome, avatar);
 
@@ -148,4 +162,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const deletePlaylist = document.getElementById("deletePlaylist");
     if (deletePlaylist)
         deletePlaylist.addEventListener("click", handleDeletePlaylist);
+    const btnAlterarAvatar = document.getElementById('playlistAvatar');
+    if (btnAlterarAvatar) {
+      btnAlterarAvatar.addEventListener('click', function() {
+        document.getElementById('playAvatar').click();
+      });
+    }
+    const avatarplay = document.getElementById('playAvatar');
+    if (avatarplay) avatarplay.addEventListener('change', handleEditPlaylist);
 });

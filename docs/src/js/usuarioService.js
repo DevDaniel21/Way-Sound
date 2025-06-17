@@ -315,12 +315,12 @@ document.addEventListener("DOMContentLoaded", function () {
             return `${min}:${seg}`;
         }
 
-        audio.addEventListener('loadedmetadata', function () {
+        if (audio) audio.addEventListener('loadedmetadata', function () {
             tempoTotal.textContent = `${formatarTempo(audio.duration)}`;
             barraProgresso.style.width = '0%';
         });
 
-        audio.addEventListener('timeupdate', function () {
+        if (audio) audio.addEventListener('timeupdate', function () {
             tempoAtual.textContent = `${formatarTempo(audio.currentTime)}`;
             let percentual = (audio.currentTime / audio.duration) * 100;
             barraProgresso.style.width = percentual + '%';
