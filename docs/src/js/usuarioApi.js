@@ -24,13 +24,13 @@ async function buscarUsuarioPorEmail(email) {
 }
 
 // Função para atualizar usuario por email (PUT)
-async function atualizarUsuario(email, nome, senha) {
+async function atualizarUsuario(email, nome, senha, avatar) {
     const response = await fetch(
         `${BASE_URL}/usuario/${encodeURIComponent(email)}`,
         {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ nome, senha }),
+            body: JSON.stringify({ nome, senha, avatar }),
         }
     );
     return response.json();

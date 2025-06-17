@@ -57,8 +57,6 @@ async function handleCreateMusic(e) {
             try {
                 const novaMusica = await criarMusica(nome, artista, foto, audio, usuario_id);
                 alert('Música publicada com sucesso!');
-                console.log(novaMusica);
-                alert(JSON.stringify(novaMusica));
                 const btnCancel = document.getElementById('btn-cancel');
                 btnCancel.click();
                 window.location.reload();

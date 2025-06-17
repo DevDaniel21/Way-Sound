@@ -151,6 +151,24 @@ async function handleRegisterSubmit(e) {
         alert("Erro ao cadastrar usuário.");
     }
 }
+// CARREGAR CONFIGURAÇÃO
+async function loadConfig() {
+    const usuarioAtivo = localStorage.getItem('Usuario');
+    const usuario = await buscarUsuarioPorEmail(usuarioAtivo);
+
+    let nome = usuario.nome;
+    let email = usuario.email;
+    let avatar = usuario.avatar;
+    if (avatar == null) {
+        avatar = '../../imgs/perfil.svg'
+    }
+
+    document.getElementById('name').value = nome;
+    document.getElementById('email').value = email;
+    if (avatar != '../../imgs/perfil.svg') {
+        document.getElementById('profile-img').style.backgroundImage = `url(${avatar})`
+    }
+}
 
 // ATUALIZAR O USUARIO
 async function handleUpdateSubmit(e) {
@@ -159,6 +177,8 @@ async function handleUpdateSubmit(e) {
     const usuario = await buscarUsuarioPorEmail(usuarioAtivo);
 
     let email = usuario.email;
+    let avatarAntigo = usuario.avatar;
+    let avatar = null
 
     let nomeEscolhido = document.getElementById("name").value;
     if (nomeEscolhido.trim() == '') nomeEscolhido = usuario.nome;
@@ -166,13 +186,29 @@ async function handleUpdateSubmit(e) {
     let senhaEscolhido = document.getElementById("senha").value;
     if (senhaEscolhido.trim() == '') senhaEscolhido = usuario.senha;
 
+    const inputDeImagem = document.getElementById('upload-btn').files[0]
+    if (inputDeImagem != undefined) {
+        const formDataImg = new FormData();
+        formDataImg.append('file', document.getElementById('upload-btn').files[0]);
+        const resImg = await fetch('http://localhost:4000/upload/imagem', {
+            method: 'POST',
+            body: formDataImg
+        });
+        const imgData = await resImg.json();
+        avatar = imgData.url;
+    } else {
+        avatar = avatarAntigo;
+    }
+
+
     try {
-        const usuarioAtualizado = await atualizarUsuario(email, nomeEscolhido, senhaEscolhido);
+        const usuarioAtualizado = await atualizarUsuario(email, nomeEscolhido, senhaEscolhido, avatar);
         alert("Usuário atualizado com sucesso!")
         localStorage.setItem('Usuario', email)
     } catch (error) {
         console.log(error)
         alert("Erro ao atualizar usuário.");
+        localStorage.setItem('Erro', JSON.stringify(error))
     }
 }
 
@@ -209,6 +245,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // CARREGAR O BOTAO DE DELETAR
     const deleteUserBtn = document.getElementById("deleteUserBtn");
     if (deleteUserBtn) deleteUserBtn.addEventListener("click", handleDeleteUser);
+    // CARREGAR CONFIG
+    const janelaAtual = window.location.pathname.split('/').pop();
+    if (janelaAtual == 'config-user.html') loadConfig()
 });
 
 export { usuarioAtivo }
