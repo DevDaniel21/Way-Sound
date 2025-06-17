@@ -133,6 +133,7 @@ body {
 }
 
 .titulo-card {
+  margin-bottom: 10px;
   font-size: var(--fs-40);
   font-weight: var(--fw-extrabold);
 }
@@ -152,6 +153,7 @@ body {
 .list-card {
   padding-left: 35px;
 }
+
 .card-btn {
   display: none;
   justify-content: center;
@@ -211,6 +213,8 @@ body {
 }
 
 .list-card {
+  font-size: 14px;
+  margin-top: 10px;
   padding-left: 35px;
   display: none;
 }
@@ -281,11 +285,11 @@ body {
   font-size: 22px;
   font-weight: bold;
   cursor: pointer;
-  color: var(--white-dark-active);
+  color: var(--white);
 }
 
 .popup-close:hover {
-  color: var(--white);
+  color: var(--purple);
 }
 
 .compare-table {
