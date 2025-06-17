@@ -12,7 +12,7 @@ async function updateSearchResults(nome) {
             musicaItem.className = 'card-music';
             musicaItem.innerHTML = `
                 <div class="foto-music">
-                    <img src="${musica.foto}" alt="" class="img-cantor">
+                    <img src="../../${musica.foto}" alt="" class="img-cantor">
                 </div>
                 <div class="text-music">
                     ${musica.nome}<br>
