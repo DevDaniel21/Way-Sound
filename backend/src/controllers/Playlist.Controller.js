@@ -125,6 +125,26 @@ class PlaylistController {
             return res.status(500).json({ error: 'Erro ao deletar playlist' })
         }
     }
+
+    async addMusicas(req, res) {
+        const { id } = req.params;
+        const { musicIds } = req.body;
+      
+        try {
+          const playlist = await Playlist.findByPk(id);
+          if (!playlist) {
+            return res.status(404).json({ error: 'Playlist não encontrada' });
+          }
+      
+          await playlist.addMusicas(musicIds); // Certifique-se de que o alias é 'Musicas' nos models
+      
+          return res.status(200).json({ message: 'Músicas adicionadas com sucesso' });
+        } catch (error) {
+          console.error('Erro ao adicionar músicas:', error);
+          return res.status(500).json({ error: 'Erro ao adicionar músicas na playlist' });
+        }
+      }
+      
 }
 
 export default new PlaylistController()

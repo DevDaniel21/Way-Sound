@@ -7,6 +7,8 @@ import {
     deletarPlaylist,
 } from "./playlistApi.js";
 
+import { listarMusicas } from './musicaApi.js'
+
 // DESCOBRIR O ID DO USUARIO
 import { buscarUsuarioPorEmail } from "./usuarioApi.js";
 import { usuarioAtivo } from "./usuarioService.js";
@@ -66,7 +68,10 @@ async function carregarDadosPlaylist() {
 
         // CARREGAR DADOS DA PLAYLIST
         document.getElementById("playlistNome").placeholder = playlist.nome;
-        if (playlist.avatar != null) document.getElementById("playlistAvatar").style.backgroundImage = `url(${playlist.avatar})`;
+        if (playlist.avatar != null)  {
+            document.getElementById("playlistAvatar").style.backgroundImage = `url(${playlist.avatar})`;
+            document.getElementById('avatar').style.display = 'none'
+    }
     } catch (error) {
         alert("Erro de conexão com o servidor");
         console.error(error);
@@ -88,47 +93,31 @@ async function carregarDadosPlaylist() {
 
 // EDITAR PLAYLIST
 async function handleEditPlaylist() {
-    const playlistId = new URLSearchParams(window.location.search).get("id");
-    const inputDesabilitado = document.getElementById("playlistNome").disabled;
-    const playlist = await buscarPlaylistPorId(playlistId);
-    let avatarAntigo = playlist.avatar;
-    let avatar = null;
-
-    const inputDeImagem = document.getElementById('playAvatar').files[0]
-    if (inputDeImagem != undefined) {
-        const formDataImg = new FormData();
-        formDataImg.append('file', document.getElementById('playAvatar').files[0]);
-        const resImg = await fetch('http://localhost:4000/upload/imagem', {
-            method: 'POST',
-            body: formDataImg
-        });
-        const imgData = await resImg.json();
-        avatar = imgData.url;
-        alert(avatar)
-    } else {
-        avatar = null;
+    const playlistId = new URLSearchParams(window.location.search).get("id")
+    const playlist = await buscarPlaylistPorId(playlistId)
+    let novoNome = document.getElementById("playlistNome").value.trim()
+    if (!novoNome) novoNome = playlist.nome
+  
+    let novoAvatar = playlist.avatar
+    const file = document.getElementById("playAvatar").files[0]
+    if (file) {
+      const fd = new FormData()
+      fd.append("file", file)
+      const res = await fetch("http://localhost:4000/upload/imagem", { method: "POST", body: fd })
+      const { url } = await res.json()
+      novoAvatar = url
     }
-
-    if (inputDesabilitado == true) {
-        document.getElementById("playlistNome").disabled = false;
-        document.getElementById("playlistNome").focus();
-    } else {
-        // SALVA EDIÇÕES
-        try {
-            const nome = document.getElementById("playlistNome").value;
-            console.log(nome)
-
-            const response = await atualizarPlaylist(playlistId, nome, avatar);
-
-            const data = await response;
-            alert("Playlist atualizada com sucesso!");
-            window.location.reload();
-        } catch (error) {
-            alert("Erro de conexão com o servidor");
-            console.error(error);
-        }
+  
+    try {
+      await atualizarPlaylist(playlistId, novoNome, novoAvatar);
+      alert("Playlist atualizada com sucesso!")
+      window.location.reload()
+    } catch (e) {
+      console.error(e)
+      alert("Erro de conexão com o servidor")
     }
-}
+  }
+  
 
 // DELETAR PLAYLIST
 async function handleDeletePlaylist() {
@@ -171,3 +160,4 @@ document.addEventListener("DOMContentLoaded", function () {
     const avatarplay = document.getElementById('playAvatar');
     if (avatarplay) avatarplay.addEventListener('change', handleEditPlaylist);
 });
+
